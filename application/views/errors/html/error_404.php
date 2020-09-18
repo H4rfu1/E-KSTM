@@ -59,7 +59,7 @@ p {
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
-		<a href="<?= base_url();"></a>
+		<a href="<?= base_url();?>"></a>
 	</div>
 </body>
 </html>
