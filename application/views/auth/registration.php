@@ -25,7 +25,7 @@
                   </div>
                   <div class="col-sm-6">
                     <input type="password" class="form-control form-control-user" id="Password2" name="password2" placeholder="Repeat Password">
-                    
+
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block">
@@ -38,7 +38,7 @@
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
               </div>
               <div class="text-center">
-                <a class="small" href="<?php echo base_url(); ?>">Already have an account? Login!</a>
+                <a class="small" href="<?php echo base_url("auth"); ?>">Already have an account? Login!</a>
               </div>
             </div>
           </div>

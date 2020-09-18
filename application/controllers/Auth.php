@@ -14,7 +14,7 @@ class Auth extends CI_Controller {
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
     $this->form_validation->set_rules('password', 'Password', 'trim|required');
     if($this->form_validation->run() == false){
-      $data['title'] = 'KuliTekno - User login';
+      $data['title'] = 'E-KSTM - User login';
       $this->load->view('templates/auth_header', $data);
       $this->load->view('auth/login');
       $this->load->view('templates/auth_footer');
@@ -81,7 +81,7 @@ class Auth extends CI_Controller {
     if($this->form_validation
     ->run() == false){
 
-      $data['title'] = 'KuliTekno - User Registration';
+      $data['title'] = 'E-KSTM - User Registration';
       $this->load->view('templates/auth_header', $data);
       $this->load->view('auth/registration');
       $this->load->view('templates/auth_footer');
@@ -97,8 +97,8 @@ class Auth extends CI_Controller {
         'date_create' => time()
 
       ];
-      $pesan = '<div class="alert alert-success" role="alert"> congratulation '.$this->input->post('fullname').'!! your account has been registered, activation has been sent to your email and will valid until 24 hours/div>';
-      
+      $pesan = '<div class="alert alert-success" role="alert"> congratulation '.$this->input->post('fullname').'!! your account has been registered, activation has been sent to your email and will valid until 24 hours. check on spam if the email didn\'t appear. </div>';
+
       //siapkan token
       $token = base64_encode(random_bytes(32));
       $user_token =[
@@ -107,7 +107,7 @@ class Auth extends CI_Controller {
         'date_created' => time()
       ];
       $this->db->insert('user',$data);
-      $this->db->insert('user_tpken',$user_token);
+      $this->db->insert('user_token',$user_token);
       $this->_sendEmail($token, 'verify');
 
       $this->session-> set_flashdata('message', $pesan);
@@ -118,21 +118,28 @@ class Auth extends CI_Controller {
   private function _sendEmail($token, $type){
      $config = [
        'protocol'  => 'smtp',
-       'smtp_host' => 'ssl://smtp.googlemail.com',
-       'smtp_user' => 'takun917@gmail.com',
-       'smtp_pass' => 'pelatok917',
+       'smtp_host' => 'mail.e-kstm.com',
+       'smtp_user' => 'no-reply@e-kstm.com',
+       'smtp_pass' => 'E-KSTM123',
        'smtp_port' => 465,
        'mailtype'  => 'html',
        'charset' => 'utf-8',
        'newline' => "\r\n",
      ];
      $this->load->library('email', $config);
-     $this->email->from('takun917@gmail.com', 'kuliteno');
+     $this->email->from('no-reply@e-kstm.com', 'e-kstm');
      $this->email->to($this->input->post('email'));
 
      if($type == 'verify'){
-       $this->email->subject('Account verivication');
-       $this->email->message('click this link to verify our account : <a href="'. base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Activate<a>');
+       $this->email->subject('e-KSTM - Account verification');
+       $message = '<html><head>';
+       $message = '<title>E-KSTM - email verif<title>';
+       $message = '<head><body>';
+       $message .= '<p>click this link to verify your account : <a href="'. base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Activate</a></p>';
+       $message .= '<p>atau</p> <p>link: '. base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</p>';
+       $message .= '</body></html>';
+       $this->email->message($message);
+       $this->email->set_mailtype('html');
      }
 
      if($this->email->send()){
@@ -149,10 +156,9 @@ class Auth extends CI_Controller {
     $user = $this->db->get_where('user', ['email' => $email])->row_array();
 
     if($user) {
-      $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array;
-
+      $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
       if($user_token) {
-        if(time()-$user_token['date_created'] < (60*60*24)) {
+        if(time()->$user_token['date_created'] < (60*60*24)) {
           $this->db->set('is_active', 1);
           $this->db->where('email', $email);
           $this->db->update('user');
