@@ -5,4 +5,5 @@ echo "\nERROR: ",
 	$heading,
 	"\n\n",
 	$message,
-	"\n\n";
+	"\n\n",
+	"<a href='https://e-kstm.com/'></a>";
