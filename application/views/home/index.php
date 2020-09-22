@@ -49,11 +49,11 @@
           <?php if (is_logged_in("home")) {
             echo '
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown no-arrow d-sm-none">
-                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                  <a class="btn btn-primary" href="'. base_url("auth/registration") .' role="button"">Daftar</a>
-                  <a class="btn btn-primary" href="'. base_url("auth") .' role="button"">Login</a>
-                </div>
+              <li class="nav-item dropdown no-arrow">
+                  <a class="nav-link btn btn-primary" href="'. base_url("auth/registration") .' role="button"">Daftar</a>
+              </li>
+              <li class="nav-item dropdown no-arrow">
+                  <a class="nav-link btn btn-primary" href="'. base_url("auth") .' role="button"">Masuk</a>
               </li>
             </ul>
             ';
