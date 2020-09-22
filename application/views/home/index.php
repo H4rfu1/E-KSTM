@@ -36,14 +36,18 @@
 
 
           <!-- Logo -->
-          <a class="top-brand d-flex align-items-center justify-content-center" href="index.html">
+          <a class="top-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
             <div class="top-brand-icon rotate-n-15">
               <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="top-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="top-brand-text mx-3">E-KSTM</div>
           </a>
 
           <!-- Topbar Navbar -->
+          <?php if (is_logged_in()) {
+            echo '<a href="'. base_url("auth") .'">Login</a>';
+          } else {
+            echo '
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -108,7 +112,7 @@
                   </div>
                   <div>
                     <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
+                    Spending Alert: Weve noticed unusually high spending for your account.
                   </div>
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
@@ -133,7 +137,7 @@
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem Ive been having.</div>
                     <div class="small text-gray-500">Emily Fowler · 58m</div>
                   </div>
                 </a>
@@ -153,7 +157,7 @@
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+                    <div class="text-truncate">Last months report looks great, I am very happy with the progress so far, keep up the good work!</div>
                     <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                   </div>
                 </a>
@@ -163,7 +167,7 @@
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they arent good...</div>
                     <div class="small text-gray-500">Chicken the Dog · 2w</div>
                   </div>
                 </a>
@@ -202,6 +206,8 @@
             </li>
 
           </ul>
+          ';
+          }?>
 
         </nav>
         <!-- End of Topbar -->

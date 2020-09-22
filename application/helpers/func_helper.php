@@ -1,8 +1,13 @@
 <?php
-  function is_logged_in(){
+  function is_logged_in($da = "auth" ){
     $CI = get_instance();
     if(!$CI->session->userdata('email')){
-      redirect('auth');
+      if ($da == "auth") {
+        redirect('auth');
+      }elseif ($da == "home") {
+        return false;
+      }
+
     }else{
       $role_id = $CI->session->userdata('role_id');
       $menu = $CI->uri->segment(1);
@@ -14,6 +19,7 @@
       if($userAccess->num_rows() < 1){
         redirect('auth/blocked');
       }
+      return true;
     }
 
   function check_Access($role_id, $menu_id){
