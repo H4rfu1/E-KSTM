@@ -5,7 +5,7 @@
       if ($da == "auth") {
         redirect('auth');
       }elseif ($da == "home") {
-        return false;
+        return true;
       }
 
     }else{
@@ -21,7 +21,7 @@
           redirect('auth/blocked');
       }
       }elseif ($da == "home") {
-        return true;
+        return false;
       }
     }
 
