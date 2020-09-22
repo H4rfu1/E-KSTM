@@ -51,10 +51,10 @@
             <div class="container">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown no-arrow mx-1">
-                    <a class="nav-link btn btn-primary" href="'. base_url("auth/registration") .' role="button"">Daftar</a>
+                    <a class="btn btn-primary" href="'. base_url("auth/registration") .' role="button"">Daftar</a>
                 </li>
                 <li class="nav-item dropdown no-arrow mx-1">
-                    <a class="nav-link btn btn-primary" href="'. base_url("auth") .' role="button"">Masuk</a>
+                    <a class="btn btn-primary" href="'. base_url("auth") .' role="button"">Masuk</a>
                 </li>
               </ul>
             </div>
