@@ -44,7 +44,7 @@
           </a>
 
           <!-- Topbar Navbar -->
-          <?php if (is_logged_in()) {
+          <?php if (is_logged_in("home")) {
             echo '<a href="'. base_url("auth") .'">Login</a>';
           } else {
             echo '
