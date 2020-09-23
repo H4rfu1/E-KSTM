@@ -28,8 +28,7 @@
           <td><?= $r['role'] ?></td>
           <td>
             <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="badge badge-warning">Access</a>
-            <a href="<?= base_url('menu/edit/'); echo $r['id']; ?>" class="badge badge-primary">Edit</a>
-            <a href="<?= base_url('menu/delete_menu/'); echo $r['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin'); ">Delete</a>
+            <a href="<?= base_url('admin/delete_role/'); echo $r['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin'); ">Delete</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>

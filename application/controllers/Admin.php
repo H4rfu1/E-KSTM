@@ -65,4 +65,9 @@ class Admin extends CI_Controller {
     }
     $this->session->set_flashdata('message', $pesan);
   }
+  public function delete_role($id){
+    $this->db->delete('user_role', ['id' => $id]);
+    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Menu has been delete </div>');
+    redirect('admin/role');
+  }
 }
