@@ -54,7 +54,7 @@ class Admin extends CI_Controller {
       'menu_id' => $menu_id
     ];
 
-    $result = $this->db->get_where('user_Access_menu', $data);
+    $result = $this->db->get_where('user_access_menu', $data);
 
     if($result->num_rows() < 1){
       $this->db->insert('user_access_menu', $data);
