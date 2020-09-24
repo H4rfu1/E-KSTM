@@ -41,7 +41,7 @@
             <td><?= date('d F Y', $user['date_create']); ?></td>
           <td>
             <a href="<?= base_url('akun/edit/'); echo $r['id']; ?>" class="badge badge-primary">Edit</a>
-            <a href="<?= base_url('akun/delete_akun/'); echo $r['id']; ?>" class="badge badge-danger" onclick="conDelete(); ">Delete</a>
+            <a href="<?= base_url('akun/delete_akun/'); echo $r['id']; ?>" class="badge badge-danger" onclick="return conDelete(); ">Delete</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
