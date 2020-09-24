@@ -36,7 +36,7 @@ class Pengumuman extends CI_Controller {
       $this->load->view('templates/dash_topbar', $data);
       $this->load->view('pengumuman/index', $data);
       $this->load->view('templates/dash_footer');
-    }else {
+    }elseif ($data['role_id'] == 3){
       $data = [
         'id_pengirim' => $this->session->userdata('id'),
         'id_role' =>  $this->input->post('role_id'),
@@ -46,6 +46,12 @@ class Pengumuman extends CI_Controller {
       $this->db->insert('pemberitahuan', $data);
       $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun added </div>');
       redirect('pengumuman');
+    }else {
+      $this->load->view('templates/dash_header', $data);
+      $this->load->view('templates/dash_sidebar', $data);
+      $this->load->view('templates/dash_topbar', $data);
+      $this->load->view('pengumuman/index', $data);
+      $this->load->view('templates/dash_footer');
     }
 
   }
@@ -55,7 +61,7 @@ class Pengumuman extends CI_Controller {
   }
 
   public function delete_pengumuman($id){
-    $this->db->delete('pemberitahuan', ['id' => $id]);
+    $this->db->delete('pemberitahuan', ['id_pemberitahuan' => $id]);
     $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun has been delete </div>');
     redirect('pengumuman');
   }
