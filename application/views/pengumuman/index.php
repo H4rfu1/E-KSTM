@@ -51,12 +51,13 @@
             <td><?= $p['isi_pemberitahuan'] ?></td>
           <?php
           if ($role_id == 3) {
-            echo '
+            $m = $p['id_pemberitahuan'];
+            echo "
             <td>
-              <a href="'. base_url("pengumuman/edit/"); echo $p["id_pemberitahuan"]; .'" class="badge badge-primary">Edit</a>
-              <a href="'. base_url('pengumuman/delete_pengumuman/'); echo $p['id_pemberitahuan']; .'" class="badge badge-danger" onclick="return confirm('yakin'); ">Delete</a>
+              <a href='". base_url("pengumuman/edit/") ."$m' class='badge badge-primary'>Edit</a>
+              <a href='". base_url('pengumuman/delete_pengumuman/') ."$m' class='badge badge-danger' onclick='return confirm('yakin'); '>Delete</a>
             </td>
-            ';
+            ";
           } ?>
 
         </tr>
