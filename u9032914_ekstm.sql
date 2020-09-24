@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 20, 2020 at 10:35 AM
+-- Generation Time: Sep 24, 2020 at 11:40 AM
 -- Server version: 10.3.23-MariaDB
 -- PHP Version: 7.3.6
 
@@ -154,10 +154,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_create`, `instansi_id`) VALUES
-(25, 'Moh. Fahrul Hafidh', 'sakun915@gmail.com', 'default.jpg', '$2y$10$TOr1i6vLxzysM53Uv6Ofx.wXpGpTijaQOjDsaZPo3h2ppCWFrqwC2', 2, 1, 1600312024, NULL),
+(25, 'Moh. Fahrul Hafidh', 'sakun915@gmail.com', 'default.jpg', '$2y$10$TOr1i6vLxzysM53Uv6Ofx.wXpGpTijaQOjDsaZPo3h2ppCWFrqwC2', 4, 1, 1600312024, NULL),
 (27, 's', 'dakun916@gmail.com', 'default.jpg', '$2y$10$xulyhbru7pes6TlDnzmHae61cjR7sPcbgm4ntjvAp4dQbLXKmN3Ku', 1, 1, 1600312890, NULL),
 (31, 'Alif Aditya Rahman', 'alifadityarahman18@gmail.com', 'default.jpg', '$2y$10$nf1zV.o/GDA6yvqqxeL3ge2nqWLnxReBP4SU2n3XO10UWC0WZvWgm', 2, 1, 1600317800, NULL),
-(33, 'Adit Aladra', 'adit.aladra@gmail.com', 'default.jpg', '$2y$10$OHjQzbOh5fe6gtLUjLVTtukP1J6P5HpCwgeOXSatAnpO1WU2jNf2.', 2, 1, 1600318344, NULL);
+(33, 'Adit Aladra', 'adit.aladra@gmail.com', 'default.jpg', '$2y$10$eqy9lwL84jBZ6v8ED2TeX.5mXrpZ1dkx1XrAU2HJAoPgnPkZPLCom', 2, 1, 1600318344, NULL);
 
 -- --------------------------------------------------------
 
@@ -179,7 +179,31 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 2, 2),
-(4, 1, 3);
+(5, 1, 3),
+(6, 3, 2),
+(7, 3, 8),
+(8, 3, 9),
+(9, 3, 10),
+(10, 5, 10),
+(11, 5, 9),
+(12, 5, 2),
+(14, 5, 8),
+(15, 6, 10),
+(16, 6, 9),
+(17, 6, 2),
+(18, 6, 6),
+(19, 7, 10),
+(20, 7, 9),
+(21, 7, 6),
+(22, 7, 2),
+(23, 8, 2),
+(24, 8, 7),
+(25, 8, 9),
+(26, 8, 10),
+(27, 4, 11),
+(28, 4, 2),
+(29, 4, 10),
+(30, 4, 9);
 
 -- --------------------------------------------------------
 
@@ -200,7 +224,12 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (1, 'Admin'),
 (2, 'User'),
 (3, 'Menu'),
-(4, 'test');
+(6, 'Laporan Kstm'),
+(7, 'Laporan Pengontrol'),
+(8, 'Rekap Laporan'),
+(9, 'Pengumuman'),
+(10, 'Forum'),
+(11, 'Akun');
 
 -- --------------------------------------------------------
 
@@ -219,7 +248,13 @@ CREATE TABLE `user_role` (
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
 (1, 'admin'),
-(2, 'member');
+(2, 'member'),
+(3, 'kepala dkpp'),
+(4, 'tu dkpp'),
+(5, 'anggota dkpp'),
+(6, 'anggota kstm'),
+(7, 'ketua kstm'),
+(8, 'pengontrol lapangan');
 
 -- --------------------------------------------------------
 
@@ -246,11 +281,14 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (4, 2, 'Edit Profile', 'user/edit', 'fas fa-fw fa-user-edit', 1),
 (5, 3, 'Menu Management', 'menu', 'fas fa-fw fa-folder', 1),
 (6, 3, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
-(7, 4, 'cob', 'test/cob', 'fa wkwkwk', 1),
-(8, 1, 'cob', 'admin/cob', 'fab fa-fw fa-youtube', 1),
 (9, 1, 'Role', 'admin/role', 'fas fa-fw fa-user-tie', 1),
 (10, 2, 'Change Password', 'user/changepassword', 'fas fa-fw fa-key', 1),
-(11, 1, 'Lul', 'Admin/lul', 'Fas fa-fw fa-profil', 1);
+(14, 6, 'Kelola Laporan', 'kstm', 'fas fa-fw fa-cogs', 1),
+(15, 7, 'Kelola Laporan', 'pengontrol', 'fas fa-fw fa-cogs', 1),
+(16, 8, 'Rekap', 'rekap', 'fas fa-fw fa-folder-open', 1),
+(17, 9, 'Pengumuman', 'pengumuman', 'fas fa-fw fa-bullhorn', 1),
+(18, 10, 'Forum', 'forum', 'fas fa-fw fa-comments', 1),
+(19, 11, 'Kelola Akun', 'akun', 'fas fa-fw fa-users', 1);
 
 -- --------------------------------------------------------
 
@@ -400,25 +438,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user_token`
