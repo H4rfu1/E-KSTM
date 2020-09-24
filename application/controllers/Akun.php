@@ -43,7 +43,7 @@ class Akun extends CI_Controller {
         'date_create' => time()
       ];
       $this->db->insert('user', $data);
-      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Submenu added </div>');
+      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun added </div>');
       redirect('akun');
     }
 
