@@ -20,10 +20,8 @@ class Akun extends CI_Controller {
     $this->db->where('id != 1');
     $data['role'] = $this->db->get('user_role')->result_array();
 
-    $this->form_validation->set_rules('title','title', 'required');
-    $this->form_validation->set_rules('menu_id','Menu', 'required');
-    $this->form_validation->set_rules('url','URL', 'required');
-    $this->form_validation->set_rules('icon','Icon', 'required');
+
+    $this->form_validation->set_rules('name','Nama', 'required');
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
       'is_unique' => 'this email has already registered'
     ]);
