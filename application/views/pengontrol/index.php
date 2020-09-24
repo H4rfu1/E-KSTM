@@ -39,7 +39,7 @@
       <tbody>
         <?php
           $i = 1;
-         foreach($laporan_kstm as $r) :
+         foreach($laporan_pengontrol as $r) :
         ?>
         <tr>
           <th scope="row"><?= $i ?></th>
