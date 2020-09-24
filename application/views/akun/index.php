@@ -13,7 +13,7 @@
     <?php endif; ?>
     <?= form_error('menu', '<div class="alert alert-danger" role="alert">','</div>'); ?>
     <?= $this->session->flashdata('message'); ?>
-    <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Submenu</a>
+    <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Akun</a>
 
     <table class="table table-hover">
       <thead>
