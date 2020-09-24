@@ -30,7 +30,7 @@
       <tbody>
         <?php
           $i = 1;
-         foreach($role as $r) :
+         foreach($akun as $r) :
         ?>
         <tr>
           <th scope="row"><?= $i ?></th>
@@ -64,37 +64,33 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newSubmenuLabel">Add New Submenu</h5>
+        <h5 class="modal-title" id="newSubmenuLabel">Add New Akun</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form class="" action="<?= base_url('menu/submenu') ?>" method="post">
+      <form class="" action="<?= base_url('akun') ?>" method="post">
       <div class="modal-body">
-      <div class="form-group">
-        <input type="text" class="form-control" id="title" name="title" placeholder="Submenu name">
-      </div>
-      <div class="form-group">
-        <select class="form-cotrol" name="menu_id" id='menu_id'>
-          <option value="">Select MENU</option>
-          <?php foreach($menu as $m) : ?>
-            <option value="<?= $m['id'] ?>"><?= $m['menu']  ?></option>
-          <?php endforeach; ?>
-        </select>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="url" name="url" placeholder="Submenu url">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="icon" name="icon" placeholder="icon">
-      </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" value="1" id="is_active" name="is_active" checked>
-          <label class="form-check-label" for="is_active">Is active?</label>
+        <div class="form-group">
+          <input type="text" class="form-control" id="name" name="name" placeholder="Nama">
         </div>
-
-      </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <select class="form-cotrol" name="role_id" id='role_id'>
+            <option value="">Select Role</option>
+            <?php foreach($role as $m) : ?>
+              <option value="<?= $m['id'] ?>"><?= $m['role']  ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="1" id="is_active" name="is_active" checked>
+            <label class="form-check-label" for="is_active">Is active?</label>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
