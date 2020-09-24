@@ -20,7 +20,7 @@
 
         <tr>
           <?php
-          if ($pole_id == 3) {
+          if ($role_id == 3) {
             echo '
             <th scope="col">#</th>
             <th scope="col">Role</th>
@@ -52,10 +52,11 @@
           <?php
           if ($role_id == 3) {
             $m = $p['id_pemberitahuan'];
+            $c = 'return confirm("yakin");'
             echo "
             <td>
               <a href='". base_url("pengumuman/edit/") ."$m' class='badge badge-primary'>Edit</a>
-              <a href='". base_url('pengumuman/delete_pengumuman/') ."$m' class='badge badge-danger' onclick='return confirm('yakin'); '>Delete</a>
+              <a href='". base_url('pengumuman/delete_pengumuman/') ."$m' class='badge badge-danger' onclick='$c'>Delete</a>
             </td>
             ";
           } ?>
@@ -97,7 +98,7 @@
         <div class="form-group">
           <select class="form-cotrol" name="role_id" id='role_id'>
             <option value="">Select Role</option>
-            <?php foreach($pole as $m) : ?>
+            <?php foreach($role as $m) : ?>
               <option value="<?= $m['id'] ?>"><?= $m['role']  ?></option>
             <?php endforeach; ?>
           </select>
