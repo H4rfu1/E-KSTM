@@ -47,14 +47,9 @@ class Akun extends CI_Controller {
 
   }
 
-  public function delete_menu($id){
-    $this->db->delete('user_menu', ['id' => $id]);
-    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Menu has been delete </div>');
-    redirect('menu');
-  }
-  public function delete_subMenu($id){
-    $this->db->delete('user_sub_menu', ['id' => $id]);
-    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Submenu has been delete </div>');
-    redirect('menu/submenu');
+  public function delete_akun($id){
+    $this->db->delete('user', ['id' => $id]);
+    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun has been delete </div>');
+    redirect('akun');
   }
 }
