@@ -6,17 +6,16 @@
 
 <div class="row">
   <div class="col-lg-12 table-responsive">
-      <div class="btn-group dropright" role="group" aria-label="Choose Laporan Type">
-        <div class="btn-group" role="group">
-          <button id="btnGroupDrop1" name="pilihan" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Laporan
-          </button>
-          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" href="<?= base_url('rekap/kstm') ?>">Laporan KSTM</a>
-            <a class="dropdown-item" href="<?= base_url('rekap/laporan') ?>">Laporan Pengontrol Lapangan</a>
-          </div>
-        </div>
+    <div class="btn-group dropright mt-1">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Laporan
+      </button>
+      <div class="dropdown-menu" >
+        <a class="dropdown-item" href="<?= base_url('rekap/kstm') ?>">Laporan KSTM</a>
+        <a class="dropdown-item" href="<?= base_url('rekap/laporan') ?>">Laporan Pengontrol Lapangan</a>
       </div>
+    </div>
+
     <?php if(validation_errors()) : ?>
     <div class="alert alert-danger" role="alert">
       <?= validation_errors(); ?>
