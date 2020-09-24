@@ -52,7 +52,7 @@
           <?php
           if ($role_id == 3) {
             $m = $p['id_pemberitahuan'];
-            $c = 'return confirm("yakin");'
+            $c = 'return confirm("yakin");';
             echo "
             <td>
               <a href='". base_url("pengumuman/edit/") ."$m' class='badge badge-primary'>Edit</a>
