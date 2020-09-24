@@ -41,31 +41,37 @@ class Pengontrol extends CI_Controller {
       $new_img = '';
       $new_vid = '';
       // cek jika ada gambar terupload
-      $upload_img = $_FILES['image']['name'];
-      if($upload_img){
-        $config['allowed_types'] = 'gif|jpg|png|jpeg';
-        $config['max_size']     = '1024';
-        $config['upload_path'] = './assets/img/profile';
+      if ($_FILES['image']['size'] == 0) {
+        $upload_img = $_FILES['image']['name'];
+        if($upload_img){
+          $config['allowed_types'] = 'gif|jpg|png|jpeg';
+          $config['max_size']     = '1024';
+          $config['upload_path'] = './assets/img/profile';
 
-        $this->load->library('upload', $config);
+          $this->load->library('upload', $config);
 
-        if($this->upload->do_upload('image')){
-          $new_img = $this->upload->data('file_name');
+          if($this->upload->do_upload('image')){
+            $new_img = $this->upload->data('file_name');
+          }
         }
       }
+
       // cek jika ada video terupload
-      $upload_vid = $_FILES['video']['name'];
-      if($upload_vid){
-        $config['allowed_types'] = 'mp4|3gp|avi|flv|webm|wmv';
-        $config['max_size']     = '5120';
-        $config['upload_path'] = './assets/vid/pengontrol';
+      if ($_FILES['video']['size'] == 0) {
+        $upload_vid = $_FILES['video']['name'];
+        if($upload_vid){
+          $config['allowed_types'] = 'mp4|3gp|avi|flv|webm|wmv';
+          $config['max_size']     = '5120';
+          $config['upload_path'] = './assets/vid/pengontrol';
 
-        $this->load->library('upload', $config);
+          $this->load->library('upload', $config);
 
-        if($this->upload->do_upload('video')){
-          $new_vid = $this->upload->data('file_name');
+          if($this->upload->do_upload('video')){
+            $new_vid = $this->upload->data('file_name');
+          }
         }
       }
+
 
       $data = [
         'id_pelapor' => $this->session->userdata('id'),
