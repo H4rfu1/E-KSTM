@@ -1,3 +1,4 @@
+<!-- untuk membuat pagenya terus https -->
 <?php
 	if($_SERVER['HTTPS']!="on")
 	{
