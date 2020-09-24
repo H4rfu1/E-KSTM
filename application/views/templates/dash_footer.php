@@ -51,9 +51,9 @@
 <!-- bootbox-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
 <script type="text/javascript">
-function conDelete() {
+function conDelete(url) {
   bootbox.confirm("Confirm Delete?", function(result){
-    // console.log('This was logged in the callback: ' + result); 
+    window.location.href = url;
   });
 }
 
