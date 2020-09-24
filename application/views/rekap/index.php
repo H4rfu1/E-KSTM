@@ -6,6 +6,17 @@
 
 <div class="row">
   <div class="col-lg-12 table-responsive">
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" name="pilihan" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Laporan
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="<?= base_url('rekap/kstm') ?>" <?= $tipe == 'kstm' ? 'selected' : ''; ?>>Laporan KSTM</a>
+            <a class="dropdown-item" href="<?= base_url('rekap/laporan') ?>" <?= $tipe == 'pengontrol' ? 'selected' : ''; ?>>Laporan Pengontrol Lapangan</a>
+          </div>
+        </div>
+      </div>
     <?php if(validation_errors()) : ?>
     <div class="alert alert-danger" role="alert">
       <?= validation_errors(); ?>
