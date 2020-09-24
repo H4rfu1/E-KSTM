@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-lg-12 table-responsive">
-    <div class="btn-group dropright mb-4">
+    <div class="btn-group dropright mb-5">
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Laporan
       </button>
