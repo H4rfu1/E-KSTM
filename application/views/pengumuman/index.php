@@ -61,7 +61,7 @@
             echo "
             <td>
               <a href='". base_url("pengumuman/edit/") ."$m' class='badge badge-primary'>Edit</a>
-              <a href='". base_url('pengumuman/delete_pengumuman/') ."$m' class='badge badge-danger' onclick='$c'>Delete</a>
+              <button class='btn btn-danger btn-sm' onclick='conDelete('".base_url("pengumuman/delete_pengumuman/") ."$m'); '>Delete</button>
             </td>
             ";
           } ?>

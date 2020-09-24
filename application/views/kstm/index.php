@@ -59,7 +59,7 @@
             <td><?= $r['harga_ternak_perekor'] ?></td>
           <td>
             <a href="<?= base_url('kstm/edit/'); echo $r['id_laporan_kstm']; ?>" class="badge badge-primary">Edit</a>
-            <a href="<?= base_url('kstm/delete_laporan_kstm/'); echo $r['id_laporan_kstm']; ?>" class="badge badge-danger" onclick="return confirm('yakin'); ">Delete</a>
+            <button class="btn btn-danger btn-sm" onclick="conDelete('<?= base_url("kstm/delete_laporan_kstm/"); echo $r['id']; ?>'); ">Delete</button>
           </td>
         </tr>
       <?php $i++; endforeach; ?>

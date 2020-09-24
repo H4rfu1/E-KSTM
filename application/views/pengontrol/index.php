@@ -63,7 +63,7 @@
             <td><?= $r['video'] ?></td>
           <td>
             <a href="<?= base_url('pengontrol/edit/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-primary">Edit</a>
-            <a href="<?= base_url('pengontrol/delete_laporan_pengontrol/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-danger" onclick="return confirm('yakin'); ">Delete</a>
+            <button class="btn btn-danger btn-sm" onclick="conDelete('<?= base_url("pengontrol/delete_laporan_pengontrol/"); echo $r['id']; ?>'); ">Delete</button>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
