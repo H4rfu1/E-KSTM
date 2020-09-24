@@ -14,6 +14,8 @@ class Kstm extends CI_Controller {
     $data['title'] = 'Laporan KSTM Management';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
+    $id_user = $this->session->userdata('id');
+    $this->db->where("id_pelapor != $id_user");
     $data['laporan_kstm'] = $this->db->get('laporan_kstm')->result_array();
 
 

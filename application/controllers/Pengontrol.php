@@ -14,6 +14,8 @@ class Pengontrol extends CI_Controller {
     $data['title'] = 'Laporan Pengontrol Management';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
+    $id_user = $this->session->userdata('id');
+    $this->db->where("id_pelapor != $id_user");
     $data['laporan_pengontrol'] = $this->db->get('laporan_pengontrol')->result_array();
 
 
