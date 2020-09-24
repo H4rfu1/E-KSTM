@@ -24,7 +24,6 @@
     <?php endif; ?>
     <?= form_error('akun', '<div class="alert alert-danger" role="alert">','</div>'); ?>
     <?= $this->session->flashdata('message'); ?>
-    <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Akun</a>
 
     <table class="table table-hover">
       <thead>
@@ -55,7 +54,7 @@
       <tbody>
         <?php
           $i = 1;
-         foreach($akun as $r) :
+         foreach($laporan as $r) :
         ?>
         <tr>
           <th scope="row"><?= $i ?></th>
