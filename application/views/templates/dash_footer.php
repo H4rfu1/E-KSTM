@@ -53,7 +53,7 @@
 <script type="text/javascript">
 function conDelete(url) {
   bootbox.confirm("Confirm Delete?", function(result){
-    console.log(url);
+    window.location.href = url;
   });
 }
 
