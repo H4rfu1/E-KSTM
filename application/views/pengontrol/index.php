@@ -62,8 +62,8 @@
             <td><?= $r['foto'] ?></td>
             <td><?= $r['video'] ?></td>
           <td>
-            <a href="<?= base_url('kstm/edit/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-primary">Edit</a>
-            <a href="<?= base_url('kstm/delete_laporan_pengontrol/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-danger" onclick="return confirm('yakin'); ">Delete</a>
+            <a href="<?= base_url('pengonrol/edit/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-primary">Edit</a>
+            <a href="<?= base_url('pengonrol/delete_laporan_pengontrol/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-danger" onclick="return confirm('yakin'); ">Delete</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
