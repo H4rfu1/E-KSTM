@@ -41,7 +41,7 @@
             <td><?= $sm['is_active'] ?></td>
           <td>
             <a href="<?= base_url('menu/edit/'); echo $sm['id']; ?>" class="badge badge-primary">Edit</a>
-            <button class="btn btn-danger btn-sm" onclick="conDelete('<?= base_url("menu/delete_subMenu/"); echo $sm['id']; ?>'); ">Delete</button>
+            <a class="badge badge-warning" onclick="conDelete('<?= base_url("menu/delete_subMenu/"); echo $sm['id']; ?>'); ">Delete</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
