@@ -10,18 +10,41 @@ class Rekap extends CI_Controller {
     }
   }
 
-  public function index($tipe = 'kstm'){
+  public function index(){
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Laporan_model', 'laporan');
-    if (strtolower($tipe) == 'kstm') {
-      $data['title'] = 'Rekap Laporan KSTM';
-      $data['laporan'] = $this->laporan->getLaporanKSTM();
-      $data['tipe'] = 'kstm';
-    } elseif (strtolower($tipe) == 'pengontrol') {
-      $data['title'] = 'Rekap Laporan Pengontrol Lapangan';
-      $data['laporan'] = $this->laporan->getLaporanPengontrol();
-      $data['tipe'] = 'pengontrol';
-    }
+    $data['title'] = 'Rekap Laporan KSTM';
+    $data['laporan'] = $this->laporan->getLaporanKSTM();
+    $data['tipe'] = 'kstm';
+
+    $this->load->view('templates/dash_header', $data);
+    $this->load->view('templates/dash_sidebar', $data);
+    $this->load->view('templates/dash_topbar', $data);
+    $this->load->view('rekap/index', $data);
+    $this->load->view('templates/dash_footer');
+
+  }
+
+  public function kstm(){
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $this->load->model('Laporan_model', 'laporan');
+    $data['title'] = 'Rekap Laporan KSTM';
+    $data['laporan'] = $this->laporan->getLaporanKSTM();
+    $data['tipe'] = 'kstm';
+
+    $this->load->view('templates/dash_header', $data);
+    $this->load->view('templates/dash_sidebar', $data);
+    $this->load->view('templates/dash_topbar', $data);
+    $this->load->view('rekap/index', $data);
+    $this->load->view('templates/dash_footer');
+
+  }
+  public function laporan(){
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $this->load->model('Laporan_model', 'laporan');
+    $data['title'] = 'Rekap Laporan Pengontrol Lapangan';
+    $data['laporan'] = $this->laporan->getLaporanPengontrol();
+    $data['tipe'] = 'pengontrol';
 
     $this->load->view('templates/dash_header', $data);
     $this->load->view('templates/dash_sidebar', $data);
