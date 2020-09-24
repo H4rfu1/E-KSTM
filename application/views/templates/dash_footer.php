@@ -53,7 +53,7 @@
 <script type="text/javascript">
 function conDelete(url) {
   bootbox.confirm("Confirm Delete?", function(result){
-    window.location.href = url;
+    window.location.href = "https://www.w3schools.com/bootstrap/bootstrap_button_groups.asp";
   });
 }
 
