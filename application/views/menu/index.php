@@ -28,7 +28,7 @@
           <td><?= $m['menu'] ?></td>
           <td>
             <a href="<?= base_url('menu/edit/'); echo $m['id']; ?>" class="badge badge-primary">Edit</a>
-            <a class="badge badge-warning" onclick="conDelete('<?= base_url("menu/delete_menu/"); echo $m['id']; ?>'); ">Delete</a>
+            <a class="badge badge-danger" onclick="conDelete('<?= base_url("menu/delete_menu/"); echo $m['id']; ?>'); ">Delete</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
