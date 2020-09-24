@@ -93,7 +93,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">Deskripsi Laporan</span>
           </div>
-          <textarea class="form-control" aria-label="With textarea" name="Deskripsi_laporan"></textarea>
+          <textarea class="form-control" aria-label="With textarea" name="deskripsi_laporan"></textarea>
         </div>
         <div class="form-group">
           <input type="text" class="form-control" id="jenis_ternak" name="jenis_ternak" placeholder="Jenis Ternak">
@@ -111,7 +111,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">Keterangan ternak meninggal</span>
           </div>
-          <textarea class="form-control" aria-label="With textarea" name="Keterangan_ternak_meninggal"></textarea>
+          <textarea class="form-control" aria-label="With textarea" name="keterangan_ternak_meninggal"></textarea>
         </div>
         <div class="form-group">
           <input type="number" class="form-control" id="jumlah_ternak_sehat" name="jumlah_ternak_sehat" placeholder="Jumlah ternak sehat">
@@ -123,7 +123,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">Keterangan kesehatan ternak</span>
           </div>
-          <textarea class="form-control" aria-label="With textarea" name="Keterangan_kesehatan_ternak"></textarea>
+          <textarea class="form-control" aria-label="With textarea" name="keterangan_kesehatan_ternak"></textarea>
         </div>
         <div class="form-group">
           <input type="number" class="form-control" id="jumlah_ternak_dikonsumsi" name="jumlah_ternak_dikonsumsi" placeholder="Jumlah ternak dikonsumsi">
@@ -132,7 +132,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">Keterangan konsumsi ternak</span>
           </div>
-          <textarea class="form-control" aria-label="With textarea" name="Keterangan_konsumsi"></textarea>
+          <textarea class="form-control" aria-label="With textarea" name="keterangan_konsumsi"></textarea>
         </div>
         <div class="form-group">
           <input type="number" class="form-control" id="jumlah_ternak_dijual" name="jumlah_ternak_dijual" placeholder="Jumlah ternak dijual">
