@@ -36,7 +36,7 @@ class Pengumuman extends CI_Controller {
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
       $this->load->view('templates/dash_topbar', $data);
-      $this->load->view('akun/index', $data);
+      $this->load->view('pengumuman/index', $data);
       $this->load->view('templates/dash_footer');
     }else {
       $data = [
@@ -50,7 +50,7 @@ class Pengumuman extends CI_Controller {
       ];
       $this->db->insert('pemberitahuan', $data);
       $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun added </div>');
-      redirect('akun');
+      redirect('pengumuman');
     }
 
   }
@@ -62,6 +62,6 @@ class Pengumuman extends CI_Controller {
   public function delete_pengumuman($id){
     $this->db->delete('pemberitahuan', ['id' => $id]);
     $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun has been delete </div>');
-    redirect('akun');
+    redirect('pengumuman');
   }
 }
