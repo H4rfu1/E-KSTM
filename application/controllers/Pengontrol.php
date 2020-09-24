@@ -38,6 +38,35 @@ class Pengontrol extends CI_Controller {
       $this->load->view('pengontrol/index', $data);
       $this->load->view('templates/dash_footer');
     }else {
+      $new_img = '';
+      $new_vid = '';
+      // cek jika ada gambar terupload
+      $upload_img = $_FILES['image']['name'];
+      if($upload_img){
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']     = '1024';
+        $config['upload_path'] = './assets/img/profile';
+
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('image')){
+          $new_img = $this->upload->data('file_name');
+        }
+      }
+      // cek jika ada video terupload
+      $upload_vid = $_FILES['video']['name'];
+      if($upload_vid){
+        $config['allowed_types'] = 'mp4|3gp|avi|flv|webm|wmv';
+        $config['max_size']     = '5120';
+        $config['upload_path'] = './assets/vid/pengontrol';
+
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('video')){
+          $new_vid = $this->upload->data('file_name');
+        }
+      }
+
       $data = [
         'id_pelapor' => $this->session->userdata('id'),
         'tanggal_laporan' => time(),
@@ -53,12 +82,13 @@ class Pengontrol extends CI_Controller {
         'jumlah_ternak_dikonsumsi' => htmlspecialchars( $this->input->post('jumlah_ternak_dikonsumsi')),
         'keterangan_konsumsi' => htmlspecialchars( $this->input->post('keterangan_konsumsi')),
         'jumlah_ternak_dijual' => htmlspecialchars( $this->input->post('jumlah_ternak_dijual')),
-        'harga_ternak_perekor' => htmlspecialchars( $this->input->post('harga_ternak_perekor'))
-
+        'harga_ternak_perekor' => htmlspecialchars( $this->input->post('harga_ternak_perekor')),
+        'tanggal_laporan' => $new_img,
+        'tanggal_laporan' =>$new_vid
       ];
-      $this->db->insert('laporan_kstm', $data);
+      $this->db->insert('laporan_pengontrol', $data);
       $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan added </div>');
-      redirect('kstm');
+      redirect('pengontrol');
     }
 
   }
@@ -70,6 +100,6 @@ class Pengontrol extends CI_Controller {
   public function delete_laporan_pengontrol($id){
     $this->db->delete('laporan_pengontrol', ['id_laporan_pengontrol' => $id]);
     $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan has been delete </div>');
-    redirect('kstm');
+    redirect('pengontrol');
   }
 }

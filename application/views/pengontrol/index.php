@@ -33,6 +33,8 @@
           <th scope="col">Keterangan Konsumsi</th>
           <th scope="col">Jumlah Ternak Diual</th>
           <th scope="col">Harga Ternak Perekor</th>
+          <th scope="col">foto</th>
+          <th scope="col">video</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -57,6 +59,8 @@
             <td><?= $r['keterangan_konsumsi'] ?></td>
             <td><?= $r['jumlah_ternak_dijual'] ?></td>
             <td><?= $r['harga_ternak_perekor'] ?></td>
+            <td><?= $r['foto'] ?></td>
+            <td><?= $r['video'] ?></td>
           <td>
             <a href="<?= base_url('kstm/edit/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-primary">Edit</a>
             <a href="<?= base_url('kstm/delete_laporan_pengontrol/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-danger" onclick="return confirm('yakin'); ">Delete</a>
@@ -139,6 +143,14 @@
         </div>
         <div class="form-group">
           <input type="number" class="form-control" id="harga_ternak_perekor" name="harga_ternak_perekor" placeholder="Harga ternak perekor">
+        </div>
+        <div class="form-group custom-file">
+          <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
+          <label class="custom-file-label" for="image">Choose image</label>
+        </div>
+        <div class="form-group custom-file">
+          <input type="file" class="custom-file-input" id="image" name="video" accept="video/*">
+          <label class="custom-file-label" for="image">Choose video</label>
         </div>
       </div>
       <div class="modal-footer">

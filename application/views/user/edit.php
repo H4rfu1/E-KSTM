@@ -32,7 +32,7 @@
             </div>
             <div class="col-sm-9">
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="image" name="image">
+                <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
                 <label class="custom-file-label" for="image">Choose file</label>
               </div>
               <?= $this->session->flashdata('message') ?>
