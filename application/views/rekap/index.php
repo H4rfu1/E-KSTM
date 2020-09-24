@@ -28,6 +28,7 @@
       <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">Pelapor</th>
           <th scope="col">Tanggal Laporan</th>
           <th scope="col">Deskripsi Laporan</th>
           <th scope="col">Jenis Ternal</th>
@@ -57,6 +58,7 @@
         ?>
         <tr>
           <th scope="row"><?= $i ?></th>
+          <td><?= $r['name'] ?></td>
           <td><?= date('d F Y', $r['tanggal_laporan']); ?></td>
           <td><?= $r['deskripsi_laporan'] ?></td>
           <td><?= $r['jenis_ternak'] ?></td>
