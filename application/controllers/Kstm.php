@@ -23,7 +23,7 @@ class Kstm extends CI_Controller {
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
       $this->load->view('templates/dash_topbar', $data);
-      $this->load->view('akun/index', $data);
+      $this->load->view('kstm/index', $data);
       $this->load->view('templates/dash_footer');
     }else {
       $data = [
@@ -37,7 +37,7 @@ class Kstm extends CI_Controller {
       ];
       $this->db->insert('user', $data);
       $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun added, password default "secret"</div>');
-      redirect('akun');
+      redirect('kstm');
     }
 
   }
@@ -47,8 +47,8 @@ class Kstm extends CI_Controller {
   }
 
   public function delete_laporan_kstm($id){
-    $this->db->delete('user', ['id_laporan_kstm' => $id]);
+    $this->db->delete('laporan_kstm', ['id_laporan_kstm' => $id]);
     $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan has been delete </div>');
-    redirect('akun');
+    redirect('kstm');
   }
 }
