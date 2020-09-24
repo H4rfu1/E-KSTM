@@ -43,7 +43,7 @@
         ?>
         <tr>
           <th scope="row"><?= $i ?></th>
-            <td><?= date('d F Y', $user['tanggal_laporan']); ?></td>
+            <td><?= date('d F Y', $r['tanggal_laporan']); ?></td>
             <td><?= $r['deskripsi_laporan'] ?></td>
             <td><?= $r['jenis_ternak'] ?></td>
             <td><?= $r['jumlah_ternak_sebelumnya'] ?></td>
