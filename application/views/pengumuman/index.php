@@ -51,7 +51,7 @@
         ?>
         <tr>
           <th scope="row"><?= $i ?></th>
-            <td><?= $role_id == 3 ? $p['name'] : $p['role']; ?></td>
+            <td><?= $role_id == 3 ? $p['role'] : $p['name']; ?></td>
             <td><?= date('d F Y', $user['date_create']); ?></td>
             <td><?= $p['isi_pemberitahuan'] ?></td>
           <?php
