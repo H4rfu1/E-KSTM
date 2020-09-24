@@ -91,7 +91,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form class="" action="<?= base_url('pemberitahuan') ?>" method="post">
+      <form class="" action="<?= base_url('pengumuman') ?>" method="post">
       <div class="modal-body">
         <div class="form-group">
           <select class="form-cotrol" name="role_id" id='role_id'>
