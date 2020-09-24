@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Akun extends CI_Controller {
+class Kstm extends CI_Controller {
 
   public function __construct(){
     parent::__construct();
@@ -11,20 +11,13 @@ class Akun extends CI_Controller {
   }
 
   public function index(){
-    $data['title'] = 'Akun Management';
+    $data['title'] = 'Laporan KSTM Management';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    $this->load->model('Akun_model', 'akun');
 
-    $data['akun'] = $this->akun->getAkun();
-
-    $this->db->where('id != 1');
-    $data['role'] = $this->db->get('user_role')->result_array();
+    $data['laporan_kstm'] = $this->db->get('laporan_kstm')->result_array();
 
 
     $this->form_validation->set_rules('name','Nama', 'required');
-    $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
-      'is_unique' => 'this email has already registered'
-    ]);
 
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
@@ -53,9 +46,9 @@ class Akun extends CI_Controller {
 
   }
 
-  public function delete_akun($id){
-    $this->db->delete('user', ['id' => $id]);
-    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun has been delete </div>');
+  public function delete_laporan_kstm($id){
+    $this->db->delete('user', ['id_laporan_kstm' => $id]);
+    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan has been delete </div>');
     redirect('akun');
   }
 }
