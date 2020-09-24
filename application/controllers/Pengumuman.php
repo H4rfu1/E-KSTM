@@ -40,8 +40,8 @@ class Pengumuman extends CI_Controller {
       $data = [
         'id_pengirim' => $this->session->userdata('id'),
         'id_role' =>  $this->input->post('role_id'),
-        'date_create' => time(),
-        'is_active' => $this->input->post('isi')
+        'tanggal_pemberitahuan' => time(),
+        'isi_pemberitahuan' => $this->input->post('isi')
       ];
       $this->db->insert('pemberitahuan', $data);
       $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun added </div>');
