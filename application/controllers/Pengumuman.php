@@ -27,10 +27,8 @@ class Pengumuman extends CI_Controller {
     $data['role'] = $this->db->get('user_role')->result_array();
 
 
-    $this->form_validation->set_rules('name','Nama', 'required');
-    $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
-      'is_unique' => 'this email has already registered'
-    ]);
+    $this->form_validation->set_rules('role_id','Role_id', 'required');
+    $this->form_validation->set_rules('isi','Isi', 'required');
 
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
@@ -40,13 +38,10 @@ class Pengumuman extends CI_Controller {
       $this->load->view('templates/dash_footer');
     }else {
       $data = [
-        'name' => htmlspecialchars( $this->input->post('name')),
-        'email' => htmlspecialchars( $this->input->post('email')),
-        'image' => 'default.jpg',
-        'password' => password_hash('secret', PASSWORD_DEFAULT),
-        'role_id' =>  $this->input->post('role_id'),
-        'is_active' => $this->input->post('is_active'),
-        'date_create' => time()
+        'id_pengirim' => $this->session->userdata('id'),
+        'id_role' =>  $this->input->post('role_id'),
+        'date_create' => time(),
+        'is_active' => $this->input->post('isi')
       ];
       $this->db->insert('pemberitahuan', $data);
       $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun added </div>');

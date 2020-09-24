@@ -11,7 +11,7 @@
       <?= validation_errors(); ?>
     </div>
     <?php endif; ?>
-    <?= form_error('menu', '<div class="alert alert-danger" role="alert">','</div>'); ?>
+    <?= form_error('akun', '<div class="alert alert-danger" role="alert">','</div>'); ?>
     <?= $this->session->flashdata('message'); ?>
     <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Akun</a>
 
