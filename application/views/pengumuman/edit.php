@@ -21,7 +21,7 @@
     <div class="form-group row">
       <label for="email" class="col-sm-2 col-form-label" >Pemberitahuan</label>
       <div class="col-sm-10">
-        <textarea class="form-control" aria-label="With textarea" name="isi"></textarea>
+        <textarea class="form-control" aria-label="With textarea" name="isi"><?= $pemberitahuan['isi_pemberitahuan']  ?></textarea>
       </div>
     </div>
 
