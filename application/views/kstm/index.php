@@ -13,7 +13,11 @@
     <?php endif; ?>
     <?= form_error('laporan', '<div class="alert alert-danger" role="alert">','</div>'); ?>
     <?= $this->session->flashdata('message'); ?>
-    <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Laporan</a>
+    <?php if ($role == 7) {
+      echo '
+        <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Laporan</a>
+      ';
+    } ?>
 
     <table class="table table-hover">
       <thead>
@@ -59,7 +63,7 @@
             <td><?= $r['harga_ternak_perekor'] ?></td>
           <td>
             <a href="<?= base_url('kstm/edit/'); echo $r['id_laporan_kstm']; ?>" class="badge badge-primary">Edit</a>
-            <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("kstm/delete_laporan_kstm/"); echo $r['id']; ?>'); ">Delete</a>
+            <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("kstm/delete_laporan_kstm/"); echo $r['id_laporan_kstm']; ?>'); ">Delete</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
