@@ -13,9 +13,6 @@
 
         <!-- Logo -->
         <a class="top-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
-          <div class="top-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
-          </div>
           <div class="container">
             <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
           </div>
