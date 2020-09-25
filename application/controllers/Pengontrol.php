@@ -43,7 +43,7 @@ class Pengontrol extends CI_Controller {
       $new_img = '';
       $new_vid = '';
       // cek jika ada gambar terupload
-      if ($_FILES['image']['size'] == 0) {
+      if ($_FILES['image']['size'] != 0) {
         $upload_img = $_FILES['image']['name'];
         if($upload_img){
           $config['allowed_types'] = 'gif|jpg|png|jpeg';

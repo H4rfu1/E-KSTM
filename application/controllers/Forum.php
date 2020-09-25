@@ -10,15 +10,54 @@ class Forum extends CI_Controller {
     }
   }
 
-  public function index(){
+  public function index($page = 0){
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['title'] = 'Forum';
+    $data['page'] = $page;
 
-    $this->load->view('templates/dash_header', $data);
-    $this->load->view('templates/dash_sidebar', $data);
-    $this->load->view('templates/dash_topbar', $data);
-    $this->load->view('forum/index', $data);
-    $this->load->view('templates/dash_footer');
+    $this->load->model('Forum_model', 'forum');
+    $data['forum'] = $this->forum->getAllForum();
+
+    $this->form_validation->set_rules('topik_bahasan','Judul', 'required');
+    $this->form_validation->set_rules('keterangan_bahasan','Isi bahasan', 'required');
+
+    if($this->form_validation->run() == false){
+      $this->load->view('templates/dash_header', $data);
+      $this->load->view('templates/dash_sidebar', $data);
+      $this->load->view('templates/dash_topbar', $data);
+      $this->load->view('forum/index', $data);
+      $this->load->view('templates/dash_footer');
+    }else {
+      $new_img = 'default.png';
+      // cek jika ada gambar terupload
+      if ($_FILES['image']['size'] != 0) {
+        $upload_img = $_FILES['image']['name'];
+        if($upload_img){
+          $config['allowed_types'] = 'gif|jpg|png|jpeg';
+          $config['max_size']     = '1024';
+          $config['upload_path'] = './assets/img/profile';
+
+          $this->load->library('upload', $config);
+
+          if($this->upload->do_upload('image')){
+            $new_img = $this->upload->data('file_name');
+          }
+        }
+      }
+      $data = [
+        'id_pembuat' => $this->session->userdata('id'),
+        'tanggal_dibuat' => time(),
+        'topik_bahasan' => htmlspecialchars( $this->input->post('topik_bahasan')),
+        'keterangan_bahasan' => htmlspecialchars( $this->input->post('keterangan_bahasan')),
+        'foto' => $new_img,
+      ];
+      $this->db->insert('forum', $data);
+      if ($this->db->affected_rows() > 0) {
+        $pesan = '<div class="alert alert-success" role="alert"> Forum has been add </div>';
+        $this->session-> set_flashdata('message', $pesan);
+      }
+      redirect('forum');
+    }
 
   }
 }
