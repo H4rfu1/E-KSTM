@@ -3,13 +3,10 @@
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
-    <div class="container">
+    <div class="container ">
       <div class="row">
-        <div class="col-8">
+        <div class="col-10 mx-auto ">
           <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
-        </div>
-        <div class="col-4">
-          <div class="sidebar-brand-text mx-3">E-KSTM </div>
         </div>
       </div>
     </div>
