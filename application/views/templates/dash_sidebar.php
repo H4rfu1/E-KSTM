@@ -3,7 +3,7 @@
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
-    <div class="container ">
+    <div class="container m-4">
       <div class="row">
         <div class="col-10 mx-auto ">
           <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
