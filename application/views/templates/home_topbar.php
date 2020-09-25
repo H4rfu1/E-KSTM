@@ -12,11 +12,7 @@
 
 
         <!-- Logo -->
-        <a class="" href="<?= base_url('') ?>">
-          <div class="container">
-            <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
-          </div>
-        </a>
+        <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
 
 
 
