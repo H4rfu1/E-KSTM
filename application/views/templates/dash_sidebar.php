@@ -4,7 +4,7 @@
   <!-- Sidebar - Brand -->
   <div class="container">
     <a class="res sidebar-brand align-items-center justify-content-center " href="<?= base_url('') ?>">
-          <img src="<?= base_url('assets/img/');?>logo.png" class="d-block" width="150" alt="logo">
+          <img src="<?= base_url('assets/img/');?>logo.png" class="d-block img-fluid" alt="logo">
     </a>
   </div>
 
