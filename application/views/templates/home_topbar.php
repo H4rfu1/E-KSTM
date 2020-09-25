@@ -5,7 +5,7 @@
   <div id="content-wrapper" class="d-flex flex-column">
 
     <!-- Main Content -->
-    <div id="content">
+    <div id="content" class="container">
 
       <!-- Topbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-white topbar py-3 shadow-sm">
@@ -13,7 +13,7 @@
 
         <!-- Logo -->
         <a class="navbar-brand" href="<?= base_url('') ?>" >
-            <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-middle mr-2" width="45" alt="logo">
+            <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-middle mr-2" width="60" alt="logo">
         </a>
 
 
