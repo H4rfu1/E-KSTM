@@ -54,6 +54,9 @@ class Akun extends CI_Controller {
     $data['user'] = $this->db->get_where('user', ['id' => $id])->row_array();
 
     $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
+    $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
+      'is_unique' => 'this email has already registered'
+    ]);
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
