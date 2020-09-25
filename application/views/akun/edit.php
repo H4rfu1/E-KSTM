@@ -22,24 +22,17 @@
       </div>
     </div>
     <div class="form-group row">
-      <div class="col-sm-2">
-        Picture
-      </div>
+      <label for="name" class="col-sm-2 col-form-label">Role User</label>
       <div class="col-sm-10">
-        <div class="row">
-          <div class="col-sm-3">
-            <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>" alt="" class="img-thumbnail">
-          </div>
-          <div class="col-sm-9">
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
-              <label class="custom-file-label" for="image">Choose file</label>
-            </div>
-            <?= $this->session->flashdata('message') ?>
-          </div>
-        </div>
+        <select class="browser-default custom-select" name="role_id" id='role_id'>
+          <option value="">Select Role</option>
+          <?php foreach($role as $m) : ?>
+            <option value="<?= $m['id'] ?>" <?= $user['role_id']==$m['id'] ? 'selected' : '' ; ?>><?= $m['role']  ?></option>
+          <?php endforeach; ?>
+        </select>
       </div>
     </div>
+
 
     <div class="form-group row justify-content-end">
       <div class="col-sm-10">

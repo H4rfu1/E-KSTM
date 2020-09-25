@@ -57,6 +57,7 @@ class Akun extends CI_Controller {
     $data['role'] = $this->db->get('user_role')->result_array();
 
     $this->form_validation->set_rules('name','Nama', 'required');
+    $this->form_validation->set_rules('role_id','Role', 'required');
     if($this->form_validation->run() == false and $id != 0){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
@@ -66,8 +67,8 @@ class Akun extends CI_Controller {
     }else{
       $data = [
         'name' => htmlspecialchars( $this->input->post('name')),
-        'email' => htmlspecialchars( $this->input->post('email'))
-        // 'role_id' =>  $this->input->post('role_id')
+        'email' => htmlspecialchars( $this->input->post('email')),
+        'role_id' =>  $this->input->post('role_id')
       ];
       $this->db->update('user', $data, array('id' => $id));
       if ($this->db->affected_rows() > 0) {
