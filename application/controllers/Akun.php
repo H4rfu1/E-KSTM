@@ -68,7 +68,8 @@ class Akun extends CI_Controller {
       $email = $this->input->post('email');
 
       $this->db->set('name',$name);
-      $this->db->where('email', $email);
+      $this->db->set('email',$email);
+      $this->db->where('id', $id);
       $this->db->update('user');
 
       $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated</div>';
