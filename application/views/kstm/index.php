@@ -37,7 +37,12 @@
           <th scope="col">Keterangan Konsumsi</th>
           <th scope="col">Jumlah Ternak Diual</th>
           <th scope="col">Harga Ternak Perekor</th>
-          <th scope="col">Action</th>
+          <?php if ($role == 7) {
+            echo '
+              <th scope="col">Action</th>
+            ';
+          } ?>
+
         </tr>
       </thead>
       <tbody>
@@ -61,10 +66,16 @@
             <td><?= $r['keterangan_konsumsi'] ?></td>
             <td><?= $r['jumlah_ternak_dijual'] ?></td>
             <td><?= $r['harga_ternak_perekor'] ?></td>
-          <td>
-            <a href="<?= base_url('kstm/edit/'); echo $r['id_laporan_kstm']; ?>" class="badge badge-primary">Edit</a>
-            <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("kstm/delete_laporan_kstm/"); echo $r['id_laporan_kstm']; ?>'); ">Delete</a>
-          </td>
+            <?php if ($role == 7) {
+              $id = $r['id_laporan_kstm'];
+              echo "
+              <td>
+                <a href='".base_url('kstm/edit/')."$id' class='badge badge-primary'>Edit</a>
+                <a class='badge badge-danger' style='color:white;' onclick='conDelete('". base_url("kstm/delete_laporan_kstm/") ."$id'); '>Delete</a>
+              </td>
+              ";
+            } ?>
+
         </tr>
       <?php $i++; endforeach; ?>
       </tbody>
