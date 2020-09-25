@@ -49,7 +49,7 @@ class Akun extends CI_Controller {
 
   }
 
-  public function edit($id){
+  public function edit($id = 0){
     $data['title'] = 'Edit Profile';
     $data['user'] = $this->db->get_where('user', ['id' => $id])->row_array();
 
@@ -57,13 +57,13 @@ class Akun extends CI_Controller {
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
       'is_unique' => 'this email has already registered'
     ]);
-    if($this->form_validation->run() == false){
+    if($this->form_validation->run() == false and $id != 0){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
       $this->load->view('templates/dash_topbar', $data);
       $this->load->view('akun/edit', $data);
       $this->load->view('templates/dash_footer');
-    }else{
+    }elseif ($this->form_validation->run() == true){
       $name = $this->input->post('name');
       $email = $this->input->post('email');
 
@@ -73,6 +73,8 @@ class Akun extends CI_Controller {
 
       $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated</div>';
       $this->session-> set_flashdata('message', $pesan);
+      redirect('akun');
+    }else {
       redirect('akun');
     }
   }
