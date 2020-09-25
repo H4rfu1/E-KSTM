@@ -10,13 +10,13 @@
       <?php endif; ?>
       <?= form_error('akun', '<div class="alert alert-danger" role="alert">','</div>'); ?>
       <?= $this->session->flashdata('message'); ?>
-      <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Forum</a>
+      <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Diskusi</a>
     </div>
 
     <div class="col-md-8">
 
         <h1 class="my-4">Forum
-          <small>- E-KSTM diskusi</small>
+          <small>diskusi E-KSTM</small>
         </h1>
         <?php
           $count = count($forum);
@@ -36,7 +36,7 @@
             <a href="<?= base_url('forum/diskusi/');echo $f['id_forum']; ?>" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
-            Posted on <?= date('d F Y', $user['tanggal_dibuat']); ?> by
+            Posted on <?= date('d F Y, h:i:s A', $f['tanggal_dibuat']); ?> by
             <p ><?= $f['name'] ?></p>
           </div>
         </div>
@@ -136,7 +136,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newSubmenuLabel">Add New Forum</h5>
+        <h5 class="modal-title" id="newSubmenuLabel">Add New Diskusi</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
