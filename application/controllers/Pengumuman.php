@@ -11,7 +11,6 @@ class Pengumuman extends CI_Controller {
   }
 
   public function index(){
-    date_default_timezone_set('Asia/Jakarta');
     $data['title'] = 'Pengumuman';
     $data['role_id'] = $this->session->userdata('role_id');
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();

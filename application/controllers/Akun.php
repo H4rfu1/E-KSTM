@@ -11,7 +11,6 @@ class Akun extends CI_Controller {
   }
 
   public function index(){
-    date_default_timezone_set('Asia/Jakarta');
     $data['title'] = 'Kelola Akun';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Akun_model', 'akun');
