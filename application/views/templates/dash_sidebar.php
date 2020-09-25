@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand my-2 py-5 d-flex align-items-center justify-content-center " href="<?= base_url('') ?>">
+  <a class="sidebar-brand my-5 d-flex align-items-center justify-content-center " href="<?= base_url('') ?>">
     <div class="container">
       <div class="row">
         <div class="col-10 mx-auto ">
