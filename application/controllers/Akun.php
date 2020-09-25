@@ -67,18 +67,16 @@ class Akun extends CI_Controller {
       $this->load->view('akun/edit', $data);
       $this->load->view('templates/dash_footer');
     }else{
-      $name = $this->input->post('name');
-      $email = $this->input->post('email');
-      $role_id = $this->input->post('role_id');
-
-      $this->db->set('name',$name);
-      $this->db->set('email',$email);
-      $this->db->set('role_id',$role_id);
-      $this->db->where('id', $id);
-      $this->db->update('user');
-
-      $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated</div>';
-      $this->session-> set_flashdata('message', $pesan);
+      $data = [
+        'name' => htmlspecialchars( $this->input->post('name')),
+        'email' => htmlspecialchars( $this->input->post('email')),
+        'role_id' =>  $this->input->post('role_id')
+      ];
+      $this->db->update('user', $data, array('id' => $id));
+      if ($this->db->affected_rows() > 0) {
+        $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated </div>';
+        $this->session-> set_flashdata('message', $pesan);
+      }
       redirect('akun');
     }
   }
