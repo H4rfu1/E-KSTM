@@ -63,7 +63,7 @@ class Akun extends CI_Controller {
       $this->load->view('templates/dash_topbar', $data);
       $this->load->view('akun/edit', $data);
       $this->load->view('templates/dash_footer');
-    }elseif ($this->form_validation->run() == true){
+    }else{
       $name = $this->input->post('name');
       $email = $this->input->post('email');
 
@@ -73,8 +73,6 @@ class Akun extends CI_Controller {
 
       $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated</div>';
       $this->session-> set_flashdata('message', $pesan);
-      redirect('akun');
-    }else {
       redirect('akun');
     }
   }
