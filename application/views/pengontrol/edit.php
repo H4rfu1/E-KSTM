@@ -93,7 +93,7 @@
           <input type="file" class="custom-file-input" id="image" name="video" accept="video/*">
           <label class="custom-file-label" for="image">Choose video</label>
         </div>
-
+        <br>
         <div class="form-group row justify-content-end">
           <div class="col-sm-10">
             <button type="submit" name="button" class="float-sm-right btn btn-primary">Edit</button>

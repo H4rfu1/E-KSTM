@@ -85,7 +85,7 @@
             <input type="number" class="form-control" id="harga_ternak_perekor" name="harga_ternak_perekor" value="<?= $laporan['harga_ternak_perekor'] ?>">
           </div>
         </div>
-
+        <br>
         <div class="form-group row justify-content-end">
           <div class="col-sm-10">
             <button type="submit" name="button" class="float-sm-right btn btn-primary">Edit</button>
