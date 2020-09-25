@@ -8,8 +8,8 @@
   <div class="col-lg-8">
     <?= form_open_multipart('pengumuman/edit/'.$pemberitahuan['id_pemberitahuan']); ?>
     <div class="form-group row">
-      <label for="name" class="col-sm-2 col-form-label">Kirim ke</label>
-      <div class="col-sm-10">
+      <label for="name" class="col-md-3 col-form-label">Kirim ke</label>
+      <div class="col-md-9">
         <select class="browser-default custom-select" name="role_id" id='role_id'>
           <option value="">Select Role</option>
           <?php foreach($role as $m) : ?>
@@ -19,8 +19,8 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="email" class="col-sm-2 col-form-label" >Pemberitahuan</label>
-      <div class="col-sm-10">
+      <label for="email" class="col-md-3 col-form-label" >Pemberitahuan</label>
+      <div class="col-md-9">
         <textarea class="form-control" aria-label="With textarea" name="isi"><?= $pemberitahuan['isi_pemberitahuan']  ?></textarea>
       </div>
     </div>
@@ -28,7 +28,7 @@
 
 
     <div class="form-group row justify-content-end">
-      <div class="col-sm-10">
+      <div class="col-md-9">
         <button type="submit" name="button" class="float-sm-right btn btn-primary">Edit</button>
       </div>
     </div>
