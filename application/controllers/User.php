@@ -10,7 +10,8 @@ class User extends CI_Controller {
 
   public function index(){
     $data['title'] = 'My Profile';
-    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $this->load->model('Akun_model', 'akun');
+    $data['user'] = $this->akun->getAkunId($this->session->userdata('id'));
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
       $this->load->view('templates/dash_topbar', $data);
