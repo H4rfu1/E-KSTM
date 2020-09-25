@@ -3,8 +3,18 @@
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
-    <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="...">
-    <div class="sidebar-brand-text mx-3">E-KSTM </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
+        </div>
+        <div class="col-4">
+          <div class="sidebar-brand-text mx-3">E-KSTM </div>
+        </div>
+      </div>
+    </div>
+
+
   </a>
 
   <!-- Divider -->
