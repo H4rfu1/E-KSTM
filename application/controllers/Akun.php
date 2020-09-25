@@ -60,6 +60,7 @@ class Akun extends CI_Controller {
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
       'is_unique' => 'this email has already registered'
     ]);
+    $this->form_validation->set_rules('role_id', 'Role', 'required');
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
