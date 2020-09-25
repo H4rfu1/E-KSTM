@@ -63,7 +63,6 @@ class Akun extends CI_Controller {
     }else{
       $name = $this->input->post('name');
       $email = $this->input->post('email');
-      }
 
       $this->db->set('name',$name);
       $this->db->where('email', $email);
@@ -73,6 +72,7 @@ class Akun extends CI_Controller {
       $this->session-> set_flashdata('message', $pesan);
       redirect('akun');
     }
+  }
 
   public function delete_akun($id){
     $this->db->delete('user', ['id' => $id]);
