@@ -65,6 +65,7 @@ class Auth extends CI_Controller {
   }
 
   public function registration(){
+    date_default_timezone_set('Asia/Jakarta');
     if($this->session->userdata('email')){
       redirect('user');
     }

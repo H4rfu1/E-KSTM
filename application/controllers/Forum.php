@@ -11,6 +11,7 @@ class Forum extends CI_Controller {
   }
 
   public function index($page = 0){
+    date_default_timezone_set('Asia/Jakarta');
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['title'] = 'Forum';
     $data['page'] = $page;

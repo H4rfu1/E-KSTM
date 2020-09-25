@@ -11,6 +11,7 @@ class Kstm extends CI_Controller {
   }
 
   public function index(){
+    date_default_timezone_set('Asia/Jakarta');
     $data['title'] = 'Kelola Laporan';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['role'] = $this->session->userdata('role_id');
