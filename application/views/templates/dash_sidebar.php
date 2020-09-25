@@ -2,11 +2,9 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <div class="container">
     <a class="res sidebar-brand align-items-center justify-content-center " href="<?= base_url('') ?>">
           <img src="<?= base_url('assets/img/');?>logo.png" class="d-block img-fluid" alt="logo">
     </a>
-  </div>
 
   <!-- Divider -->
   <hr class="sidebar-divider">
