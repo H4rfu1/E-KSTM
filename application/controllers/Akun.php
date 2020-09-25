@@ -73,7 +73,6 @@ class Akun extends CI_Controller {
       $this->session-> set_flashdata('message', $pesan);
       redirect('akun');
     }
-  }
 
   public function delete_akun($id){
     $this->db->delete('user', ['id' => $id]);
