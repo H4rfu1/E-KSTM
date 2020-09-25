@@ -2,8 +2,8 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand py-2 my-5 d-flex align-items-center justify-content-center " href="<?= base_url('') ?>">
-      <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
+  <a class="sidebar-brand my-5 d-flex align-items-center justify-content-center " href="<?= base_url('') ?>">
+      <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid img-thumbnail" alt="logo">
   </a>
 
   <!-- Divider -->
