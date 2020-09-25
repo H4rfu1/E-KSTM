@@ -53,6 +53,9 @@ class Akun extends CI_Controller {
     $data['title'] = 'Edit Profile';
     $data['user'] = $this->db->get_where('user', ['id' => $id])->row_array();
 
+    $this->db->where('id != 1');
+    $data['role'] = $this->db->get('user_role')->result_array();
+
     $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
       'is_unique' => 'this email has already registered'
@@ -66,9 +69,11 @@ class Akun extends CI_Controller {
     }else{
       $name = $this->input->post('name');
       $email = $this->input->post('email');
+      $role_id = $this->input->post('role_id');
 
       $this->db->set('name',$name);
       $this->db->set('email',$email);
+      $this->db->set('role_id',$role_id);
       $this->db->where('id', $id);
       $this->db->update('user');
 

@@ -21,6 +21,14 @@
 
         </div>
       </div>
+      <div class="form-group">
+        <select class="form-cotrol" name="role_id" id='role_id'>
+          <option value="">Select Role</option>
+          <?php foreach($role as $m) : ?>
+            <option value="<?= $m['id'] ?>"><?= $m['role']  ?></option>
+          <?php endforeach; ?>
+        </select>
+      </div>
 
       <div class="form-group row justify-content-end">
         <div class="col-sm-10">
