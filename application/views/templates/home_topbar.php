@@ -12,9 +12,11 @@
 
 
         <!-- Logo -->
-        <a class="navbar-brand" href="<?= base_url('') ?>" >
-            <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-middle mr-2" width="60" alt="logo">
-        </a>
+        <div class="container">
+          <a class="navbar-brand" href="<?= base_url('') ?>" >
+              <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-middle mr-2" width="60" alt="logo">
+          </a>
+        </div>
 
 
 
