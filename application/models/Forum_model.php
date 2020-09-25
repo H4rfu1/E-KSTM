@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pengumuman_model extends CI_Model {
+class Forum_model extends CI_Model {
   public function getAllForum(){
      $query = "SELECT `forum`.*, `user`.`name`
               FROM `forum` JOIN `user`
