@@ -24,7 +24,7 @@
           $numberOfPages = ceil($count / $perPage);
           $offset = $page * $perPage;
           $sliceForum = array_slice($forum, $offset, $perPage);
-          $i = 1
+          $i = 1;
          foreach($sliceForum as $f) :
         ?>
         <!-- Blog Post -->
