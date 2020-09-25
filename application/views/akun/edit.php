@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-lg-8">
-      <?= form_open_multipart('akun/edit'); ?>
+      <form class="" action="<?= base_url('akun/edit') ?>" method="post">
       <div class="form-group row">
         <label for="email" class="col-sm-2 col-form-label" >Email</label>
         <div class="col-sm-10">
