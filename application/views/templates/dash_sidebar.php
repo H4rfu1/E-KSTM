@@ -3,8 +3,8 @@
 
   <!-- Sidebar - Brand -->
   <div class="container">
-    <a class="res sidebar-brand d-flex align-items-center justify-content-center " href="<?= base_url('') ?>">
-          <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block" width="150" alt="logo">
+    <a class="res sidebar-brand align-items-center justify-content-center " href="<?= base_url('') ?>">
+          <img src="<?= base_url('assets/img/');?>logo.png" class="d-block" width="150" alt="logo">
     </a>
   </div>
 
