@@ -24,7 +24,7 @@
       <div class="form-group row">
         <label for="name" class="col-sm-2 col-form-label">Role</label>
         <div class="col-sm-10">
-          <select class="form-cotrol" name="role_id" id='role_id'>
+          <select class="selectpicker" name="role_id" id='role_id'>
             <option value="">Select Role</option>
             <?php foreach($role as $m) : ?>
               <option value="<?= $m['id'] ?>" <?= $user['role_id'] == $m['id'] ? "selected" : '';  ?>><?= $m['role']  ?></option>

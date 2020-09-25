@@ -78,7 +78,7 @@
           <input type="email" class="form-control" id="email" name="email" placeholder="Email">
         </div>
         <div class="form-group">
-          <select class="form-cotrol" name="role_id" id='role_id'>
+          <select class="browser-default custom-select" name="role_id" id='role_id'>
             <option value="">Select Role</option>
             <?php foreach($role as $m) : ?>
               <option value="<?= $m['id'] ?>"><?= $m['role']  ?></option>
