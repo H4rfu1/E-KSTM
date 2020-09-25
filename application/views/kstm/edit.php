@@ -8,11 +8,9 @@
   <div class="col-lg-8">
       <form class="" action="<?= base_url('kstm/edit') ?>" method="post">
         <div class="form-group row">
-          <div class="input-group-prepend">
-            <span class="input-group-text col-sm-2 col-form-label">Deskripsi Laporan</span>
-          </div>
+          <label for="deskripsi_laporan" class="col-sm-2 col-form-label">Deskripsi Laporan</label>
           <div class="col-sm-10">
-            <textarea class="form-control" aria-label="With textarea" name="deskripsi_laporan" value="<?= $laporan['deskripsi_laporan'] ?>"></textarea>
+            <textarea class="form-control" aria-label="With textarea" name="deskripsi_laporan"><?= $laporan['deskripsi_laporan'] ?></textarea>
           </div>
         </div>
         <div class="form-group row">
@@ -40,11 +38,9 @@
           </div>
         </div>
         <div class="form-group row">
-          <div class="input-group-prepend">
-            <span class="input-group-text col-sm-2 col-form-label">Keterangan ternak meninggal</span>
-          </div>
+          <label for="keterangan_ternak_meninggal" class="col-sm-2 col-form-label">"Keterangan ternak meninggal</label>
           <div class="col-sm-10">
-            <textarea class="form-control" aria-label="With textarea" name="keterangan_ternak_meninggal" value="<?= $laporan['keterangan_ternak_meninggal'] ?>"></textarea>
+            <textarea class="form-control" aria-label="With textarea" name="keterangan_ternak_meninggal"><?= $laporan['keterangan_ternak_meninggal'] ?></textarea>
           </div>
         </div>
         <div class="form-group row">
@@ -60,11 +56,9 @@
           </div>
         </div>
         <div class="form-group row">
-          <div class="input-group-prepend">
-            <span class="input-group-text col-sm-2 col-form-label">Keterangan kesehatan ternak</span>
-          </div>
+          <label for="keterangan_kesehatan_ternak" class="col-sm-2 col-form-label">Keterangan kesehatan ternak</label>
           <div class="col-sm-10">
-            <textarea class="form-control" aria-label="With textarea" name="keterangan_kesehatan_ternak" value="<?= $laporan['keterangan_kesehatan_ternak'] ?>"></textarea>
+            <textarea class="form-control" aria-label="With textarea" name="keterangan_kesehatan_ternak" ><?= $laporan['keterangan_kesehatan_ternak'] ?></textarea>
           </div>
         </div>
         <div class="form-group row">
@@ -74,11 +68,9 @@
           </div>
         </div>
         <div class="form-group row">
-          <div class="input-group-prepend">
-            <span class="input-group-text col-sm-2 col-form-label">Keterangan konsumsi ternak</span>
-          </div>
+          <label for="keterangan_konsumsi" class="col-sm-2 col-form-label">Keterangan konsumsi ternak</label>
           <div class="col-sm-10">
-            <textarea class="form-control" aria-label="With textarea" name="keterangan_konsumsi" value="<?= $laporan['keterangan_konsumsi'] ?>"></textarea>
+            <textarea class="form-control" aria-label="With textarea" name="keterangan_konsumsi" ><?= $laporan['keterangan_konsumsi'] ?></textarea>
           </div>
         </div>
         <div class="form-group row">
