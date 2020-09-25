@@ -12,7 +12,7 @@
 
 
         <!-- Logo -->
-        <a class="top-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
+        <a class="" href="<?= base_url('') ?>">
           <div class="container">
             <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
           </div>
