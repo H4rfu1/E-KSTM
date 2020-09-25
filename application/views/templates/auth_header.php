@@ -38,11 +38,8 @@
 
 
 			<!-- Logo -->
-			<a class="top-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
-				<div class="top-brand-icon rotate-n-15">
-					<i class="fas fa-laugh-wink"></i>
-				</div>
-				<div class="top-brand-text mx-3">E-KSTM</div>
+			<a class="navbar-brand" href="<?= base_url('') ?>" >
+					<img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-middle mr-2" width="60" alt="logo">
 			</a>
 
 
