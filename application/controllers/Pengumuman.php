@@ -78,7 +78,7 @@ class Pengumuman extends CI_Controller {
         'id_role' =>  $this->input->post('role_id'),
         'isi_pemberitahuan' => $this->input->post('isi')
       ];
-      $this->db->update('pemberitahuan', $data, array('id' => $id));
+      $this->db->update('pemberitahuan', $data, array('id_pemberitahuan' => $id));
       if ($this->db->affected_rows() > 0) {
         $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated </div>';
         $this->session-> set_flashdata('message', $pesan);
