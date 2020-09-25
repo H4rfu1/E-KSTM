@@ -8,7 +8,7 @@
     <div id="content">
 
       <!-- Topbar -->
-      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white topbar py-3 shadow-sm">
 
 
         <!-- Logo -->
