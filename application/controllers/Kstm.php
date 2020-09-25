@@ -89,19 +89,19 @@ class Kstm extends CI_Controller {
       $this->load->view('kstm/edit', $data);
       $this->load->view('templates/dash_footer');
     }else{
-      $deskripsi_laporan = htmlspecialchars( $this->input->post('deskripsi_laporan')),
-      $jenis_ternak = htmlspecialchars( $this->input->post('jenis_ternak')),
-      $jumlah_ternak_sebelumnya = htmlspecialchars( $this->input->post('jumlah_ternak_sebelumnya')),
-      $jumlah_ternak_sekarang = htmlspecialchars( $this->input->post('jumlah_ternak_sekarang')),
-      $jumlah_ternak_meninggal = htmlspecialchars( $this->input->post('jumlah_ternak_meninggal')),
-      $keterangan_ternak_meninggal = htmlspecialchars( $this->input->post('keterangan_ternak_meninggal')),
-      $jumlah_ternak_sehat = htmlspecialchars( $this->input->post('jumlah_ternak_sehat')),
-      $jumlah_ternak_sakit = htmlspecialchars( $this->input->post('jumlah_ternak_sakit')),
-      $keterangan_kesehatan_ternak = htmlspecialchars( $this->input->post('keterangan_kesehatan_ternak')),
-      $jumlah_ternak_dikonsumsi = htmlspecialchars( $this->input->post('jumlah_ternak_dikonsumsi')),
-      $keterangan_konsumsi = htmlspecialchars( $this->input->post('keterangan_konsumsi')),
-      $jumlah_ternak_dijual = htmlspecialchars( $this->input->post('jumlah_ternak_dijual')),
-      $harga_ternak_perekor = htmlspecialchars( $this->input->post('harga_ternak_perekor'))
+      $deskripsi_laporan = htmlspecialchars( $this->input->post('deskripsi_laporan'));
+      $jenis_ternak = htmlspecialchars( $this->input->post('jenis_ternak'));
+      $jumlah_ternak_sebelumnya = htmlspecialchars( $this->input->post('jumlah_ternak_sebelumnya'));
+      $jumlah_ternak_sekarang = htmlspecialchars( $this->input->post('jumlah_ternak_sekarang'));
+      $jumlah_ternak_meninggal = htmlspecialchars( $this->input->post('jumlah_ternak_meninggal'));
+      $keterangan_ternak_meninggal = htmlspecialchars( $this->input->post('keterangan_ternak_meninggal'));
+      $jumlah_ternak_sehat = htmlspecialchars( $this->input->post('jumlah_ternak_sehat'));
+      $jumlah_ternak_sakit = htmlspecialchars( $this->input->post('jumlah_ternak_sakit'));
+      $keterangan_kesehatan_ternak = htmlspecialchars( $this->input->post('keterangan_kesehatan_ternak'));
+      $jumlah_ternak_dikonsumsi = htmlspecialchars( $this->input->post('jumlah_ternak_dikonsumsi'));
+      $keterangan_konsumsi = htmlspecialchars( $this->input->post('keterangan_konsumsi'));
+      $jumlah_ternak_dijual = htmlspecialchars( $this->input->post('jumlah_ternak_dijual'));
+      $harga_ternak_perekor = htmlspecialchars( $this->input->post('harga_ternak_perekor'));
 
 
       $this->db->set('deskripsi_laporan',$deskripsi_laporan);
