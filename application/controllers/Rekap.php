@@ -13,7 +13,7 @@ class Rekap extends CI_Controller {
   public function index(){
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Laporan_model', 'laporan');
-    $data['title'] = 'Rekap Laporan KSTM';
+    $data['title'] = 'Rekap';
     $data['laporan'] = $this->laporan->getLaporanKSTM();
     $data['tipe'] = 'kstm';
 
