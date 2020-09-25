@@ -3,15 +3,7 @@
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand my-5 d-flex align-items-center justify-content-center " href="<?= base_url('') ?>">
-    <div class="container">
-      <div class="row">
-        <div class="col-10 mx-auto ">
-          <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
-        </div>
-      </div>
-    </div>
-
-
+      <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
   </a>
 
   <!-- Divider -->
