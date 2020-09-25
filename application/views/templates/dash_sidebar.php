@@ -2,11 +2,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="res sidebar-brand my-5 d-flex align-items-center justify-content-center " href="<?= base_url('') ?>">
-      <div class="container">
-        <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
-      </div>
-  </a>
+  <div class="container">
+    <a class="res sidebar-brand my-5 d-flex align-items-center justify-content-center " href="<?= base_url('') ?>">
+          <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
+    </a>
+  </div>
 
   <!-- Divider -->
   <hr class="sidebar-divider">

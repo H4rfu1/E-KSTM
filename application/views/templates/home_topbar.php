@@ -5,7 +5,7 @@
   <div id="content-wrapper" class="d-flex flex-column">
 
     <!-- Main Content -->
-    <div id="content" class="container">
+    <div id="content">
 
       <!-- Topbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-white topbar py-3 shadow-sm">
