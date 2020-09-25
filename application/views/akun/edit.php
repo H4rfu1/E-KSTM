@@ -8,22 +8,22 @@
   <div class="col-lg-8">
     <?= form_open_multipart('akun/edit/'.$user['id']); ?>
     <div class="form-group row">
-      <label for="email" class="col-sm-2 col-form-label" >Email</label>
-      <div class="col-sm-10">
+      <label for="email" class="col-sm-3 col-form-label" >Email</label>
+      <div class="col-md-9">
         <input type="text" class="form-control" id="email" name="email" value="<?= $user['email'] ?>">
       </div>
     </div>
     <div class="form-group row">
-      <label for="name" class="col-sm-2 col-form-label">Full Name</label>
-      <div class="col-sm-10">
+      <label for="name" class="col-sm-3 col-form-label">Full Name</label>
+      <div class="col-md-9">
         <input type="text" class="form-control" id="name" name="name" value="<?= $user['name'] ?>">
         <?= form_error('name','<small class="text-danger pl-3">', '</small>'); ?>
 
       </div>
     </div>
     <div class="form-group row">
-      <label for="name" class="col-sm-2 col-form-label">Role User</label>
-      <div class="col-sm-10">
+      <label for="name" class="col-sm-3 col-form-label">Role User</label>
+      <div class="col-md-9">
         <select class="browser-default custom-select" name="role_id" id='role_id'>
           <option value="">Select Role</option>
           <?php foreach($role as $m) : ?>
@@ -35,7 +35,7 @@
 
 
     <div class="form-group row justify-content-end">
-      <div class="col-sm-10">
+      <div class="col-md-9">
         <button type="submit" name="button" class="float-sm-right btn btn-primary">Edit</button>
       </div>
     </div>
