@@ -28,7 +28,7 @@
           <td><?= $r['role'] ?></td>
           <td>
             <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="badge badge-warning">Access</a>
-            <a class="badge badge-danger" onclick="conDelete('<?= base_url("admin/delete_role/"); echo $r['id']; ?>'); ">Delete</a>
+            <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("admin/delete_role/"); echo $r['id']; ?>'); ">Delete</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
