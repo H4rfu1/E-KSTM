@@ -12,8 +12,8 @@
 
 
         <!-- Logo -->
-        <a class="navbar-brand" href="<?= base_url('') ?>" width="20" height="20">
-            <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
+        <a class="navbar-brand" href="<?= base_url('') ?>" >
+            <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-middle mr-2" width="45" alt="logo">
         </a>
 
 
