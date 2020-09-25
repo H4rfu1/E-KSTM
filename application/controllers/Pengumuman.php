@@ -59,6 +59,7 @@ class Pengumuman extends CI_Controller {
   public function edit($id = 0){
     $data['title'] = 'Edit Pengumuman';
     $data['pemberitahuan'] = $this->db->get_where('pemberitahuan', ['id_pemberitahuan' => $id])->row_array();
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
     $this->db->where('id != 1');
     $this->db->where('id != 3');
