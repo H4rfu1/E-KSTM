@@ -3,7 +3,7 @@
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
-    <img src="<?= base_url('assets/img/');?>logo.png" class="card-img" alt="...">
+    <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="...">
     <div class="sidebar-brand-text mx-3">E-KSTM </div>
   </a>
 
