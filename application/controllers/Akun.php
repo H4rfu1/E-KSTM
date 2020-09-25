@@ -50,7 +50,29 @@ class Akun extends CI_Controller {
   }
 
   public function edit($id){
-    echo "edit id $id";
+    $data['title'] = 'Edit Profile';
+    $data['user'] = $this->db->get_where('user', ['id' => $id])->row_array();
+
+    $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
+    if($this->form_validation->run() == false){
+      $this->load->view('templates/dash_header', $data);
+      $this->load->view('templates/dash_sidebar', $data);
+      $this->load->view('templates/dash_topbar', $data);
+      $this->load->view('akun/edit', $data);
+      $this->load->view('templates/dash_footer');
+    }else{
+      $name = $this->input->post('name');
+      $email = $this->input->post('email');
+      }
+
+      $this->db->set('name',$name);
+      $this->db->where('email', $email);
+      $this->db->update('user');
+
+      $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated</div>';
+      $this->session-> set_flashdata('message', $pesan);
+      redirect('akun');
+    }
   }
 
   public function delete_akun($id){
