@@ -16,7 +16,9 @@
           <div class="top-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
           </div>
-          <div class="top-brand-text mx-3">E-KSTM</div>
+          <div class="top-brand-icon">
+            <img src="<?= base_url('assets/img/');?>logo.png" class="img-fluid" alt="logo">
+          </div>
         </a>
 
 
