@@ -15,7 +15,7 @@ class Kstm extends CI_Controller {
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['role'] = $this->session->userdata('role_id');
     $id_user = $this->session->userdata('id');
-    $this->db->where("id_pelapor != $id_user");
+    $this->db->where("id_pelapor = $id_user");
     $data['laporan_kstm'] = $this->db->get('laporan_kstm')->result_array();
 
 
