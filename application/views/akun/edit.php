@@ -27,7 +27,7 @@
           <select class="form-cotrol" name="role_id" id='role_id'>
             <option value="">Select Role</option>
             <?php foreach($role as $m) : ?>
-              <option value="<?= $m['id'] ?>" <?= $user['role_id'] = $m['id'] ? "selected" : '';  ?>><?= $m['role']  ?></option>
+              <option value="<?= $m['id'] ?>" <?= $user['role_id'] == $m['id'] ? "selected" : '';  ?>><?= $m['role']  ?></option>
             <?php endforeach; ?>
           </select>
         </div>
