@@ -67,6 +67,7 @@ class Kstm extends CI_Controller {
 
   public function edit($id = 0){
     $data['title'] = 'Edit Profile';
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['laporan'] = $this->db->get_where('laporan_kstm', ['id_laporan_kstm' => $id])->row_array();
 
     $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required');
