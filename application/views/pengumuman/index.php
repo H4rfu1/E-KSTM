@@ -94,7 +94,7 @@
       <form class="" action="<?= base_url('pengumuman') ?>" method="post">
       <div class="modal-body">
         <div class="form-group">
-          <select class="form-cotrol" name="role_id" id='role_id'>
+          <select class="browser-default custom-select" name="role_id" id='role_id'>
             <option value="">Select Role</option>
             <?php foreach($role as $m) : ?>
               <option value="<?= $m['id'] ?>"><?= $m['role']  ?></option>

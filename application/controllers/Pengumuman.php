@@ -56,8 +56,34 @@ class Pengumuman extends CI_Controller {
 
   }
 
-  public function edit($id){
-    echo "edit id $id";
+  public function edit($id = 0){
+    $data['title'] = 'Edit Pengumuman';
+    $data['pemberitahuan'] = $this->db->get_where('pemberitahuan', ['id_pemberitahuan' => $id])->row_array();
+
+    $this->db->where('id != 1');
+    $this->db->where('id != 3');
+    $data['role'] = $this->db->get('user_role')->result_array();
+
+    $this->form_validation->set_rules('role_id','Role_id', 'required');
+    $this->form_validation->set_rules('isi','Isi', 'required');
+    if($this->form_validation->run() == false and $id != 0){
+      $this->load->view('templates/dash_header', $data);
+      $this->load->view('templates/dash_sidebar', $data);
+      $this->load->view('templates/dash_topbar', $data);
+      $this->load->view('pengumuman/edit', $data);
+      $this->load->view('templates/dash_footer');
+    }else{
+      $data = [
+        'id_role' =>  $this->input->post('role_id'),
+        'isi_pemberitahuan' => $this->input->post('isi')
+      ];
+      $this->db->update('pemberitahuan', $data, array('id' => $id));
+      if ($this->db->affected_rows() > 0) {
+        $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated </div>';
+        $this->session-> set_flashdata('message', $pesan);
+      }
+      redirect('pengumuman');
+    }
   }
 
   public function delete_pengumuman($id){
