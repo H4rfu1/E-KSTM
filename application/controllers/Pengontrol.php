@@ -101,8 +101,8 @@ class Pengontrol extends CI_Controller {
 
   }
 
-  public function edit(){
-
+  public function edit($id){
+    echo "edit id $id";
   }
 
   public function delete_laporan_pengontrol($id){
