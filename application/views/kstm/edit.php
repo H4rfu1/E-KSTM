@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-lg-8">
-      <form class="" action="<?= base_url('kstm/edit') ?>" method="post">
+      <form class="" action="<?= base_url('kstm/edit/'); echo $laporan['id_laporan_kstm']  ?>" method="post">
         <div class="form-group row">
           <label for="deskripsi_laporan" class="col-sm-2 col-form-label">Deskripsi Laporan</label>
           <div class="col-sm-10">

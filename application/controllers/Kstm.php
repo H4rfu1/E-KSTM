@@ -137,8 +137,7 @@ class Kstm extends CI_Controller {
         'harga_ternak_perekor' => htmlspecialchars( $this->input->post('harga_ternak_perekor'))
 
       ];
-      $this->db->where('id_laporan_kstm', $id);
-      $this->db->update('laporan_kstm', $data);
+      $this->db->update('laporan_kstm', $data, array('id_laporan_kstm' => $id));
       $pesan = '<div class="alert alert-success" role="alert"> Laporan has been updated </div>';
       $this->session-> set_flashdata('message', $pesan);
       redirect('kstm');
