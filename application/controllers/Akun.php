@@ -60,7 +60,7 @@ class Akun extends CI_Controller {
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
       'is_unique' => 'this email has already registered'
     ]);
-    $this->form_validation->set_rules('role_id', 'Role', 'required');
+    // $this->form_validation->set_rules('role_id', 'Role', 'required');
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
@@ -70,8 +70,8 @@ class Akun extends CI_Controller {
     }else{
       $data = [
         'name' => htmlspecialchars( $this->input->post('name')),
-        'email' => htmlspecialchars( $this->input->post('email')),
-        'role_id' =>  $this->input->post('role_id')
+        'email' => htmlspecialchars( $this->input->post('email'))
+        // 'role_id' =>  $this->input->post('role_id')
       ];
       $this->db->update('user', $data, array('id' => $id));
       if ($this->db->affected_rows() > 0) {
