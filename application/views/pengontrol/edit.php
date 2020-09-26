@@ -96,6 +96,7 @@
         <br>
         <div class="form-group row justify-content-end">
           <div class="col-sm-9">
+            <br>
             <button type="submit" name="button" class="float-sm-right btn btn-primary">Ubah</button>
           </div>
         </div>

@@ -29,7 +29,7 @@
     <?= $this->session->flashdata('message'); ?>
     <?php if ($role_id == 3) {
       echo '
-        <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Pemberitahuan</a>
+        <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Tambah Pemberitahuan</a>
       ';
     } ?>
 
@@ -42,10 +42,10 @@
           if ($role_id == 3) {
             echo '
             <th scope="col">#</th>
-            <th scope="col">Role</th>
+            <th scope="col">Wewenang</th>
             <th scope="col">tanggal Pemberitahuan</th>
             <th scope="col">Isi pemberitahuan</th>
-            <th scope="col">Action</th>
+            <th scope="col">Aksi</th>
             ';
           } else {
             echo '
@@ -71,11 +71,10 @@
           <?php
           if ($role_id == 3) {
             $m = $p['id_pemberitahuan'];
-            $c = 'return confirm("yakin");';
             echo "
             <td>
-              <a href='". base_url("pengumuman/edit/") ."$m' class='badge badge-primary'>Edit</a>
-              <a class='badge badge-danger' style='color:white;' onclick='conDelete('".base_url("pengumuman/delete_pengumuman/") ."$m'); '>Delete</a>
+              <a href='". base_url("pengumuman/edit/") ."$m' class='badge badge-primary'>Ubah</a>
+              <a class='badge badge-danger' style='color:white;' onclick='conDelete('".base_url("pengumuman/delete_pengumuman/") ."$m'); '>Hapus</a>
             </td>
             ";
           } ?>
@@ -100,7 +99,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newSubmenuLabel">Add New Pemberitahuan</h5>
+        <h5 class="modal-title" id="newSubmenuLabel">Tambah Pemberitahuan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -109,7 +108,7 @@
       <div class="modal-body">
         <div class="form-group">
           <select class="browser-default custom-select" name="role_id" id='role_id'>
-            <option value="">Select Role</option>
+            <option value="">Pilih penerima</option>
             <?php foreach($role as $m) : ?>
               <option value="<?= $m['id'] ?>"><?= $m['role']  ?></option>
             <?php endforeach; ?>
@@ -123,8 +122,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
       </div>
       </form>
     </div>

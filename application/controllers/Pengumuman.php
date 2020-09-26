@@ -32,8 +32,10 @@ class Pengumuman extends CI_Controller {
     $data['role'] = $this->db->get('user_role')->result_array();
 
 
-    $this->form_validation->set_rules('role_id','Role_id', 'required');
-    $this->form_validation->set_rules('isi','Isi', 'required');
+    $this->form_validation->set_rules('role_id','Role_id', 'required', 'required'[
+      'required' => "Wewenang harus diisi"]);
+    $this->form_validation->set_rules('isi','Isi', 'required', 'required'[
+      'required' => "Isi harus diisi"]);
 
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
@@ -49,7 +51,7 @@ class Pengumuman extends CI_Controller {
         'isi_pemberitahuan' => $this->input->post('isi')
       ];
       $this->db->insert('pemberitahuan', $data);
-      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun added </div>');
+      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Pengumuman berhasil ditambah. </div>');
       redirect('pengumuman');
     }else {
       $this->load->view('templates/dash_header', $data);
@@ -64,7 +66,7 @@ class Pengumuman extends CI_Controller {
   public function edit($id = 0){
     $breadcrumb         = array(
             "Pengumuman" => "pengumuman",
-            "Edit" => ""
+            "Ubah" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Pengumuman';
@@ -75,8 +77,10 @@ class Pengumuman extends CI_Controller {
     $this->db->where('id != 3');
     $data['role'] = $this->db->get('user_role')->result_array();
 
-    $this->form_validation->set_rules('role_id','Role_id', 'required');
-    $this->form_validation->set_rules('isi','Isi', 'required');
+    $this->form_validation->set_rules('role_id','Role_id', 'required', 'required'[
+      'required' => "Wewenang harus diisi"]);
+    $this->form_validation->set_rules('isi','Isi', 'required', 'required'[
+      'required' => "Isi harus diisi"]);
     if($this->form_validation->run() == false and $id != 0){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
@@ -90,7 +94,7 @@ class Pengumuman extends CI_Controller {
       ];
       $this->db->update('pemberitahuan', $data, array('id_pemberitahuan' => $id));
       if ($this->db->affected_rows() > 0) {
-        $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated </div>';
+        $pesan = '<div class="alert alert-success" role="alert"> Pengumuman berhasil diperbarui. </div>';
         $this->session-> set_flashdata('message', $pesan);
       }
       redirect('pengumuman');
@@ -99,7 +103,7 @@ class Pengumuman extends CI_Controller {
 
   public function delete_pengumuman($id){
     $this->db->delete('pemberitahuan', ['id_pemberitahuan' => $id]);
-    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun has been delete </div>');
+    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Pengumuman berhasil dihapus. </div>');
     redirect('pengumuman');
   }
 }

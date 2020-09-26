@@ -16,7 +16,7 @@
   </div>
 
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Edit Pengumuman</h1>
+<h1 class="h3 mb-4 text-gray-800">Ubah Pengumuman</h1>
 
 <div class="row">
   <div class="col-lg-8">
@@ -43,7 +43,8 @@
 
     <div class="form-group row justify-content-end">
       <div class="col-md-9">
-        <button type="submit" name="button" class="float-sm-right btn btn-primary">Edit</button>
+        <br>
+        <button type="submit" name="button" class="float-sm-right btn btn-primary">Ubah</button>
       </div>
     </div>
     </form>
