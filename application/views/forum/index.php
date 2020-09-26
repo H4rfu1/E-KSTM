@@ -47,13 +47,14 @@
         <?php $i++; endforeach; ?>
 
         <!-- Pagination -->
+        <?php $paget = $page+1; $pagel =  $page-1;?>
         <?php if (  $count > $perPage+1): ?>
           <ul class="pagination justify-content-center mb-4">
             <li class="page-item <?= $page+1 > $numberOfPages ?'disabled':''; ?>" >
-              <a class="page-link" href="<?= base_url('forum/index/') .  $page+1 ?>">&larr; Older</a>
+              <a class="page-link" href="<?= base_url('forum/index/' . $paget) ?>">&larr; Older</a>
             </li>
             <li class="page-item <?= $page-1 < 0 ?'disabled':''; ?>" >
-              <a class="page-link" href="<?= base_url('forum/index/') .  $page-1 ?>">Newer &rarr;</a>
+              <a class="page-link" href="<?= base_url('forum/index/' . $pagel)?>">Newer &rarr;</a>
             </li>
           </ul>
         <?php endif; ?>
