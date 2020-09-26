@@ -30,7 +30,7 @@
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="<?= base_url('assets/img/forum/') . $forum['image']; ?>" alt="">
+        <img class="img-fluid rounded" src="<?= base_url('assets/img/forum/') . $forum['foto']; ?>" alt="">
 
         <hr>
 
@@ -58,7 +58,7 @@
          foreach($komen as $k) :
         ?>
         <div class="media mb-4">
-          <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['foto']; ?>" alt="">
+          <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['image']; ?>" alt="">
           <div class="media-body">
             <h5 class="mt-0"><?= $k['name'] ?></h5>
             <p><?= $k['isi_tanggapan'] ?></p>
