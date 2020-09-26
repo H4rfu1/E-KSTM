@@ -26,18 +26,18 @@
     <?php endif; ?>
     <?= form_error('akun', '<div class="alert alert-danger" role="alert">','</div>'); ?>
     <?= $this->session->flashdata('message'); ?>
-    <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Akun</a>
+    <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Tambah Akun</a>
 
     <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Name</th>
+          <th scope="col">Nama</th>
           <th scope="col">Email</th>
-          <th scope="col">Role</th>
-          <th scope="col">Is Active</th>
-          <th scope="col">Date Create</th>
-          <th scope="col">Action</th>
+          <th scope="col">Wewenang</th>
+          <th scope="col">Apa aktif</th>
+          <th scope="col">Tanggal dibuat</th>
+          <th scope="col">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -53,8 +53,8 @@
             <td><?= $r['is_active'] ?></td>
             <td><?= date('d F Y', $user['date_create']); ?></td>
           <td>
-            <a href="<?= base_url('akun/edit/'); echo $r['id']; ?>" class="badge badge-primary">Edit</a>
-            <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("akun/delete_akun/"); echo $r['id']; ?>'); ">Delete</a>
+            <a href="<?= base_url('akun/edit/'); echo $r['id']; ?>" class="badge badge-primary">Ubah</a>
+            <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("akun/delete_akun/"); echo $r['id']; ?>'); ">Hapus</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
@@ -77,7 +77,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newSubmenuLabel">Add New Akun</h5>
+        <h5 class="modal-title" id="newSubmenuLabel">Tambah Akun</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -92,7 +92,7 @@
         </div>
         <div class="form-group">
           <select class="browser-default custom-select" name="role_id" id='role_id'>
-            <option value="">Select Role</option>
+            <option value="">Pilih wewenang</option>
             <?php foreach($role as $m) : ?>
               <option value="<?= $m['id'] ?>"><?= $m['role']  ?></option>
             <?php endforeach; ?>
@@ -101,13 +101,13 @@
         <div class="form-group">
           <div class="form-check">
             <input type="checkbox" class="form-check-input" value="1" id="is_active" name="is_active" checked>
-            <label class="form-check-label" for="is_active">Is active?</label>
+            <label class="form-check-label" for="is_active">apa aktif?</label>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
       </div>
       </form>
     </div>

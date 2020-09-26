@@ -25,10 +25,13 @@ class Akun extends CI_Controller {
     $data['role'] = $this->db->get('user_role')->result_array();
 
 
-    $this->form_validation->set_rules('name','Nama', 'required');
-    $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
-      'is_unique' => 'this email has already registered'
-    ]);
+    $this->form_validation->set_rules('name','Nama', 'required', [
+      'required' => "Nama harus diisi"]);
+    $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]', [
+      'required' => "Email harus diisi",
+      'valid_email' => "Email tidak dikenal"]);
+      $this->form_validation->set_rules('role','Role', 'required', [
+        'required' => "Role harus diisi"]);
 
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
@@ -41,13 +44,13 @@ class Akun extends CI_Controller {
         'name' => htmlspecialchars( $this->input->post('name')),
         'email' => htmlspecialchars( $this->input->post('email')),
         'image' => 'default.jpg',
-        'password' => password_hash('secret', PASSWORD_DEFAULT),
+        'password' => password_hash('rahasia', PASSWORD_DEFAULT),
         'role_id' =>  $this->input->post('role_id'),
         'is_active' => $this->input->post('is_active'),
         'date_create' => time()
       ];
       $this->db->insert('user', $data);
-      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun added, password default "secret"</div>');
+      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun berhasil ditambah, password bawaannya adalah "rahasia" tanpa petik.</div>');
       redirect('akun');
     }
 
@@ -56,7 +59,7 @@ class Akun extends CI_Controller {
   public function edit($id = 0){
     $breadcrumb         = array(
             "Kelola Akun" => "akun",
-            " Edit" => ""
+            "Ubah" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Profile';
@@ -81,7 +84,7 @@ class Akun extends CI_Controller {
       ];
       $this->db->update('user', $data, array('id' => $id));
       if ($this->db->affected_rows() > 0) {
-        $pesan = '<div class="alert alert-success" role="alert"> Akun has been updated </div>';
+        $pesan = '<div class="alert alert-success" role="alert"> Akun berhasil diperbaharui. </div>';
         $this->session-> set_flashdata('message', $pesan);
       }
       redirect('akun');
@@ -90,7 +93,7 @@ class Akun extends CI_Controller {
 
   public function delete_akun($id){
     $this->db->delete('user', ['id' => $id]);
-    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun has been delete </div>');
+    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Akun berhasil dihapus. </div>');
     redirect('akun');
   }
 }
