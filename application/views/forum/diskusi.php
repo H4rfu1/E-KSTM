@@ -35,7 +35,7 @@
         <hr>
 
         <!-- Post Content -->
-        <p><?= $forum['keterangan_bahasan'] ?></p>
+        <p style="white-space: pre-line"><?= $forum['keterangan_bahasan'] ?></p>
 
         <hr>
 
