@@ -13,10 +13,10 @@ class Forum_model extends CI_Model {
      $query = "SELECT `forum`.*, `user`.`name`
               FROM `forum` JOIN `user`
               ON `forum`.`id_pembuat` = `user`.`id`
-              ORDER BY `forum`.`tanggal_dibuat` DESC
               WHERE `forum`.`keterangan_bahasan` LIKE '%".$keyword."%' OR
               `user`.`name` LIKE '%".$keyword."%' OR
-              `forum`.`topik_bahasan` LIKE '%".$keyword."%'";
+              `forum`.`topik_bahasan` LIKE '%".$keyword."%'
+              ORDER BY `forum`.`tanggal_dibuat` DESC";
       return $this->db->query($query)->result_array();
   }
   public function getCertainForum($id){
