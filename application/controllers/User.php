@@ -25,7 +25,7 @@ class User extends CI_Controller {
   public function edit(){
     $breadcrumb         = array(
             "Profil" => "user",
-            "Ubah" => ""
+            "Ubah Profil" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Ubah Profil';
@@ -71,7 +71,7 @@ class User extends CI_Controller {
       $this->db->where('email', $email);
       $this->db->update('user');
 
-      $pesan = '<div class="alert alert-success" role="alert"> Your profile has been updated</div>';
+      $pesan = '<div class="alert alert-success" role="alert">Profil berhasil diubah</div>';
       $this->session-> set_flashdata('message', $pesan);
       redirect('user');
     }
@@ -101,12 +101,12 @@ class User extends CI_Controller {
       $current_password = $this->input->post('current_password');
       $new_password = $this->input->post('new_password1');
       if(!password_verify($current_password, $data['user']['password'])){
-        $pesan = '<div class="alert alert-danger" role="alert"> wrong current password.</div>';
+        $pesan = '<div class="alert alert-danger" role="alert"> Password lama kurang tepat.</div>';
         $this->session-> set_flashdata('message', $pesan);
         redirect('user/changepassword');
       }else{
         if($current_password == $new_password){
-          $pesan = '<div class="alert alert-danger" role="alert"> stupid!, your password same with the current.</div>';
+          $pesan = '<div class="alert alert-danger" role="alert"> Password sama dengan yang lama.</div>';
           $this->session-> set_flashdata('message', $pesan);
           redirect('user/changepassword');
         } else{
@@ -116,7 +116,7 @@ class User extends CI_Controller {
           $this->db->where('email', $this->session->userdata('email'));
           $this->db->update('user');
 
-          $pesan = '<div class="alert alert-success" role="alert"> Your password succesful changed.</div>';
+          $pesan = '<div class="alert alert-success" role="alert"> Password berhasil diubah.</div>';
           $this->session-> set_flashdata('message', $pesan);
           redirect('user/changepassword');
         }

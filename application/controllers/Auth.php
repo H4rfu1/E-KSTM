@@ -12,7 +12,8 @@ class Auth extends CI_Controller {
       redirect('user');
     }
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-    $this->form_validation->set_rules('password', 'Password', 'trim|required');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required', [
+      'required' => "Password harus diisi");
     if($this->form_validation->run() == false){
       $data['title'] = 'E-KSTM - User login';
       $this->load->view('templates/auth_header', $data);
@@ -51,15 +52,15 @@ class Auth extends CI_Controller {
 
 
         } else {
-          $this->session-> set_flashdata('message', '<div class="alert alert-danger" role="alert"> Wrong password </div>');
+          $this->session-> set_flashdata('message', '<div class="alert alert-danger" role="alert"> Password kurang tepat. </div>');
           redirect('auth');
         }
       } else{
-        $this->session-> set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email email has not been activated </div>');
+        $this->session-> set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email anda belum teraktivasi. Silakan cek email untuk proses aktivasi. (Cek folder spam bila tiak ada).</div>');
         redirect('auth');
       }
     } else {
-      $this->session-> set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email is not registered </div>');
+      $this->session-> set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email anda belum terdaftar.</div>');
       redirect('auth');
     }
   }
@@ -70,11 +71,11 @@ class Auth extends CI_Controller {
     }
     $this->form_validation->set_rules('fullname','Name', 'required|trim');
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
-      'is_unique' => 'this email has already registered'
+      'is_unique' => 'Email sudah terdaftar'
     ]);
     $this->form_validation->set_rules('password1','Password','trim|min_length[3]|matches[password2]', [
-      'matches' => "password don't match",
-      'min_length' => 'password to short'
+      'matches' => "Password tidak sama",
+      'min_length' => 'Password terlalu pendek'
     ]);
     $this->form_validation->set_rules('password2','Password2','trim|matches[password1]');
 
@@ -98,7 +99,7 @@ class Auth extends CI_Controller {
         'date_create' => time()
 
       ];
-      $pesan = '<div class="alert alert-success" role="alert"> congratulation '.$this->input->post('fullname').'!! your account has been registered, activation has been sent to your email and will valid until 24 hours. check on spam if the email didn\'t appear. </div>';
+      $pesan = '<div class="alert alert-success" role="alert"> Yey, Selamat '.$this->input->post('fullname').'!! akun kamu sudah terdaftar, email aktivasi sudah terkirim dan akan valid selama a24 jam. Coba cek pada bagian spam bila belum muncul. </div>';
 
       //siapkan token
       $token = base64_encode(random_bytes(32));
@@ -136,8 +137,8 @@ class Auth extends CI_Controller {
        $message = '<html><head>';
        $message = '<title>E-KSTM - email verif<title>';
        $message = '<head><body>';
-       $message .= '<p>click this link to verify your account : <a href="'. base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Activate</a></p>';
-       $message .= '<p>atau</p> <p>link: '. base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</p>';
+       $message .= '<p>Klik link ini untuk aktivasi akun : <a href="'. base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Aktifkan</a></p>';
+       $message .= '<p>atau salin</p> <p>link: '. base_url() . 'auth/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '</p>';
        $message .= '</body></html>';
        $this->email->message($message);
        $this->email->set_mailtype('html');
@@ -165,7 +166,7 @@ class Auth extends CI_Controller {
           $this->db->update('user');
           $this->db->delete('user_token', ['email' => $email]);
 
-          $pesan = '<div class="alert alert-success" role="alert"> ' . $email .' account has been activated!, please login</div>';
+          $pesan = '<div class="alert alert-success" role="alert"> ' . $email .' Akun anda sudah aktif!, silakan login.</div>';
           $this->session-> set_flashdata('message', $pesan);
           redirect('auth');
         }else {
@@ -173,17 +174,17 @@ class Auth extends CI_Controller {
           $this->db->delete('user_token', ['email' => $email]);
 
 
-          $pesan = '<div class="alert alert-danger" role="alert"> account activation  failed, takon has been expied.</div>';
+          $pesan = '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, token aktivasi sudah kadaluarsa.</div>';
           $this->session-> set_flashdata('message', $pesan);
           redirect('auth');
         }
       } else {
-        $pesan = '<div class="alert alert-danger" role="alert"> account activation  failed, wrong token</div>';
+        $pesan = '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, token tidak dikenali.</div>';
         $this->session-> set_flashdata('message', $pesan);
         redirect('auth');
       }
     } else {
-      $pesan = '<div class="alert alert-danger" role="alert"> account activation dont use to playing man</div>';
+      $pesan = '<div class="alert alert-danger" role="alert">Jangan dibuat mainan, atau akan dilaporkan.</div>';
       $this->session-> set_flashdata('message', $pesan);
       redirect('auth');
     }
@@ -193,7 +194,7 @@ class Auth extends CI_Controller {
   public function logout(){
     $this->session->unset_userdata('email');
     $this->session->unset_userdata('role_id');
-    $pesan = '<div class="alert alert-success" role="alert"> you have been logout</div>';
+    $pesan = '<div class="alert alert-success" role="alert"> Berhasil logout</div>';
     $this->session-> set_flashdata('message', $pesan);
     redirect('auth');
 
