@@ -11,7 +11,7 @@
       <?= $this->session->flashdata('message'); ?>
     </div>
     <!-- Post Content Column -->
-      <div class="col-md-12">
+      <div class="col-lg-12">
 
         <!-- Title -->
         <h1 style="color: black;" class="mt-4"><?= $forum['topik_bahasan'] ?></h1>
@@ -30,7 +30,7 @@
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="<?= base_url('assets/img/forum/') . $forum['foto']; ?>" alt="">
+        <img class="img-fluid rounded" src="<?= base_url('assets/img/forum/') . $forum['foto']; ?>" alt="gambar post" style="max-height:300px;">
 
         <hr>
 
