@@ -29,9 +29,9 @@ class Forum extends CI_Controller {
       $data['cari'] = $this->input->post('cari');
     }else {
       $data['forum'] = $this->forum->getAllForum();
-      $this->form_validation->set_rules('topik_bahasan','Judul', 'required'[
+      $this->form_validation->set_rules('topik_bahasan','Judul', [
         'required' => "Judul harus diisi"]);
-      $this->form_validation->set_rules('keterangan_bahasan','Isi bahasan', 'required'[
+      $this->form_validation->set_rules('keterangan_bahasan','Isi bahasan', [
         'required' => "Keterangan Bahasan harus diisi"]);
     }
 
@@ -100,7 +100,7 @@ class Forum extends CI_Controller {
     $data['komen'] = $this->forum->getKomen($id);
 
 
-    $this->form_validation->set_rules('isi_tanggapan','Isi tanggapan', 'required', 'required'[
+    $this->form_validation->set_rules('isi_tanggapan','Isi tanggapan', 'required', [
       'required' => "Isi tanggapan harus diisi"]);
 
     if($this->form_validation->run() == false){

@@ -32,9 +32,9 @@ class User extends CI_Controller {
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 
-    $this->form_validation->set_rules('name', 'Full Name', 'required|trim', 'required'[
+    $this->form_validation->set_rules('name', 'Full Name', 'required|trim',[
       'required' => "Nama lengkap harus diisi"]);
-      $this->form_validation->set_rules('email', 'Email', 'required', 'required'[
+      $this->form_validation->set_rules('email', 'Email', 'required',[
         'required' => "Email harus diisi"]);
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
@@ -89,8 +89,12 @@ class User extends CI_Controller {
     $data['title'] = 'Ubah Password';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-    $this->form_validation->set_rules('current_password', 'Current Password', 'required|trim');
-    $this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]');
+    $this->form_validation->set_rules('current_password', 'Current Password', 'required|trim', [
+      'required' => "Passsword lama harus diisi"]);
+    $this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]', [
+      'matches' => "Password tidak sama",
+      'min_length' => 'Password terlalu pendek'
+    ]);
     $this->form_validation->set_rules('new_password2', 'Confirm New Password
     ', 'required|trim|min_length[3]|matches[new_password1]');
 

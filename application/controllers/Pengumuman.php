@@ -32,9 +32,9 @@ class Pengumuman extends CI_Controller {
     $data['role'] = $this->db->get('user_role')->result_array();
 
 
-    $this->form_validation->set_rules('role_id','Role_id', 'required', 'required'[
+    $this->form_validation->set_rules('role_id','Role_id', 'required', [
       'required' => "Wewenang harus diisi"]);
-    $this->form_validation->set_rules('isi','Isi', 'required', 'required'[
+    $this->form_validation->set_rules('isi','Isi', 'required', [
       'required' => "Isi harus diisi"]);
 
     if($this->form_validation->run() == false){
@@ -77,9 +77,9 @@ class Pengumuman extends CI_Controller {
     $this->db->where('id != 3');
     $data['role'] = $this->db->get('user_role')->result_array();
 
-    $this->form_validation->set_rules('role_id','Role_id', 'required', 'required'[
+    $this->form_validation->set_rules('role_id','Role_id', 'required', [
       'required' => "Wewenang harus diisi"]);
-    $this->form_validation->set_rules('isi','Isi', 'required', 'required'[
+    $this->form_validation->set_rules('isi','Isi', 'required', [
       'required' => "Isi harus diisi"]);
     if($this->form_validation->run() == false and $id != 0){
       $this->load->view('templates/dash_header', $data);

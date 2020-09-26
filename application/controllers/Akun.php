@@ -68,8 +68,10 @@ class Akun extends CI_Controller {
     $this->db->where('id != 1');
     $data['role'] = $this->db->get('user_role')->result_array();
 
-    $this->form_validation->set_rules('name','Nama', 'required');
-    $this->form_validation->set_rules('role_id','Role', 'required');
+    $this->form_validation->set_rules('name','Nama', 'required', [
+      'required' => "Nama harus diisi"]);
+    $this->form_validation->set_rules('role_id','Role', 'required', [
+      'required' => "Wewenang harus diisi"]);
     if($this->form_validation->run() == false and $id != 0){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);

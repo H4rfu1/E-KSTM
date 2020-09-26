@@ -23,31 +23,31 @@ class Pengontrol extends CI_Controller {
     $data['laporan_pengontrol'] = $this->db->get('laporan_pengontrol')->result_array();
 
 
-    $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required', 'required'[
+    $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required', [
       'required' => "Deskripsi laporan harus diisi"]);
-    $this->form_validation->set_rules('jenis_ternak','Jenis_ternak', 'required', 'required'[
+    $this->form_validation->set_rules('jenis_ternak','Jenis_ternak', 'required', [
       'required' => "Jenis ternak harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_sebelumnya','Jumlah_ternak_sebelumnya', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_sebelumnya','Jumlah_ternak_sebelumnya', 'required', [
       'required' => "Jumlah ternak sebelumnya harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_sekarang','Jumlah_ternak_sekarang', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_sekarang','Jumlah_ternak_sekarang', 'required', [
       'required' => "Jumlah ternak sekarang harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_meninggal','Jumlah_ternak_meninggal', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_meninggal','Jumlah_ternak_meninggal', 'required', [
       'required' => "Jumlah ternak meninggal harus diisi"]);
-    $this->form_validation->set_rules('keterangan_ternak_meninggal','Keterangan_ternak_meninggal', 'required', 'required'[
+    $this->form_validation->set_rules('keterangan_ternak_meninggal','Keterangan_ternak_meninggal', 'required', [
       'required' => "Keterangan ternak meninggal harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_sehat','Jumlah_ternak_sehat', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_sehat','Jumlah_ternak_sehat', 'required', [
       'required' => "Jumlah ternak sehat harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_sakit','Jumlah_ternak_sakit', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_sakit','Jumlah_ternak_sakit', 'required', [
       'required' => "Jumlah ternak sakit harus diisi"]);
-    $this->form_validation->set_rules('keterangan_kesehatan_ternak','Keterangan_kesehatan_ternak', 'required', 'required'[
+    $this->form_validation->set_rules('keterangan_kesehatan_ternak','Keterangan_kesehatan_ternak', 'required', [
       'required' => "Keterangan kesehatan ernak harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_dikonsumsi','Jumlah_ternak_dikonsumsi', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_dikonsumsi','Jumlah_ternak_dikonsumsi', 'required', [
       'required' => "Jumlah ternak dikonsumsi harus diisi"]);
-    $this->form_validation->set_rules('keterangan_konsumsi','Keterangan_konsumsi', 'required', 'required'[
+    $this->form_validation->set_rules('keterangan_konsumsi','Keterangan_konsumsi', 'required', [
       'required' => "Keterangan konsumsi harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_dijual','Jumlah_ternak_dijual', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_dijual','Jumlah_ternak_dijual', 'required', [
       'required' => "Jumlah ternak dijual harus diisi"]);
-    $this->form_validation->set_rules('harga_ternak_perekor','Harga_ternak_perekor', 'required', 'required'[
+    $this->form_validation->set_rules('harga_ternak_perekor','Harga_ternak_perekor', 'required', [
       'required' => "Harga ternak perekor harus diisi"]);
 
     if($this->form_validation->run() == false){
@@ -128,31 +128,31 @@ class Pengontrol extends CI_Controller {
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['laporan'] = $this->db->get_where('laporan_pengontrol', ['id_laporan_pengontrol' => $id])->row_array();
 
-    $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required', 'required'[
+    $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required', [
       'required' => "Deskripsi laporan harus diisi"]);
-    $this->form_validation->set_rules('jenis_ternak','Jenis_ternak', 'required', 'required'[
+    $this->form_validation->set_rules('jenis_ternak','Jenis_ternak', 'required', [
       'required' => "Jenis ternak harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_sebelumnya','Jumlah_ternak_sebelumnya', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_sebelumnya','Jumlah_ternak_sebelumnya', 'required', [
       'required' => "Jumlah ternak sebelumnya harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_sekarang','Jumlah_ternak_sekarang', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_sekarang','Jumlah_ternak_sekarang', 'required', [
       'required' => "Jumlah ternak sekarang harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_meninggal','Jumlah_ternak_meninggal', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_meninggal','Jumlah_ternak_meninggal', 'required', [
       'required' => "Jumlah ternak meninggal harus diisi"]);
-    $this->form_validation->set_rules('keterangan_ternak_meninggal','Keterangan_ternak_meninggal', 'required', 'required'[
+    $this->form_validation->set_rules('keterangan_ternak_meninggal','Keterangan_ternak_meninggal', 'required', [
       'required' => "Keterangan ternak meninggal harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_sehat','Jumlah_ternak_sehat', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_sehat','Jumlah_ternak_sehat', 'required', [
       'required' => "Jumlah ternak sehat harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_sakit','Jumlah_ternak_sakit', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_sakit','Jumlah_ternak_sakit', 'required', [
       'required' => "Jumlah ternak sakit harus diisi"]);
-    $this->form_validation->set_rules('keterangan_kesehatan_ternak','Keterangan_kesehatan_ternak', 'required', 'required'[
+    $this->form_validation->set_rules('keterangan_kesehatan_ternak','Keterangan_kesehatan_ternak', 'required', [
       'required' => "Keterangan kesehatan ernak harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_dikonsumsi','Jumlah_ternak_dikonsumsi', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_dikonsumsi','Jumlah_ternak_dikonsumsi', 'required', [
       'required' => "Jumlah ternak dikonsumsi harus diisi"]);
-    $this->form_validation->set_rules('keterangan_konsumsi','Keterangan_konsumsi', 'required', 'required'[
+    $this->form_validation->set_rules('keterangan_konsumsi','Keterangan_konsumsi', 'required', [
       'required' => "Keterangan konsumsi harus diisi"]);
-    $this->form_validation->set_rules('jumlah_ternak_dijual','Jumlah_ternak_dijual', 'required', 'required'[
+    $this->form_validation->set_rules('jumlah_ternak_dijual','Jumlah_ternak_dijual', 'required', [
       'required' => "Jumlah ternak dijual harus diisi"]);
-    $this->form_validation->set_rules('harga_ternak_perekor','Harga_ternak_perekor', 'required', 'required'[
+    $this->form_validation->set_rules('harga_ternak_perekor','Harga_ternak_perekor', 'required', [
       'required' => "Harga ternak perekor harus diisi"]);
     if($this->form_validation->run() == false and $id != 0){
       $this->load->view('templates/dash_header', $data);
