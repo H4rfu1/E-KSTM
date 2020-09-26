@@ -11,6 +11,10 @@ class Akun extends CI_Controller {
   }
 
   public function index(){
+    $breadcrumb         = array(
+            "Akun" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Kelola Akun';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Akun_model', 'akun');
@@ -50,6 +54,11 @@ class Akun extends CI_Controller {
   }
 
   public function edit($id = 0){
+    $breadcrumb         = array(
+            "Akun" => "akun",
+            " Edit" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Profile';
     $data['user'] = $this->db->get_where('user', ['id' => $id])->row_array();
 
