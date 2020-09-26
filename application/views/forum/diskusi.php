@@ -58,7 +58,7 @@
          foreach($komen as $k) :
         ?>
         <div class="media mb-4">
-          <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['image']; ?>" alt="">
+          <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['image']; ?>" alt="foto" width="50" height="50">
           <div class="media-body">
             <h5 class="mt-0"><?= $k['name'] ?></h5>
             <p><?= $k['isi_tanggapan'] ?></p>
