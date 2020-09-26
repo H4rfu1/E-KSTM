@@ -18,7 +18,7 @@ class Forum extends CI_Controller {
     $this->load->model('Forum_model', 'forum');
 
     if($this->input->post('cari')!= null){
-      $this->form_validation->set_rules('cari','Judul', 'required');
+      $this->form_validation->set_rules('cari','Cari', 'required');
       $data['forum'] = $this->forum->getSearchForum(htmlspecialchars($this->input->post('cari')));
       $data['cari'] = $this->input->post('cari');
     }else {
