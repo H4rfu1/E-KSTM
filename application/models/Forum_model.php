@@ -14,9 +14,9 @@ class Forum_model extends CI_Model {
               FROM `forum` JOIN `user`
               ON `forum`.`id_pembuat` = `user`.`id`
               ORDER BY `forum`.`tanggal_dibuat` DESC
-              WHERE `forum`.`keterangan_bahasan` LIKE %'".$keyword."'% OR
-              `user`.`name` LIKE %'".$keyword."'% OR
-              `forum`.`topik_bahasan` LIKE %'".$keyword."'%";
+              WHERE `forum`.`keterangan_bahasan` LIKE '%".$keyword."%' OR
+              `user`.`name` LIKE '%".$keyword."%' OR
+              `forum`.`topik_bahasan` LIKE '%".$keyword."%'";
       return $this->db->query($query)->result_array();
   }
   public function getCertainForum($id){
