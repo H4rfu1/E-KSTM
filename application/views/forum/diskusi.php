@@ -30,7 +30,7 @@
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="<?= base_url('assets/img/forum/') . $forum['foto']; ?>" alt="gambar post" style="max-height:300px;">
+        <img class="img-fluid rounded mx-auto d-block" src="<?= base_url('assets/img/forum/') . $forum['foto']; ?>" alt="gambar post" style="max-height:300px;">
 
         <hr>
 
@@ -58,7 +58,7 @@
          foreach($komen as $k) :
         ?>
         <div class="media mb-4">
-          <img class="mx-auto d-block rounded-circle" src="<?= base_url('assets/img/profile/') . $k['image']; ?>" alt="foto" width="50" height="50">
+          <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['image']; ?>" alt="foto" width="50" height="50">
           <div class="media-body">
             <h5 style="color: black;" class="mt-0"><?= $k['name'] ?></h5>
             <p><?= $k['isi_tanggapan'] ?></p>
