@@ -25,7 +25,7 @@
         <?php
           $count = count($forum);
           $perPage = 4;
-          $numberOfPages = ceil(($count-1) / $perPage);
+          $numberOfPages = ceil(($count) / $perPage);
           $offset = $page * $perPage;
           $sliceForum = array_slice($forum, $offset, $perPage);
           $i = 1;
@@ -50,7 +50,7 @@
         <?php $paget = $page+1; $pagel =  $page-1;?>
         <?php if (  $count > $perPage+1): ?>
           <ul class="pagination justify-content-center mb-4">
-            <li class="page-item <?= $page+1 > $numberOfPages ?'disabled':''; ?>" >
+            <li class="page-item <?= $page > $numberOfPages ?'disabled':''; ?>" >
               <a class="page-link" href="<?= base_url('forum/index/' . $paget); ?>">&larr; Older</a>
             </li>
             <li class="page-item <?= $page-1 < 0 ?'disabled':''; ?>" >
