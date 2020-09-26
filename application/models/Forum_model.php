@@ -9,8 +9,8 @@ class Forum_model extends CI_Model {
               ORDER BY `forum`.`tanggal_dibuat` DESC";
       return $this->db->query($query)->result_array();
   }
-  public function getSearchForum($keyword){
-    $keyword = htmlspecialchars($keyword);
+  public function getSearchForum($key){
+    $keyword = htmlspecialchars($key);
      $query = "SELECT `forum`.*, `user`.`name`
               FROM `forum` JOIN `user`
               ON `forum`.`id_pembuat` = `user`.`id`
