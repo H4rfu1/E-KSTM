@@ -13,7 +13,7 @@ class User extends CI_Controller {
             "Profil" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
-    $data['title'] = 'My Profile';
+    $data['title'] = 'Profil Saya';
     $this->load->model('Akun_model', 'akun');
     $data['user'] = $this->akun->getAkunId($this->session->userdata('id'));
       $this->load->view('templates/dash_header', $data);
@@ -25,10 +25,10 @@ class User extends CI_Controller {
   public function edit(){
     $breadcrumb         = array(
             "Profil" => "user",
-            "Edit" => ""
+            "Ubah" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
-    $data['title'] = 'Edit Profile';
+    $data['title'] = 'Ubah Profil';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 
@@ -80,10 +80,10 @@ class User extends CI_Controller {
   public function changePassword(){
     $breadcrumb         = array(
             "Profil" => "user",
-            "Change Password" => ""
+            "Ubah Password" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
-    $data['title'] = 'Change Password';
+    $data['title'] = 'Ubah Password';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
     $this->form_validation->set_rules('current_password', 'Current Password', 'required|trim');
