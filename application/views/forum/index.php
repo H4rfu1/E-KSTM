@@ -14,7 +14,7 @@
     </div>
 
     <div class="col-md-8">
-        <h1  class="my-4">Forum
+        <h1 style="color: black;" class="my-4">Forum
           <small>diskusi E-KSTM</small>
         </h1>
         <?php
@@ -30,13 +30,13 @@
         <div class="card mb-4">
           <img class="card-img-top" src="<?= base_url('assets/img/forum/') . $f['foto']; ?>" alt="Card image cap">
           <div class="card-body">
-            <h2 class="card-title" ><?= $f['topik_bahasan'] ?></h2>
+            <h2 class="card-title" style="color: black;"><?= $f['topik_bahasan'] ?></h2>
             <p class="card-text"><?= substr($f['keterangan_bahasan'], 0, 25) ?>...</p>
             <a href="<?= base_url('forum/diskusi/');echo $f['id_forum']; ?>" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
             Posted on <?= date('d F Y, h:i:s A', $f['tanggal_dibuat']); ?>
-            <p >by <?= $f['name'] ?></p>
+            <p style="color: black;">by <?= $f['name'] ?></p>
           </div>
         </div>
         <?php $i++; endforeach; ?>
