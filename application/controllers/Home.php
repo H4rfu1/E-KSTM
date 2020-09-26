@@ -7,9 +7,9 @@ class Home extends CI_Controller {
 		if (!is_logged_in("home")) {
     	$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 		}
-		$this->load->view('templates/home_header', $data);
-    $this->load->view('templates/home_topbar', $data);
+		// $this->load->view('templates/home_header', $data);
+    // $this->load->view('templates/home_topbar', $data);
     $this->load->view('home/index', $data);
-    $this->load->view('templates/home_footer');
+    // $this->load->view('templates/home_footer');
 	}
 }
