@@ -162,7 +162,7 @@
           <textarea class="form-control" aria-label="With textarea" name="keterangan_bahasan"></textarea>
         </div>
         <div class="form-group custom-file">
-          <input type="file" class="custom-file-input" id="foto" name="foto" accept="image/*">
+          <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
           <label class="custom-file-label" for="foto">Choose image</label>
         </div>
 
