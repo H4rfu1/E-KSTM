@@ -12,7 +12,7 @@ class Akun extends CI_Controller {
 
   public function index(){
     $breadcrumb         = array(
-            "Akun" => ""
+            "Kelola Akun" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Kelola Akun';
@@ -55,7 +55,7 @@ class Akun extends CI_Controller {
 
   public function edit($id = 0){
     $breadcrumb         = array(
-            "Akun" => "akun",
+            "Kelola Akun" => "akun",
             " Edit" => ""
         );
     $data['breadcrumb'] = $breadcrumb;

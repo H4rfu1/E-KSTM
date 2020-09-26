@@ -10,7 +10,7 @@ class User extends CI_Controller {
 
   public function index(){
     $breadcrumb         = array(
-            "Kelola Akun" => ""
+            "Profil" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'My Profile';
@@ -24,7 +24,7 @@ class User extends CI_Controller {
   }
   public function edit(){
     $breadcrumb         = array(
-            "Kelola Akun" => "user",
+            "Profil" => "user",
             "Edit" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
@@ -78,6 +78,11 @@ class User extends CI_Controller {
   }
 
   public function changePassword(){
+    $breadcrumb         = array(
+            "Profil" => "user",
+            "Change Password" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Change Password';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
