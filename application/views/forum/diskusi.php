@@ -14,10 +14,10 @@
       <div class="col-lg-8">
 
         <!-- Title -->
-        <h1 style="color: black;" class="mt-4"><?= $forum['topik_bahasan'] ?></h1>
+        <h1  class="mt-4"><?= $forum['topik_bahasan'] ?></h1>
 
         <!-- Author -->
-        <p class="lead" style="color: black;">
+        <p class="lead" >
           by
           <a><?= $forum['name'] ?></a>
         </p>
@@ -60,7 +60,7 @@
         <div class="media mb-4">
           <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['image']; ?>" alt="foto" width="50" height="50">
           <div class="media-body">
-            <h5 style="color: black;" class="mt-0"><?= $k['name'] ?></h5>
+            <h5  class="mt-0"><?= $k['name'] ?></h5>
             <p><?= $k['isi_tanggapan'] ?></p>
           </div>
         </div>

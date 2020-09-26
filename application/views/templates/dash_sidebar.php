@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion m-0" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
   <div class="container m-0">
@@ -63,7 +63,7 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item ">
-    <a class="nav-link m-auto" href="<?= base_url('auth/logout') ?>">
+    <a class="nav-link m-auto" href="<?= base_url('auth/logout') ?>" data-toggle="modal" data-target="#logoutModal">
       <i class="fas fa-fw fa-sign-out-alt"></i>
       <span>Logout</span></a>
   </li>
