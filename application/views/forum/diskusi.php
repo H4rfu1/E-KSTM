@@ -14,10 +14,10 @@
       <div class="col-lg-8">
 
         <!-- Title -->
-        <h1 style="font-weight: bold;" class="mt-4"><?= $forum['topik_bahasan'] ?></h1>
+        <h1 style="color: black;" class="mt-4"><?= $forum['topik_bahasan'] ?></h1>
 
         <!-- Author -->
-        <p class="lead" style="font-weight: bold;">
+        <p class="lead" style="color: black;">
           by
           <a><?= $forum['name'] ?></a>
         </p>
@@ -60,7 +60,7 @@
         <div class="media mb-4">
           <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['image']; ?>" alt="foto" width="50" height="50">
           <div class="media-body">
-            <h5 style="font-weight: bold;" class="mt-0"><?= $k['name'] ?></h5>
+            <h5 style="color: black;" class="mt-0"><?= $k['name'] ?></h5>
             <p><?= $k['isi_tanggapan'] ?></p>
           </div>
         </div>
@@ -112,7 +112,7 @@
         </div>
 
         <!-- Categories Widget -->
-        <div class="card my-4">
+        <!-- <div class="card my-4">
           <h5 class="card-header">Categories</h5>
           <div class="card-body">
             <div class="row">
@@ -143,7 +143,7 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- Side Widget -->
