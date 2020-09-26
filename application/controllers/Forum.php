@@ -43,8 +43,8 @@ class Forum extends CI_Controller {
       } else {
         $new_img = 'default.png';
         // cek jika ada gambar terupload
-        if ($_FILES['image']['size'] != 0) {
-          $upload_img = $_FILES['image']['name'];
+        if ($_FILES['foto']['size'] != 0) {
+          $upload_img = $_FILES['foto']['name'];
           if($upload_img){
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size']     = '1024';
@@ -52,7 +52,7 @@ class Forum extends CI_Controller {
 
             $this->load->library('upload', $config);
 
-            if($this->upload->do_upload('image')){
+            if($this->upload->do_upload('foto')){
               $new_img = $this->upload->data('file_name');
             }
           }

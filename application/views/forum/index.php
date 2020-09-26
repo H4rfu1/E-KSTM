@@ -48,16 +48,18 @@
 
         <!-- Pagination -->
         <?php
-            if ($i > 3) {
+            if ($count > 6) {
               $disable = $page != 0 ? 'disabled' : '';
+              $pagel = $page-1;
               $page++;
+
               echo '
               <ul class="pagination justify-content-center mb-4">
                 <li class="page-item">
                   <a class="page-link" href="' . base_url('forum/index/') .  $page . '">&larr; Older</a>
                 </li>
                 <li class="page-item '.$disable.'">
-                  <a class="page-link" href="#">Newer &rarr;</a>
+                  <a class="page-link" href="'. base_url('forum/index/') .  $pagel . '">Newer &rarr;</a>
                 </li>
               </ul>
               ';
