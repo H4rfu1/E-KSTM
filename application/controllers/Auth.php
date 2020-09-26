@@ -11,7 +11,9 @@ class Auth extends CI_Controller {
     if($this->session->userdata('email')){
       redirect('user');
     }
-    $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+    $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email', [
+      'required' => "Email harus diisi",
+      'valid_email' => "Email tidak dikenal"]);
     $this->form_validation->set_rules('password', 'Password', 'trim|required', [
       'required' => "Password harus diisi"]);
     if($this->form_validation->run() == false){
@@ -69,8 +71,10 @@ class Auth extends CI_Controller {
     if($this->session->userdata('email')){
       redirect('user');
     }
-    $this->form_validation->set_rules('fullname','Name', 'required|trim');
+    $this->form_validation->set_rules('fullname','Name', 'required|trim', [
+      'required' => "Nama harus diisi"]);
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
+      'required' => "Email harus diisi",
       'is_unique' => 'Email sudah terdaftar'
     ]);
     $this->form_validation->set_rules('password1','Password','trim|min_length[3]|matches[password2]', [

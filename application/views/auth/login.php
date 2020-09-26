@@ -14,7 +14,7 @@
               <div class="col-lg">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Login Page</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Laman Login</h1>
                   </div>
 
                   <?= $this->session->flashdata('message'); ?>
@@ -33,10 +33,10 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                    <a class="small" href="forgot-password.html">Lupa Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="<?php echo base_url('auth/registration'); ?>">Create an Account!</a>
+                    <a class="small" href="<?php echo base_url('auth/registration'); ?>">Buat akun baru!</a>
                   </div>
                 </div>
               </div>
