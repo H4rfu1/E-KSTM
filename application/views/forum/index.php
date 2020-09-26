@@ -18,7 +18,7 @@
           <small>diskusi E-KSTM</small>
         </h1>
         <br>
-        <?php if ($cari != null and $cari != ''): ?>
+        <?php if ($cari != ''): ?>
           <p>Hasil pencarian untuk keyword <?= $cari ?></p>
         <?php endif; ?>
 
