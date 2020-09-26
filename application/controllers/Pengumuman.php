@@ -11,6 +11,10 @@ class Pengumuman extends CI_Controller {
   }
 
   public function index(){
+    $breadcrumb         = array(
+            "Pengumuman" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Pengumuman';
     $data['role_id'] = $this->session->userdata('role_id');
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -58,6 +62,11 @@ class Pengumuman extends CI_Controller {
   }
 
   public function edit($id = 0){
+    $breadcrumb         = array(
+            "Pengumuman" => "pengumuman",
+            "Edit" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Pengumuman';
     $data['pemberitahuan'] = $this->db->get_where('pemberitahuan', ['id_pemberitahuan' => $id])->row_array();
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();

@@ -86,7 +86,7 @@ class Forum extends CI_Controller {
   public function diskusi($id = 0){
     $breadcrumb         = array(
             "Forum" => "forum",
-            " Diskusi" => ""
+            "Diskusi" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();

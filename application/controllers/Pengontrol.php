@@ -11,6 +11,10 @@ class Pengontrol extends CI_Controller {
   }
 
   public function index(){
+    $breadcrumb         = array(
+            "Laporan Pengontrol" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Kelola Laporan';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
@@ -102,6 +106,11 @@ class Pengontrol extends CI_Controller {
   }
 
   public function edit($id = 0){
+    $breadcrumb         = array(
+            "Laporan Pengontrol" => "pengontrol",
+            "Edit" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Profile';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['laporan'] = $this->db->get_where('laporan_pengontrol', ['id_laporan_pengontrol' => $id])->row_array();

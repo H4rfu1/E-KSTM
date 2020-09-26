@@ -9,6 +9,10 @@ class User extends CI_Controller {
   }
 
   public function index(){
+    $breadcrumb         = array(
+            "Kelola Akun" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'My Profile';
     $this->load->model('Akun_model', 'akun');
     $data['user'] = $this->akun->getAkunId($this->session->userdata('id'));
@@ -19,6 +23,11 @@ class User extends CI_Controller {
       $this->load->view('templates/dash_footer');
   }
   public function edit(){
+    $breadcrumb         = array(
+            "Kelola Akun" => "user",
+            "Edit" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Profile';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 

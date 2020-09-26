@@ -11,6 +11,10 @@ class Rekap extends CI_Controller {
   }
 
   public function index(){
+    $breadcrumb         = array(
+            "Rekap Laporan KSTM" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Laporan_model', 'laporan');
     $data['title'] = 'Rekap';
@@ -26,6 +30,11 @@ class Rekap extends CI_Controller {
   }
 
   public function kstm(){
+    $breadcrumb         = array(
+            "Rekap Laporan KSTM" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
+
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Laporan_model', 'laporan');
     $data['title'] = 'Rekap Laporan KSTM';
@@ -40,6 +49,10 @@ class Rekap extends CI_Controller {
 
   }
   public function laporan(){
+    $breadcrumb         = array(
+            "Rekap Laporan Pengontrol Lapangan" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Laporan_model', 'laporan');
     $data['title'] = 'Rekap Laporan Pengontrol Lapangan';

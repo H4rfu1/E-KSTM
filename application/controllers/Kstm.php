@@ -11,6 +11,10 @@ class Kstm extends CI_Controller {
   }
 
   public function index(){
+    $breadcrumb         = array(
+            "Laporan KSTM" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Kelola Laporan';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['role'] = $this->session->userdata('role_id');
@@ -66,6 +70,11 @@ class Kstm extends CI_Controller {
   }
 
   public function edit($id = 0){
+    $breadcrumb         = array(
+            "Laporan KSTM" => "kstm",
+            "Edit" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Profile';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['laporan'] = $this->db->get_where('laporan_kstm', ['id_laporan_kstm' => $id])->row_array();

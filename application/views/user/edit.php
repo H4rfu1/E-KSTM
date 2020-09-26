@@ -1,5 +1,19 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
+  <div>
+     <ul class="breadcrumb">
+        <?php
+          foreach ($breadcrumb as $key=>$value) {
+          if($value!=''){
+           ?>
+            <li><a href="<?=base_url($value); ?>"><?=$key; ?></a> <span class="divider">></span></li>
+        <?php }else{?>
+            <li class="active"><?=$key; ?></li>
+        <?php }
+           }
+           ?>
+     </ul>
+  </div>
 
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
