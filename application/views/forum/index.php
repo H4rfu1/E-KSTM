@@ -36,7 +36,7 @@
           <img class="card-img-top" src="<?= base_url('assets/img/forum/') . $f['foto']; ?>" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-title" style="color: black;"><?= $f['topik_bahasan'] ?></h2>
-            <p class="card-text"><?= substr($f['keterangan_bahasan'], 0, 25) ?>...</p>
+            <p class="card-text"><?= substr($f['keterangan_bahasan'], 0, 200) ?>...</p>
             <a href="<?= base_url('forum/diskusi/');echo $f['id_forum']; ?>" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">

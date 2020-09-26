@@ -43,18 +43,21 @@ class Forum extends CI_Controller {
       } else {
         $new_img = 'default.png';
         // cek jika ada gambar terupload
-        if (!empty($_FILES['image']['name'])) {
-          $upload_img = $_FILES['image']['name'];
-          if($upload_img){
-            $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size']     = '1024';
-            $config['upload_path'] = './assets/img/forum';
+        $upload_img = $_FILES['image']['name'];
 
-            $this->load->library('upload', $config);
+        if($upload_img){
+          $config['allowed_types'] = 'gif|jpg|png|jpeg';
+          $config['max_size']     = '1024';
+          $config['upload_path'] = './assets/img/forum';
 
-            if($this->upload->do_upload('image')){
-              $new_img = $this->upload->data('file_name');
-            }
+          $this->load->library('upload', $config);
+
+          if($this->upload->do_upload('image')){
+            $new_img = $this->upload->data('file_name');
+          }else{
+            $pesan = '<div class="alert alert-danger" role="alert">'.$this->upload->display_errors().'</div>';
+            $this->session-> set_flashdata('message', $pesan);
+            redirect('forum'); die;
           }
         }
         $data = [
