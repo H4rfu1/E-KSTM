@@ -23,13 +23,16 @@ class Forum extends CI_Controller {
     $this->load->model('Forum_model', 'forum');
     $data['cari'] = '';
     if($this->input->post('search')!= null){
-      $this->form_validation->set_rules('cari','Cari', 'required');
+      $this->form_validation->set_rules('cari','Cari', 'required',[
+        'required' => "Keyword harus diisi"]);
       $data['forum'] = $this->forum->getSearchForum(htmlspecialchars($this->input->post('cari'), ENT_QUOTES, 'UTF-8'));
       $data['cari'] = $this->input->post('cari');
     }else {
       $data['forum'] = $this->forum->getAllForum();
-      $this->form_validation->set_rules('topik_bahasan','Judul', 'required');
-      $this->form_validation->set_rules('keterangan_bahasan','Isi bahasan', 'required');
+      $this->form_validation->set_rules('topik_bahasan','Judul', 'required'[
+        'required' => "Judul harus diisi"]);
+      $this->form_validation->set_rules('keterangan_bahasan','Isi bahasan', 'required'[
+        'required' => "Keterangan Bahasan harus diisi"]);
     }
 
     if($this->form_validation->run() == false){
@@ -74,7 +77,7 @@ class Forum extends CI_Controller {
         ];
         $this->db->insert('forum', $data);
         if ($this->db->affected_rows() > 0) {
-          $pesan = '<div class="alert alert-success" role="alert"> Forum has been add </div>';
+          $pesan = '<div class="alert alert-success" role="alert"> Forum diskusi berhasil ditambah. </div>';
           $this->session-> set_flashdata('message', $pesan);
         }
         redirect('forum');
@@ -97,7 +100,8 @@ class Forum extends CI_Controller {
     $data['komen'] = $this->forum->getKomen($id);
 
 
-    $this->form_validation->set_rules('isi_tanggapan','Isi tanggapan', 'required');
+    $this->form_validation->set_rules('isi_tanggapan','Isi tanggapan', 'required', 'required'[
+      'required' => "Isi tanggapan harus diisi"]);
 
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
@@ -114,7 +118,7 @@ class Forum extends CI_Controller {
       ];
       $this->db->insert('tanggapan_forum', $data);
       if ($this->db->affected_rows() > 0) {
-        $pesan = '<div class="alert alert-success" role="alert"> Komen has been add </div>';
+        $pesan = '<div class="alert alert-success" role="alert"> Komen berhasil ditambah </div>';
         $this->session-> set_flashdata('message', $pesan);
       }
       redirect('forum/diskusi/'.$id);

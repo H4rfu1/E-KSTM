@@ -10,11 +10,11 @@
               </div>
               <form class="user" method="post" action="<?php echo base_url('auth/registration/'); ?>">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fullname" name="fullname" placeholder="Full Name" value="<?= set_value('fullname'); ?>">
+                  <input type="text" class="form-control form-control-user" id="fullname" name="fullname" placeholder="Nama lengkap" value="<?= set_value('fullname'); ?>">
                   <?= form_error('fullname','<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address" value="<?= set_value('email'); ?>">
+                  <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email" value="<?= set_value('email'); ?>">
                   <?= form_error('email','<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group row">
@@ -23,12 +23,12 @@
                     <?= form_error('password1','<small class="text-danger pl-3">', '</small>'); ?>
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="Password2" name="password2" placeholder="Repeat Password">
+                    <input type="password" class="form-control form-control-user" id="Password2" name="password2" placeholder="Ulangi Password">
 
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block">
-                  Daftar akun
+                  Daftar
                 </button>
 
               </form>

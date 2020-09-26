@@ -33,14 +33,14 @@
 
         <!-- Author -->
         <p class="lead" style="color: black;">
-          by
+          Oleh
           <a><?= $forum['name'] ?></a>
         </p>
 
         <hr>
 
         <!-- Date/Time -->
-        <p>Posted on <?= date('d F Y, h:i:s A', $forum['tanggal_dibuat']); ?></p>
+        <p>Di muat pada <?= date('d F Y, h:i:s A', $forum['tanggal_dibuat']); ?></p>
 
         <hr>
 
@@ -56,13 +56,13 @@
 
         <!-- Comments Form -->
         <div class="card my-4">
-          <h5 class="card-header">Leave a Comment:</h5>
+          <h5 class="card-header">Tinggalkan Komentar:</h5>
           <div class="card-body">
             <form action="<?= base_url('forum/diskusi/');echo $forum['id_forum']; ?>" method="post">
               <div class="form-group">
                 <textarea class="form-control" rows="3" name="isi_tanggapan"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
             </form>
           </div>
         </div>
@@ -177,40 +177,3 @@
 
 </div>
 <!-- End of Main Content -->
-
-<!-- Modal -->
-
-<div class="modal fade" id="newSubmenu" tabindex="-1" role="dialog" aria-labelledby="newSubmenuLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="newSubmenuLabel">Add New Diskusi</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form class="" action="<?= base_url('forum') ?>" method="post">
-      <div class="modal-body">
-        <div class="form-group">
-          <input type="text" class="form-control" id="topik_bahasan" name="topik_bahasan" placeholder="Judul">
-        </div>
-        <div class="input-group form-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Isi pembahasan</span>
-          </div>
-          <textarea class="form-control" aria-label="With textarea" name="keterangan_bahasan"></textarea>
-        </div>
-        <div class="form-group custom-file">
-          <input type="file" class="custom-file-input" id="foto" name="foto" accept="image/*">
-          <label class="custom-file-label" for="foto">Choose image</label>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
