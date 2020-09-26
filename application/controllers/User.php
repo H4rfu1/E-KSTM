@@ -32,7 +32,10 @@ class User extends CI_Controller {
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 
-    $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
+    $this->form_validation->set_rules('name', 'Full Name', 'required|trim', 'required'[
+      'required' => "Nama lengkap harus diisi"]);
+      $this->form_validation->set_rules('email', 'Email', 'required', 'required'[
+        'required' => "Email harus diisi"]);
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);

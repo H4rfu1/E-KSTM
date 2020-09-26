@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="name" class="col-sm-2 col-form-label">Full Name</label>
+        <label for="name" class="col-sm-2 col-form-label">Nama lengkap</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="name" name="name" value="<?= $user['name'] ?>">
           <?= form_error('name','<small class="text-danger pl-3">', '</small>'); ?>
@@ -37,7 +37,7 @@
       </div>
       <div class="form-group row">
         <div class="col-sm-2">
-          Picture
+          Gambar profil
         </div>
         <div class="col-sm-10">
           <div class="row">
@@ -47,7 +47,7 @@
             <div class="col-sm-9">
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
-                <label class="custom-file-label" for="image">Choose file</label>
+                <label class="custom-file-label" for="image">Pilih Gambar</label>
               </div>
               <?= $this->session->flashdata('message') ?>
             </div>
@@ -57,7 +57,7 @@
 
       <div class="form-group row justify-content-end">
         <div class="col-sm-10">
-          <button type="submit" name="button" class="float-sm-right btn btn-primary">Edit</button>
+          <button type="submit" name="button" class="float-sm-right btn btn-primary">Ubah</button>
         </div>
       </div>
       </form>

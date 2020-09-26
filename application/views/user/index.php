@@ -17,7 +17,7 @@
           </div>
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">My Profil</h1>
+          <h1 class="h3 mb-4 text-gray-800">Profil Saya</h1>
 
           <div class="row">
             <div class="col-lg-8">
@@ -34,7 +34,7 @@
                 <h5 class="card-title"><?= $user['name']; ?></h5>
                 <p class="card-text"><?= $user['role']; ?></p>
                 <p class="card-text"><?= $user['email']; ?></p>
-                <p class="card-text"><small class="text-muted">member since <?= date('d F Y', $user['date_create']); ?></small></p>
+                <p class="card-text"><small class="text-muted">Terdaftar sejak <?= date('d F Y', $user['date_create']); ?></small></p>
                 </div>
               </div>
             </div>
