@@ -17,7 +17,7 @@ class Forum extends CI_Controller {
 
     $this->load->model('Forum_model', 'forum');
 
-    if(isset($this->input->post('cari'))){
+    if($this->input->post('cari')!= null){
       $this->form_validation->set_rules('cari','Judul', 'required');
       $data['forum'] = $this->forum->getSearchForum(htmlspecialchars($this->input->post('cari')));
     }else {
@@ -33,7 +33,7 @@ class Forum extends CI_Controller {
       $this->load->view('forum/index', $data);
       $this->load->view('templates/dash_footer');
     }else {
-      if (isset($this->input->post('cari'))) {
+      if ($this->input->post('cari')!= null) {
         $this->load->view('templates/dash_header', $data);
         $this->load->view('templates/dash_sidebar', $data);
         $this->load->view('templates/dash_topbar', $data);
