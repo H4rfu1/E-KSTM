@@ -24,7 +24,7 @@
 
         <?php
           $count = count($forum);
-          $perPage = 5;
+          $perPage = 4;
           $numberOfPages = ceil($count / $perPage);
           $offset = $page * $perPage;
           $sliceForum = array_slice($forum, $offset, $perPage);
@@ -47,24 +47,18 @@
         <?php $i++; endforeach; ?>
 
         <!-- Pagination -->
-        <?php
-            if ($count > 6) {
-              $disable = $page != 0 ? 'disabled' : '';
-              $pagel = $page-1;
-              $page++;
+        <?php if (  $count > $perPage+1): ?>
+          <ul class="pagination justify-content-center mb-4">
+            <li class="page-item" <?= $page+1 > $numberOfPages ?'disabled':''; ?>>
+              <a class="page-link" href="<?= base_url('forum/index/') .  $page ?>">&larr; Older</a>
+            </li>
+            <li class="page-item" <?= $page-1 < 0 ?'disabled':''; ?>>
+              <a class="page-link" href="'. base_url('forum/index/') .  $pagel . '">Newer &rarr;</a>
+            </li>
+          </ul>
+        <?php endif; ?>
 
-              echo '
-              <ul class="pagination justify-content-center mb-4">
-                <li class="page-item">
-                  <a class="page-link" href="' . base_url('forum/index/') .  $page . '">&larr; Older</a>
-                </li>
-                <li class="page-item '.$disable.'">
-                  <a class="page-link" href="'. base_url('forum/index/') .  $pagel . '">Newer &rarr;</a>
-                </li>
-              </ul>
-              ';
-            }
-         ?>
+
 
 
       </div>
