@@ -30,7 +30,7 @@
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="<?= base_url('assets/img/forum/') . $forum['foto']; ?>" alt="">
+        <img class="img-fluid rounded" src="<?= base_url('assets/img/forum/') . $forum['image']; ?>" alt="">
 
         <hr>
 

@@ -17,7 +17,7 @@ class Forum_model extends CI_Model {
       return $this->db->query($query)->row_array();
   }
   public function getKomen($id){
-     $query = "SELECT `tanggapan_forum`.*, `user`.`name`,`user`.`foto`
+     $query = "SELECT `tanggapan_forum`.*, `user`.`name`,`user`.`image`
               FROM `tanggapan_forum` JOIN `user`
               ON `tanggapan_forum`.`id_penanggap` = `user`.`id`
               WHERE `tanggapan_forum`.`id_forum` = $id
