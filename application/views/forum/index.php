@@ -79,7 +79,7 @@
               <div class="input-group">
                 <input type="text" class="form-control" name="cari" placeholder="Cari...">
                 <span class="input-group-append">
-                  <button class="btn btn-secondary" type="submit">Cari!</button>
+                  <button class="btn btn-secondary" type="submit" name="search">Cari!</button>
                 </span>
               </div>
             </div>

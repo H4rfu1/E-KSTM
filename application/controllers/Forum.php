@@ -17,7 +17,7 @@ class Forum extends CI_Controller {
 
     $this->load->model('Forum_model', 'forum');
     $data['cari'] = '';
-    if($this->input->post('cari')!= null){
+    if($this->input->post('search')!= null){
       $this->form_validation->set_rules('cari','Cari', 'required');
       $data['forum'] = $this->forum->getSearchForum(htmlspecialchars($this->input->post('cari')));
       $data['cari'] = $this->input->post('cari');
@@ -34,7 +34,7 @@ class Forum extends CI_Controller {
       $this->load->view('forum/index', $data);
       $this->load->view('templates/dash_footer');
     }else {
-      if ($this->input->post('cari')!= null) {
+      if ($this->input->post('search')!= null) {
         $this->load->view('templates/dash_header', $data);
         $this->load->view('templates/dash_sidebar', $data);
         $this->load->view('templates/dash_topbar', $data);
