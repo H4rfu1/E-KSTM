@@ -2,67 +2,98 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12">
-
       <?php if(validation_errors()) : ?>
       <div class="alert alert-danger" role="alert">
         <?= validation_errors(); ?>
       </div>
       <?php endif; ?>
-      <?= form_error('forum', '<div class="alert alert-danger" role="alert">','</div>'); ?>
+      <?= form_error('diskusi', '<div class="alert alert-danger" role="alert">','</div>'); ?>
       <?= $this->session->flashdata('message'); ?>
-      <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Diskusi</a>
     </div>
+    <!-- Post Content Column -->
+      <div class="col-lg-8">
 
-    <div class="col-md-8">
+        <!-- Title -->
+        <h1 class="mt-4"><?= $forum['topik_bahasan'] ?></h1>
 
-        <h1 class="my-4">Forum
-          <small>diskusi E-KSTM</small>
-        </h1>
-        <?php
-          $count = count($forum);
-          $perPage = 5;
-          $numberOfPages = ceil($count / $perPage);
-          $offset = $page * $perPage;
-          $sliceForum = array_slice($forum, $offset, $perPage);
-          $i = 1;
-         foreach($sliceForum as $f) :
-        ?>
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="<?= base_url('assets/img/forum/') . $f['foto']; ?>" alt="Card image cap">
+        <!-- Author -->
+        <p class="lead">
+          by
+          <a><?= $forum['name'] ?></a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Posted on <?= date('d F Y, h:i:s A', $forum['tanggal_dibuat']); ?></p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="<?= base_url('assets/img/forum/') . $forum['foto']; ?>" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+        <p><?= $forum['keterangan_bahasan'] ?></p>
+
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
           <div class="card-body">
-            <h2 class="card-title"><?= $f['topik_bahasan'] ?></h2>
-            <p class="card-text"><?= substr($f['keterangan_bahasan'], 0, 25) ?>...</p>
-            <a href="<?= base_url('forum/diskusi/');echo $f['id_forum']; ?>" class="btn btn-primary">Read More &rarr;</a>
+            <form action="<?= base_url('forum/diskusi/');echo $forum['id_forum']; ?>" method="post">
+              <div class="form-group">
+                <textarea class="form-control" rows="3" name="isi_tanggapan"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
           </div>
-          <div class="card-footer text-muted">
-            Posted on <?= date('d F Y, h:i:s A', $f['tanggal_dibuat']); ?> by
-            <p ><?= $f['name'] ?></p>
+        </div>
+
+        <!-- Single Comment -->
+        <?php
+          $i = 1;
+         foreach($komen as $k) :
+        ?>
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['foto']; ?>" alt="">
+          <div class="media-body">
+            <h5 class="mt-0"><?= $k['name'] ?></h5>
+            <p><?= $k['isi_tanggapan'] ?></p>
           </div>
         </div>
         <?php $i++; endforeach; ?>
 
-        <!-- Pagination -->
-        <?php
-            if ($i > 3) {
-              $disable = $page != 0 ? 'disabled' : '';
-              $page++;
-              echo '
-              <ul class="pagination justify-content-center mb-4">
-                <li class="page-item">
-                  <a class="page-link" href="' . base_url('forum/index/') .  $page . '">&larr; Older</a>
-                </li>
-                <li class="page-item '.$disable.'">
-                  <a class="page-link" href="#">Newer &rarr;</a>
-                </li>
-              </ul>
-              ';
-            }
-         ?>
 
+        <!-- Comment with nested comments -->
+        <!-- <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+          </div>
+        </div> -->
 
       </div>
-      <!-- end col 8 -->
 
       <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
@@ -81,7 +112,7 @@
         </div>
 
         <!-- Categories Widget -->
-        <!-- <div class="card my-4">
+        <div class="card my-4">
           <h5 class="card-header">Categories</h5>
           <div class="card-body">
             <div class="row">
@@ -113,15 +144,16 @@
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
 
         <!-- Side Widget -->
-        <!-- <div class="card my-4">
+        <div class="card my-4">
           <h5 class="card-header">Side Widget</h5>
           <div class="card-body">
             You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
           </div>
-        </div> -->
+        </div>
+
       </div>
   </div>
 </div>

@@ -60,4 +60,38 @@ class Forum extends CI_Controller {
     }
 
   }
+
+  public function diskusi($id = 0){
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $data['title'] = 'Forum';
+
+    $this->load->model('Forum_model', 'forum');
+    $data['forum'] = $this->forum->getCertainForum($id);
+    $data['komen'] = $this->forum->getKomen($id);
+
+
+    $this->form_validation->set_rules('isi_tanggapan','Isi tanggapan', 'required');
+
+    if($this->form_validation->run() == false){
+      $this->load->view('templates/dash_header', $data);
+      $this->load->view('templates/dash_sidebar', $data);
+      $this->load->view('templates/dash_topbar', $data);
+      $this->load->view('forum/diskusi', $data);
+      $this->load->view('templates/dash_footer');
+    }else {
+      $data = [
+        'id_penanggap' => $this->session->userdata('id'),
+        'id_forum' => $id,
+        'tanggal_tanggapan' => time(),
+        'isi_tanggapan' => htmlspecialchars( $this->input->post('isi_tanggapan'))
+      ];
+      $this->db->insert('tanggapan_forum', $data);
+      if ($this->db->affected_rows() > 0) {
+        $pesan = '<div class="alert alert-success" role="alert"> Komen has been add </div>';
+        $this->session-> set_flashdata('message', $pesan);
+      }
+      redirect('forum/diskusi/$id');
+    }
+
+  }
 }
