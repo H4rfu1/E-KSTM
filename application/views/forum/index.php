@@ -43,7 +43,7 @@
             <p style="color: black;">by <?= $f['name'] ?></p>
           </div>
         </div>
-        <?php $i++; endforeach; ?>
+        <?php endforeach; ?>
 
         <!-- Pagination -->
         <?php $paget = $page+1; $pagel =  $page-1;?>
