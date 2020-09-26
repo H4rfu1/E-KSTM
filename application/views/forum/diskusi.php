@@ -11,7 +11,7 @@
       <?= $this->session->flashdata('message'); ?>
     </div>
     <!-- Post Content Column -->
-      <div class="col-lg-8">
+      <div class="col-md-12">
 
         <!-- Title -->
         <h1 style="color: black;" class="mt-4"><?= $forum['topik_bahasan'] ?></h1>
@@ -96,10 +96,10 @@
       </div>
 
       <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
+      <!-- <div class="col-md-4"> -->
 
         <!-- Search Widget -->
-        <div class="card my-4">
+        <!-- <div class="card my-4">
           <h5 class="card-header">Search</h5>
           <div class="card-body">
             <div class="input-group">
@@ -109,7 +109,7 @@
               </span>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Categories Widget -->
         <!-- <div class="card my-4">
@@ -154,7 +154,8 @@
           </div>
         </div> -->
 
-      </div>
+      <!-- </div> -->
+
   </div>
 </div>
 <!-- /.container-fluid -->

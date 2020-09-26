@@ -19,7 +19,7 @@
         </h1>
         <br>
         <?php if ($cari != ''): ?>
-          <p>Hasil pencarian untuk keyword <?= $cari ?></p>
+          <p>Hasil pencarian untuk keyword "<?= $cari ?>"</p>
         <?php endif; ?>
 
         <?php
