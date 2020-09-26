@@ -19,7 +19,7 @@ class Forum extends CI_Controller {
     $data['cari'] = '';
     if($this->input->post('search')!= null){
       $this->form_validation->set_rules('cari','Cari', 'required');
-      $data['forum'] = $this->forum->getSearchForum(htmlentities($this->input->post('cari')));
+      $data['forum'] = $this->forum->getSearchForum(htmlspecialchars($this->input->post('cari'), ENT_QUOTES, 'UTF-8'));
       $data['cari'] = $this->input->post('cari');
     }else {
       $data['forum'] = $this->forum->getAllForum();
