@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-lg-8">
-      <form class="" action="<?= base_url('pengontrol/edit/'); echo $laporan['id_laporan_pengontrol']  ?>" method="post">
+      <?= form_open_multipart('pengontrol/edit/'.$laporan['id_laporan_pengontrol']); ?>
         <div class="form-group row">
           <label for="deskripsi_laporan" class="col-sm-3 col-form-label">Deskripsi Laporan</label>
           <div class="col-sm-9">

@@ -91,7 +91,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form class="" action="<?= base_url('pengontrol') ?>" method="post">
+      <?= form_open_multipart('pengontrol'); ?>
       <div class="modal-body">
         <div class="input-group form-group">
           <div class="input-group-prepend">
