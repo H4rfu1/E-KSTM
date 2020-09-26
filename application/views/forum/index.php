@@ -49,11 +49,11 @@
         <!-- Pagination -->
         <?php if (  $count > $perPage+1): ?>
           <ul class="pagination justify-content-center mb-4">
-            <li class="page-item" <?= $page+1 > $numberOfPages ?'disabled':''; ?>>
-              <a class="page-link" href="<?= base_url('forum/index/') .  $page ?>">&larr; Older</a>
+            <li class="page-item <?= $page+1 > $numberOfPages ?'disabled':''; ?>" >
+              <a class="page-link" href="<?= base_url('forum/index/') .  $page+1 ?>">&larr; Older</a>
             </li>
-            <li class="page-item" <?= $page-1 < 0 ?'disabled':''; ?>>
-              <a class="page-link" href="'. base_url('forum/index/') .  $pagel . '">Newer &rarr;</a>
+            <li class="page-item <?= $page-1 < 0 ?'disabled':''; ?>" >
+              <a class="page-link" href="<?= base_url('forum/index/') .  $page-1 ?>">Newer &rarr;</a>
             </li>
           </ul>
         <?php endif; ?>
