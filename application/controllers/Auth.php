@@ -74,6 +74,7 @@ class Auth extends CI_Controller {
     $this->form_validation->set_rules('fullname','Name', 'required|trim', [
       'required' => "Nama harus diisi"]);
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]',[
+      'required' => "Passsword lama harus diisi",
       'required' => "Email harus diisi",
       'is_unique' => 'Email sudah terdaftar'
     ]);

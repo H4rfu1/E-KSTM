@@ -92,6 +92,7 @@ class User extends CI_Controller {
     $this->form_validation->set_rules('current_password', 'Current Password', 'required|trim', [
       'required' => "Passsword lama harus diisi"]);
     $this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]', [
+      'required' => "Passsword lama harus diisi",
       'matches' => "Password tidak sama",
       'min_length' => 'Password terlalu pendek'
     ]);
