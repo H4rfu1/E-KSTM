@@ -12,8 +12,7 @@ class Forum extends CI_Controller {
 
   public function index($page = 0){
     $breadcrumb         = array(
-            "Forum" => "forum",
-            "Diskusi" => ""
+            "Forum" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
 
@@ -85,6 +84,11 @@ class Forum extends CI_Controller {
   }
 
   public function diskusi($id = 0){
+    $breadcrumb         = array(
+            "Forum" => "forum",
+            " Diskusi" => ""
+        );
+    $data['breadcrumb'] = $breadcrumb;
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['title'] = 'Forum';
 
