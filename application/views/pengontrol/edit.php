@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Edit Laporan</h1>
+<h1 class="h3 mb-4 text-gray-800">Ubah Laporan</h1>
 
 <div class="row">
   <div class="col-lg-8">
@@ -87,16 +87,16 @@
         </div>
         <div class="form-group custom-file">
           <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
-          <label class="custom-file-label" for="image">Choose image</label>
+          <label class="custom-file-label" for="image">Pilih image</label>
         </div>
         <div class="form-group custom-file">
-          <input type="file" class="custom-file-input" id="image" name="video" accept="video/*">
-          <label class="custom-file-label" for="image">Choose video</label>
+          <input type="file" class="custom-file-input" id="video" name="video" accept="video/*">
+          <label class="custom-file-label" for="image">Pilih video</label>
         </div>
         <br>
         <div class="form-group row justify-content-end">
           <div class="col-sm-9">
-            <button type="submit" name="button" class="float-sm-right btn btn-primary">Edit</button>
+            <button type="submit" name="button" class="float-sm-right btn btn-primary">Ubah</button>
           </div>
         </div>
       </form>

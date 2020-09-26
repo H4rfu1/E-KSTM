@@ -27,7 +27,7 @@
     <?php endif; ?>
     <?= form_error('laporan', '<div class="alert alert-danger" role="alert">','</div>'); ?>
     <?= $this->session->flashdata('message'); ?>
-    <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Laporan</a>
+    <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Tambah Laporan</a>
 
     <table class="table table-hover">
       <thead>
@@ -49,7 +49,7 @@
           <th scope="col">Harga Ternak Perekor</th>
           <th scope="col">foto</th>
           <th scope="col">video</th>
-          <th scope="col">Action</th>
+          <th scope="col">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -76,8 +76,8 @@
             <td><?= $r['foto'] ?></td>
             <td><?= $r['video'] ?></td>
           <td>
-            <a href="<?= base_url('pengontrol/edit/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-primary">Edit</a>
-            <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("pengontrol/delete_laporan_pengontrol/"); echo $r['id_laporan_pengontrol']; ?>'); ">Delete</a>
+            <a href="<?= base_url('pengontrol/edit/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-primary">Ubah</a>
+            <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("pengontrol/delete_laporan_pengontrol/"); echo $r['id_laporan_pengontrol']; ?>'); ">Hapus</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
@@ -100,7 +100,7 @@
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newSubmenuLabel">Add New Laporan</h5>
+        <h5 class="modal-title" id="newSubmenuLabel">Tambah Laporan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -160,16 +160,16 @@
         </div>
         <div class="form-group custom-file">
           <input type="file" class="custom-file-input" id="image" name="image" accept="image/*">
-          <label class="custom-file-label" for="image">Choose image</label>
+          <label class="custom-file-label" for="image">Pilih image</label>
         </div>
         <div class="form-group custom-file">
           <input type="file" class="custom-file-input" id="image" name="video" accept="video/*">
-          <label class="custom-file-label" for="image">Choose video</label>
+          <label class="custom-file-label" for="image">Pilih video</label>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
       </div>
       </form>
     </div>

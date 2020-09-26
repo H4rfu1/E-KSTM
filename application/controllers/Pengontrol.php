@@ -112,7 +112,7 @@ class Pengontrol extends CI_Controller {
         'video' =>$new_vid
       ];
       $this->db->insert('laporan_pengontrol', $data);
-      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan added </div>');
+      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan berhasil ditambah. </div>');
       redirect('pengontrol');
     }
 
@@ -121,7 +121,7 @@ class Pengontrol extends CI_Controller {
   public function edit($id = 0){
     $breadcrumb         = array(
             "Laporan Pengontrol" => "pengontrol",
-            "Edit" => ""
+            "Ubah" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Profile';
@@ -164,34 +164,40 @@ class Pengontrol extends CI_Controller {
       $new_img = '';
       $new_vid = '';
       // cek jika ada gambar terupload
-      if ($_FILES['image']['size'] == 0) {
-        $upload_img = $_FILES['image']['name'];
-        if($upload_img){
-          $config['allowed_types'] = 'gif|jpg|png|jpeg';
-          $config['max_size']     = '1024';
-          $config['upload_path'] = './assets/img/profile';
+      $upload_img = $_FILES['image']['name'];
 
-          $this->load->library('upload', $config);
+      if($upload_img){
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']     = '1024';
+        $config['upload_path'] = './assets/img/pengontrol';
 
-          if($this->upload->do_upload('image')){
-            $new_img = $this->upload->data('file_name');
-          }
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('image')){
+          $new_img = $this->upload->data('file_name');
+        }else{
+          $pesan = '<div class="alert alert-danger" role="alert">'.$this->upload->display_errors().'</div>';
+          $this->session-> set_flashdata('message', $pesan);
+          redirect('forum'); die;
         }
       }
 
       // cek jika ada video terupload
-      if ($_FILES['video']['size'] == 0) {
-        $upload_vid = $_FILES['video']['name'];
-        if($upload_vid){
-          $config['allowed_types'] = 'mp4|3gp|avi|flv|webm|wmv';
-          $config['max_size']     = '5120';
-          $config['upload_path'] = './assets/vid/pengontrol';
+      $upload_vid = $_FILES['video']['name'];
 
-          $this->load->library('upload', $config);
+      if($upload_vid){
+        $config['allowed_types'] = 'mp4|3gp|avi|flv|webm|wmv';
+        $config['max_size']     = '10240';
+        $config['upload_path'] = './assets/vid/pengontrol';
 
-          if($this->upload->do_upload('video')){
-            $new_vid = $this->upload->data('file_name');
-          }
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('video')){
+          $new_vid = $this->upload->data('file_name');
+        }else{
+          $pesan = '<div class="alert alert-danger" role="alert">'.$this->upload->display_errors().'</div>';
+          $this->session-> set_flashdata('message', $pesan);
+          redirect('forum'); die;
         }
       }
 
@@ -215,7 +221,7 @@ class Pengontrol extends CI_Controller {
       ];
       $this->db->update('laporan_pengontrol', $data, array('id_laporan_pengontrol' => $id));
       if ($this->db->affected_rows() > 0) {
-        $pesan = '<div class="alert alert-success" role="alert"> Laporan has been updated </div>';
+        $pesan = '<div class="alert alert-success" role="alert"> Laporan berhasil diperbarui.</div>';
         $this->session-> set_flashdata('message', $pesan);
       }
       redirect('pengontrol');
@@ -224,7 +230,7 @@ class Pengontrol extends CI_Controller {
 
   public function delete_laporan_pengontrol($id){
     $this->db->delete('laporan_pengontrol', ['id_laporan_pengontrol' => $id]);
-    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan has been delete </div>');
+    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan berhasil dihapus. </div>');
     redirect('pengontrol');
   }
 }

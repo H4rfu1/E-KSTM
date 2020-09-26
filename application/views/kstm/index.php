@@ -67,7 +67,7 @@
           <th scope="col">Harga Ternak Perekor</th>
           <?php if ($role == 7) {
             echo '
-              <th scope="col">Action</th>
+              <th scope="col">Aksi</th>
             ';
           } ?>
 
