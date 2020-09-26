@@ -45,7 +45,7 @@
 
 </head>
 
-<body id="page-top p-0" >
+<body id="page-top" style="padding:0;">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
