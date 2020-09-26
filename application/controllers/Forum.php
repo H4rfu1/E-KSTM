@@ -90,7 +90,7 @@ class Forum extends CI_Controller {
         $pesan = '<div class="alert alert-success" role="alert"> Komen has been add </div>';
         $this->session-> set_flashdata('message', $pesan);
       }
-      redirect('forum/diskusi/$id');
+      redirect('forum/diskusi/'.$id);
     }
 
   }
