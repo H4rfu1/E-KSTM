@@ -21,7 +21,9 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-middle mr-2" width="60" alt="logo"></a>
+                <a class="navbar-brand js-scroll-trigger" href="<?= base_url('') ?>">
+                  <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-middle mr-2 image-fluid" style="max-height: 70;" alt="logo">
+                </a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <!-- Topbar Navbar -->
                   <?php if (is_logged_in("home")) {
@@ -73,15 +75,13 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">E-KSTM</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
+                    <img src="<?= base_url('assets/img/');?>logo.png" alt="logo" style="max-height:200;">
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+                <p class="masthead-subheading font-weight-light mb-0">Website pengawasan program KSTM</p>
             </div>
         </header>
         <!-- Portfolio Section-->
