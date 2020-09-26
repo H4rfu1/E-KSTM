@@ -76,7 +76,7 @@
           <img class="d-flex mr-3 rounded-circle" src="<?= base_url('assets/img/profile/') . $k['image']; ?>" alt="foto" width="50" height="50">
           <div class="media-body">
             <h5 style="color: black;" class="mt-0"><?= $k['name'] ?></h5>
-            <p><?= $k['isi_tanggapan'] ?></p>
+            <p style="white-space: pre-line">><?= $k['isi_tanggapan'] ?></p>
           </div>
         </div>
         <?php $i++; endforeach; ?>

@@ -101,7 +101,7 @@ class Forum extends CI_Controller {
 
 
     $this->form_validation->set_rules('isi_tanggapan','Isi tanggapan', 'required', [
-      'required' => "Isi tanggapan harus diisi"]);
+      'required' => "Komentar harus diisi"]);
 
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
