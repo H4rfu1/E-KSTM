@@ -13,7 +13,7 @@ class Auth extends CI_Controller {
     }
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
     $this->form_validation->set_rules('password', 'Password', 'trim|required', [
-      'required' => "Password harus diisi");
+      'required' => "Password harus diisi"]);
     if($this->form_validation->run() == false){
       $data['title'] = 'E-KSTM - User login';
       $this->load->view('templates/auth_header', $data);
