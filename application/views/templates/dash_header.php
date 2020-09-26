@@ -36,7 +36,7 @@
   cursor:pointer;
  }
  textarea{
-	 white-space: pre-line;
+	 white-space: pre-wrap;
  }
  @media only screen and (min-width: 650px) {
   .res {
