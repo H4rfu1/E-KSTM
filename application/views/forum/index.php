@@ -150,7 +150,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form class="" action="<?= base_url('forum') ?>" method="post">
+      <?= form_open_multipart('forum'); ?>
       <div class="modal-body">
         <div class="form-group">
           <input type="text" class="form-control" id="topik_bahasan" name="topik_bahasan" placeholder="Judul">
