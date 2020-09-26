@@ -23,19 +23,32 @@ class Kstm extends CI_Controller {
     $data['laporan_kstm'] = $this->db->get('laporan_kstm')->result_array();
 
 
-    $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required');
-    $this->form_validation->set_rules('jenis_ternak','Jenis_ternak', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_sebelumnya','Jumlah_ternak_sebelumnya', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_sekarang','Jumlah_ternak_sekarang', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_meninggal','Jumlah_ternak_meninggal', 'required');
-    $this->form_validation->set_rules('keterangan_ternak_meninggal','Keterangan_ternak_meninggal', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_sehat','Jumlah_ternak_sehat', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_sakit','Jumlah_ternak_sakit', 'required');
-    $this->form_validation->set_rules('keterangan_kesehatan_ternak','Keterangan_kesehatan_ternak', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_dikonsumsi','Jumlah_ternak_dikonsumsi', 'required');
-    $this->form_validation->set_rules('keterangan_konsumsi','Keterangan_konsumsi', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_dijual','Jumlah_ternak_dijual', 'required');
-    $this->form_validation->set_rules('harga_ternak_perekor','Harga_ternak_perekor', 'required');
+    $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required', 'required'[
+      'required' => "Deskripsi laporan harus diisi"]);
+    $this->form_validation->set_rules('jenis_ternak','Jenis_ternak', 'required', 'required'[
+      'required' => "Jenis ternak harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_sebelumnya','Jumlah_ternak_sebelumnya', 'required', 'required'[
+      'required' => "Jumlah ternak sebelumnya harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_sekarang','Jumlah_ternak_sekarang', 'required', 'required'[
+      'required' => "Jumlah ternak sekarang harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_meninggal','Jumlah_ternak_meninggal', 'required', 'required'[
+      'required' => "Jumlah ternak meninggal harus diisi"]);
+    $this->form_validation->set_rules('keterangan_ternak_meninggal','Keterangan_ternak_meninggal', 'required', 'required'[
+      'required' => "Keterangan ternak meninggal harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_sehat','Jumlah_ternak_sehat', 'required', 'required'[
+      'required' => "Jumlah ternak sehat harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_sakit','Jumlah_ternak_sakit', 'required', 'required'[
+      'required' => "Jumlah ternak sakit harus diisi"]);
+    $this->form_validation->set_rules('keterangan_kesehatan_ternak','Keterangan_kesehatan_ternak', 'required', 'required'[
+      'required' => "Keterangan kesehatan ernak harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_dikonsumsi','Jumlah_ternak_dikonsumsi', 'required', 'required'[
+      'required' => "Jumlah ternak dikonsumsi harus diisi"]);
+    $this->form_validation->set_rules('keterangan_konsumsi','Keterangan_konsumsi', 'required', 'required'[
+      'required' => "Keterangan konsumsi harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_dijual','Jumlah_ternak_dijual', 'required', 'required'[
+      'required' => "Jumlah ternak dijual harus diisi"]);
+    $this->form_validation->set_rules('harga_ternak_perekor','Harga_ternak_perekor', 'required', 'required'[
+      'required' => "Harga ternak perekor harus diisi"]);
 
     if($this->form_validation->run() == false){
       $this->load->view('templates/dash_header', $data);
@@ -63,7 +76,7 @@ class Kstm extends CI_Controller {
 
       ];
       $this->db->insert('laporan_kstm', $data);
-      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan added </div>');
+      $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan berhasil ditambah. </div>');
       redirect('kstm');
     }
 
@@ -72,26 +85,39 @@ class Kstm extends CI_Controller {
   public function edit($id = 0){
     $breadcrumb         = array(
             "Laporan KSTM" => "kstm",
-            "Edit" => ""
+            "Ubah" => ""
         );
     $data['breadcrumb'] = $breadcrumb;
     $data['title'] = 'Edit Profile';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['laporan'] = $this->db->get_where('laporan_kstm', ['id_laporan_kstm' => $id])->row_array();
 
-    $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required');
-    $this->form_validation->set_rules('jenis_ternak','Jenis_ternak', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_sebelumnya','Jumlah_ternak_sebelumnya', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_sekarang','Jumlah_ternak_sekarang', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_meninggal','Jumlah_ternak_meninggal', 'required');
-    $this->form_validation->set_rules('keterangan_ternak_meninggal','Keterangan_ternak_meninggal', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_sehat','Jumlah_ternak_sehat', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_sakit','Jumlah_ternak_sakit', 'required');
-    $this->form_validation->set_rules('keterangan_kesehatan_ternak','Keterangan_kesehatan_ternak', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_dikonsumsi','Jumlah_ternak_dikonsumsi', 'required');
-    $this->form_validation->set_rules('keterangan_konsumsi','Keterangan_konsumsi', 'required');
-    $this->form_validation->set_rules('jumlah_ternak_dijual','Jumlah_ternak_dijual', 'required');
-    $this->form_validation->set_rules('harga_ternak_perekor','Harga_ternak_perekor', 'required');
+    $this->form_validation->set_rules('deskripsi_laporan','Deskripsi_laporan', 'required', 'required'[
+      'required' => "Deskripsi laporan harus diisi"]);
+    $this->form_validation->set_rules('jenis_ternak','Jenis_ternak', 'required', 'required'[
+      'required' => "Jenis ternak harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_sebelumnya','Jumlah_ternak_sebelumnya', 'required', 'required'[
+      'required' => "Jumlah ternak sebelumnya harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_sekarang','Jumlah_ternak_sekarang', 'required', 'required'[
+      'required' => "Jumlah ternak sekarang harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_meninggal','Jumlah_ternak_meninggal', 'required', 'required'[
+      'required' => "Jumlah ternak meninggal harus diisi"]);
+    $this->form_validation->set_rules('keterangan_ternak_meninggal','Keterangan_ternak_meninggal', 'required', 'required'[
+      'required' => "Keterangan ternak meninggal harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_sehat','Jumlah_ternak_sehat', 'required', 'required'[
+      'required' => "Jumlah ternak sehat harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_sakit','Jumlah_ternak_sakit', 'required', 'required'[
+      'required' => "Jumlah ternak sakit harus diisi"]);
+    $this->form_validation->set_rules('keterangan_kesehatan_ternak','Keterangan_kesehatan_ternak', 'required', 'required'[
+      'required' => "Keterangan kesehatan ernak harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_dikonsumsi','Jumlah_ternak_dikonsumsi', 'required', 'required'[
+      'required' => "Jumlah ternak dikonsumsi harus diisi"]);
+    $this->form_validation->set_rules('keterangan_konsumsi','Keterangan_konsumsi', 'required', 'required'[
+      'required' => "Keterangan konsumsi harus diisi"]);
+    $this->form_validation->set_rules('jumlah_ternak_dijual','Jumlah_ternak_dijual', 'required', 'required'[
+      'required' => "Jumlah ternak dijual harus diisi"]);
+    $this->form_validation->set_rules('harga_ternak_perekor','Harga_ternak_perekor', 'required', 'required'[
+      'required' => "Harga ternak perekor harus diisi"]);
     if($this->form_validation->run() == false and $id != 0){
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
@@ -117,7 +143,7 @@ class Kstm extends CI_Controller {
       ];
       $this->db->update('laporan_kstm', $data, array('id_laporan_kstm' => $id));
       if ($this->db->affected_rows() > 0) {
-        $pesan = '<div class="alert alert-success" role="alert"> Laporan has been updated </div>';
+        $pesan = '<div class="alert alert-success" role="alert"> Laporan berhasil diperbarui. </div>';
         $this->session-> set_flashdata('message', $pesan);
       }
       redirect('kstm');
@@ -126,7 +152,7 @@ class Kstm extends CI_Controller {
 
   public function delete_laporan_kstm($id){
     $this->db->delete('laporan_kstm', ['id_laporan_kstm' => $id]);
-    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan has been delete </div>');
+    $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan berhasil dihapus. </div>');
     redirect('kstm');
   }
 }

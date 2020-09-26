@@ -43,7 +43,7 @@
     <?= $this->session->flashdata('message'); ?>
     <?php if ($role == 7) {
       echo '
-        <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Add New Laporan</a>
+        <a href="#" class="btn btn-success mb-3"  data-toggle="modal" data-target="#newSubmenu">Tambah Laporan</a>
       ';
     } ?>
 
@@ -99,8 +99,8 @@
               $del = '"'.base_url("kstm/delete_laporan_kstm/").$id.'"';
               echo "
               <td>
-                <a href='".base_url('kstm/edit/')."$id' class='badge badge-primary'>Edit</a>
-                <a class='badge badge-danger' style='color:white;' onclick='conDelete(".$del. "); '>Delete</a>
+                <a href='".base_url('kstm/edit/')."$id' class='badge badge-primary'>Ubah</a>
+                <a class='badge badge-danger' style='color:white;' onclick='conDelete(".$del. "); '>Hapus</a>
               </td>
               ";
             } ?>
@@ -126,7 +126,7 @@
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newSubmenuLabel">Add New Laporan</h5>
+        <h5 class="modal-title" id="newSubmenuLabel">Tambah Laporan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -186,8 +186,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
       </div>
       </form>
     </div>

@@ -84,7 +84,7 @@ class Akun extends CI_Controller {
       ];
       $this->db->update('user', $data, array('id' => $id));
       if ($this->db->affected_rows() > 0) {
-        $pesan = '<div class="alert alert-success" role="alert"> Akun berhasil diperbaharui. </div>';
+        $pesan = '<div class="alert alert-success" role="alert"> Akun berhasil diperbarui. </div>';
         $this->session-> set_flashdata('message', $pesan);
       }
       redirect('akun');
