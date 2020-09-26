@@ -10,6 +10,7 @@ class Akun_model extends CI_Model {
       return $this->db->query($query)->result_array();
   }
   public function getAkunId($id){
+    $id = htmlspecialchars($id);
      $query = "SELECT `user`.*, `user_role`.`role`
               FROM `user` JOIN `user_role`
               ON `user`.`role_id` = `user_role`.`id`

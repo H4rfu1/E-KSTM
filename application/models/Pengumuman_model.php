@@ -12,6 +12,7 @@ class Pengumuman_model extends CI_Model {
       return $this->db->query($query)->result_array();
   }
   public function getRolePengumuman($role){
+    $role = htmlspecialchars($role);
      $query = "SELECT `pemberitahuan`.*, `user`.`name`
               FROM `pemberitahuan`
               JOIN `user`

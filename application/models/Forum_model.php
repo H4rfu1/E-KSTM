@@ -10,6 +10,7 @@ class Forum_model extends CI_Model {
       return $this->db->query($query)->result_array();
   }
   public function getSearchForum($keyword){
+    $keyword = htmlspecialchars($keyword);
      $query = "SELECT `forum`.*, `user`.`name`
               FROM `forum` JOIN `user`
               ON `forum`.`id_pembuat` = `user`.`id`
@@ -20,6 +21,7 @@ class Forum_model extends CI_Model {
       return $this->db->query($query)->result_array();
   }
   public function getCertainForum($id){
+    $id = htmlspecialchars($id);
      $query = "SELECT `forum`.*, `user`.`name`
               FROM `forum` JOIN `user`
               ON `forum`.`id_pembuat` = `user`.`id`
@@ -27,6 +29,7 @@ class Forum_model extends CI_Model {
       return $this->db->query($query)->row_array();
   }
   public function getKomen($id){
+    $id = htmlspecialchars($id);
      $query = "SELECT `tanggapan_forum`.*, `user`.`name`,`user`.`image`
               FROM `tanggapan_forum` JOIN `user`
               ON `tanggapan_forum`.`id_penanggap` = `user`.`id`
