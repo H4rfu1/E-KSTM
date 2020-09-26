@@ -68,10 +68,11 @@
             <td><?= $r['harga_ternak_perekor'] ?></td>
             <?php if ($role == 7) {
               $id = $r['id_laporan_kstm'];
+              $del = '"'.base_url("kstm/delete_laporan_kstm/").$id.'"';
               echo "
               <td>
                 <a href='".base_url('kstm/edit/')."$id' class='badge badge-primary'>Edit</a>
-                <a class='badge badge-danger' style='color:white;' onclick='conDelete('". base_url("kstm/delete_laporan_kstm/") ."$id'); '>Delete</a>
+                <a class='badge badge-danger' style='color:white;' onclick='conDelete(".$del. "); '>Delete</a>
               </td>
               ";
             } ?>
