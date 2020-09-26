@@ -24,7 +24,7 @@ class Forum extends CI_Controller {
     $data['cari'] = '';
     if($this->input->post('search')!= null){
       $this->form_validation->set_rules('cari','Cari', 'required',[
-        'required' => "Keyword harus diisi"]);
+        'required' => "Kata kunci pencarian harus diisi"]);
       $data['forum'] = $this->forum->getSearchForum(htmlspecialchars($this->input->post('cari'), ENT_QUOTES, 'UTF-8'));
       $data['cari'] = $this->input->post('cari');
     }else {
