@@ -35,11 +35,15 @@
  a:hover {
   cursor:pointer;
  }
+ textarea{
+	 white-space: pre-line;
+ }
  @media only screen and (min-width: 650px) {
   .res {
     margin-top: 0;
 		margin-bottom: 0;
   }
+
 }
 </style>
 
