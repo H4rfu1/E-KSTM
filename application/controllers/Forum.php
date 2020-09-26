@@ -20,6 +20,7 @@ class Forum extends CI_Controller {
     if($this->input->post('cari')!= null){
       $this->form_validation->set_rules('cari','Judul', 'required');
       $data['forum'] = $this->forum->getSearchForum(htmlspecialchars($this->input->post('cari')));
+      $data['cari'] = $this->input->post('cari');
     }else {
       $data['forum'] = $this->forum->getAllForum();
       $this->form_validation->set_rules('topik_bahasan','Judul', 'required');

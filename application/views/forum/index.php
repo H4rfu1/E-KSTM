@@ -17,6 +17,11 @@
         <h1 style="color: black;" class="my-4">Forum
           <small>diskusi E-KSTM</small>
         </h1>
+        <br>
+        <?php if ($cari != null and $cari != ''): ?>
+          <p>Hasil pencarian untuk keyword <?= $cari ?></p>
+        <?php endif; ?>
+
         <?php
           $count = count($forum);
           $perPage = 5;
