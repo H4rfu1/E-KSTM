@@ -159,7 +159,7 @@ class Auth extends CI_Controller {
       if(!$CI->session->userdata('token')){
           redirect('auth/lupapassword');
       }else {
-        $this->form_validation->set_rules('password1','Password','trim|min_length[3]|matches[password2]', [
+        $this->form_validation->set_rules('new_password1','Password','trim|min_length[3]|matches[password2]', [
           'matches' => "Password tidak sama",
           'min_length' => 'Password terlalu pendek'
         ]);
