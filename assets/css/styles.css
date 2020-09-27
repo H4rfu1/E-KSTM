@@ -3183,7 +3183,7 @@ input[type=button].btn-block {
   height: 0;
   margin: 0.5rem 0;
   overflow: hidden;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #eaecf4;
 }
 
 .dropdown-item {
@@ -3192,24 +3192,27 @@ input[type=button].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #3a3b45;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
 }
+
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
+  color: #2e2f37;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #f8f9fc;
 }
+
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #1abc9c;
+  background-color: #4e73df;
 }
+
 .dropdown-item.disabled, .dropdown-item:disabled {
-  color: #6c757d;
+  color: #858796;
   pointer-events: none;
   background-color: transparent;
 }
