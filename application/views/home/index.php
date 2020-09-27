@@ -18,6 +18,7 @@
         <link href="<?= base_url('assets/') ?>css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+      <div id="wrapper">
       <div id="content-wrapper" class="d-flex flex-column">
         <!-- Navigation-->
         <nav class="navbar navbar-expand bg-white text-uppercase fixed-top shadow" id="mainNav">
@@ -221,10 +222,12 @@
                 </div>
             </div>
         </footer>
-        
+
         </div>
         <!-- end content wrapper -->
 
+        </div>
+        <!-- End of Page Wrapper -->
 
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
