@@ -441,8 +441,8 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Contact form JS-->
-        <script src="<?= base_url('assets/') ?>assets/mail/jqBootstrapValidation.js"></script>
-        <script src="<?= base_url('assets/') ?>assets/mail/contact_me.js"></script>
+        <script src="<?= base_url('assets/') ?>mail/jqBootstrapValidation.js"></script>
+        <script src="<?= base_url('assets/') ?>mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="<?= base_url('assets/') ?>js/scripts.js"></script>
     </body>
