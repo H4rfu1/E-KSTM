@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="home e-kstm kstm jember" />
+        <meta name="description" content="Website “E-KSTM” ini akan sangat bermanfaat menjembatani pusat informasi antara KSTM dengan Dinas Ketahanan Pangan dan Peternakan Kabupaten Jember serta dapat mempermudah pengawasan (monitoring) berkala terhadap jalannya program KSTM." />
         <meta name="author" content="" />
         <title><?php echo $title; ?></title>
         <!-- Favicon-->
@@ -75,10 +75,10 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">E-KSTM</h1>
+                <!-- <h1 class="masthead-heading text-uppercase mb-0">E-KSTM</h1> -->
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
-                    <img src="<?= base_url('assets/img/');?>logo.png" alt="logo" height="170" >
+                    <img src="<?= base_url('assets/img/');?>logo.png" alt="logo" height="270" >
                 </div>
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">Website pengawasan program KSTM</p>
