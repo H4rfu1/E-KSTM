@@ -187,7 +187,12 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Partner</h4>
                         <p class="lead mb-0">
-                            <img src="<?=base_url('assets/img/') ;?>dinas_logo.png" height="50" alt="">
+                          Dinas Ketahanan Pangan
+                          <br />
+                          dan Peternakan
+                          <br/>
+                          Kabupaten Jember
+                            <!-- <img src="<base_url('assets/img/') ;?>dinas_logo.png" height="50" alt=""> -->
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
