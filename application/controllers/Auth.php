@@ -138,16 +138,17 @@ class Auth extends CI_Controller {
             ];
             $this->session->set_userdata($data);
           }else {
-            $this->db->delete('user', ['email' => $email]);
             $this->db->delete('user_token', ['email' => $email]);
             $pesan = '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, token aktivasi sudah kadaluarsa.</div>';
             $this->session-> set_flashdata('message', $pesan);
             redirect('auth');
           }
         } else {
-          $pesan = '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, token tidak dikenali.</div>';
-          $this->session-> set_flashdata('message', $pesan);
-          redirect('auth');
+          if(!$CI->session->userdata('token')){
+            $pesan = '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, token tidak dikenali.</div>';
+            $this->session-> set_flashdata('message', $pesan);
+            redirect('auth');
+          }
         }
       } else {
         $pesan = '<div class="alert alert-danger" role="alert">Jangan dibuat mainan, atau akan dilaporkan.</div>';
