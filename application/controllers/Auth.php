@@ -124,11 +124,11 @@ class Auth extends CI_Controller {
     }
     if ($token == 'token') {
       $email = $this->input->get('email');
-      $token = $this->input->get('token');
+      $tokenGet = $this->input->get('token');
       $user = $this->db->get_where('user', ['email' => $email])->row_array();
 
       if($user) {
-        $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
+        $user_token = $this->db->get_where('user_token', ['token' => $tokenGet])->row_array();
         if($user_token) {
           if(time()->$user_token['date_created'] < (60*60*24)) {
             $this->db->delete('user_token', ['email' => $email]);
