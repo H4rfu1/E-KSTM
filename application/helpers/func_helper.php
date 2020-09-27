@@ -1,7 +1,7 @@
 <?php
   function is_logged_in($da = "auth" ){
     $CI = get_instance();
-    if(!$CI->session->userdata('email')){
+    if(!$CI->session->userdata('id')){
       if ($da == "auth") {
         redirect('auth');
       }elseif ($da == "home") {
