@@ -81,7 +81,7 @@
                     <img src="<?= base_url('assets/img/');?>logo.png" alt="logo" height="270" >
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">PLATFORM PENGEMBANGAN DAN PENGAWASAN PROGRAM KSTM SEBAGAI UPAYA PENINGKATAN KUALITAS KSTM</p>
+                <p class="masthead-subheading font-weight-light mb-0">Platform pengembangan dan pengawasan program Kelompok Tani Santri Milenial (KSTM) sebagai upaya peningkatan kualitas KSTM</p>
             </div>
         </header>
         <!-- Portfolio Section-->
