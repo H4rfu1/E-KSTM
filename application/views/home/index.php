@@ -187,7 +187,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="col-lg-4 mb-5 mb-lg-0" style="text-align:left;">
                         <h4 class="text-uppercase mb-4">Partner</h4>
                         <p class="lead mb-0">
                           Dinas Ketahanan Pangan
