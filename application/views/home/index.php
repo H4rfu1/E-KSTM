@@ -172,7 +172,7 @@
                 </div>
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://github.com/H4rfu1/E-KSTM">
+                    <a class="btn btn-xl btn-outline-light" target="_blank" href="https://github.com/H4rfu1/E-KSTM">
                         <i class="fab fa-github mr-2"></i>
                         See code on github!
                     </a>
@@ -185,11 +185,9 @@
                 <div class="row">
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <h4 class="text-uppercase mb-4">Partner</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
-                            <br />
-                            Clark, MO 65243
+                            <img src="<?=base_url('assets/img/') ;?>dinas_logo.png" height="50" alt="">
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
