@@ -19,7 +19,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top shadow" id="mainNav">
+        <nav class="navbar navbar-expand-lg bg-white text-uppercase static-top shadow" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="<?= base_url('') ?>">
                   <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-top mr-2 " height="70" alt="logo">
