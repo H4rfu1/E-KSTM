@@ -29,9 +29,9 @@ class Forum extends CI_Controller {
       $data['cari'] = $this->input->post('cari');
     }else {
       $data['forum'] = $this->forum->getAllForum();
-      $this->form_validation->set_rules('topik_bahasan','Judul', [
+      $this->form_validation->set_rules('topik_bahasan','Judul','required', [
         'required' => "Judul harus diisi"]);
-      $this->form_validation->set_rules('keterangan_bahasan','Isi bahasan', [
+      $this->form_validation->set_rules('keterangan_bahasan','Isi bahasan','required', [
         'required' => "Keterangan Bahasan harus diisi"]);
     }
 
