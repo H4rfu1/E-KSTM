@@ -170,8 +170,8 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div style="text-align: justify; text-justify: inter-word;" class="col-lg-4 ml-auto"><p class="lead">Website “E-KSTM” ini akan sangat bermanfaat menjembatani pusat informasi antara KSTM dengan Dinas Ketahanan Pangan dan Peternakan Kabupaten Jember serta dapat mempermudah pengawasan (monitoring) berkala terhadap jalannya program KSTM.</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead" style="text-align: justify; text-justify: inter-word;">Terutama di era pandemi COVID-19 sekarang ini. Proses transparansi menjadi keunggulan utama aplikasi kami ini, karena semua terawasi dan terintegrasi di dalam satu sistem (real time)!</p></div>
+                    <div style="text-align: justify; text-justify: inter-word; text-indent: 2.0em;" class="col-lg-4 ml-auto"><p class="lead">Website “E-KSTM” ini akan sangat bermanfaat menjembatani pusat informasi antara KSTM dengan Dinas Ketahanan Pangan dan Peternakan serta dapat mempermudah pengawasan (monitoring) berkala terhadap jalannya program KSTM.</p></div>
+                    <div class="col-lg-4 mr-auto"><p class="lead" style="text-align: justify; text-justify: inter-word;text-indent: 2.0em;">Terutama di era pandemi COVID-19 sekarang ini. Proses transparansi menjadi keunggulan utama aplikasi kami ini, karena semua terawasi dan terintegrasi di dalam satu sistem (secara waktu langsung)!</p></div>
                 </div>
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
