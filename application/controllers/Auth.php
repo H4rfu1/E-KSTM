@@ -144,7 +144,7 @@ class Auth extends CI_Controller {
     ->run() == false){
       $data['title'] = 'E-KSTM - Lupa Password';
       $this->load->view('templates/auth_header', $data);
-      $this->load->view('auth/lupa_password');
+      $this->load->view('auth/lupapassword');
       $this->load->view('templates/auth_footer');
     } else {
       $email = $this->input->post('email', true);
