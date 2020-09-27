@@ -8,6 +8,7 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Lupa Password</h1>
               </div>
+              <?= $this->session->flashdata('message'); ?>
               <?php if ($form == 'isi email'): ?>
                 <form class="user" method="post" action="<?php echo base_url('auth/lupapassword/'); ?>">
                   <div class="form-group">

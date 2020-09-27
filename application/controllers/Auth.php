@@ -82,8 +82,7 @@ class Auth extends CI_Controller {
     $this->form_validation->set_rules('password2','Password2','trim|matches[password1]');
 
 
-    if($this->form_validation
-    ->run() == false){
+    if($this->form_validation->run() == false){
 
       $data['title'] = 'E-KSTM - Daftar';
       $this->load->view('templates/auth_header', $data);
@@ -120,7 +119,7 @@ class Auth extends CI_Controller {
   }
 
   public function lupaPassword($token = ''){
-    if($this->session->userdata('email')){
+    if($this->session->userdata('id')){
       redirect('user');
     }
     if ($token == 'token') {
@@ -135,7 +134,6 @@ class Auth extends CI_Controller {
             $this->db->delete('user_token', ['email' => $email]);
             $data = [
               'email' => $user['email'],
-              'id' => $user['id'],
               'token' => 'benar'
             ];
             $this->session->set_userdata($data);
@@ -188,8 +186,7 @@ class Auth extends CI_Controller {
         'required' => "Email harus diisi"
       ]);
 
-      if($this->form_validation
-      ->run() == false){
+      if($this->form_validation->run() == false){
         $data['title'] = 'E-KSTM - Lupa Password';
         $data['form'] = 'isi email';
         $this->load->view('templates/auth_header', $data);
@@ -203,6 +200,7 @@ class Auth extends CI_Controller {
           //jika usernya ada dan aktif
           if($user['is_active'] == 1){
             // beri email berisi token
+            $pesan = '<div class="alert alert-success" role="alert"> Yey, Selamat '.$this->input->post('fullname').'!! link ganti password sudah terkirim dan akan valid selama 24 jam. Coba cek pada bagian spam bila belum muncul. </div>';
             //siapkan token
             $token = base64_encode(random_bytes(32));
             $user_token =[
@@ -210,12 +208,11 @@ class Auth extends CI_Controller {
               'token' => $token,
               'date_created' => time()
             ];
-            $this->db->insert('user',$data);
             $this->db->insert('user_token',$user_token);
             $this->_sendEmail($token, 'lupaPassword');
 
             $this->session-> set_flashdata('message', $pesan);
-            redirect('auth');
+            redirect('auth/lupapassword');
           } else{
             $this->session-> set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email anda belum teraktivasi. Silakan cek email untuk proses aktivasi. (Cek folder spam bila tiak ada).</div>');
             redirect('auth');
