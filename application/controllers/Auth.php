@@ -123,10 +123,12 @@ class Auth extends CI_Controller {
       redirect('auth');
     }
     if ($token == 'token') {
-      $email = $this->input->get('email');
+      if ($email = $this->input->get('email');) {
+        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+      } else {
+        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+      }
       $tokenGet = $this->input->get('token');
-      $user = $this->db->get_where('user', ['email' => $email])->row_array();
-
       if($user) {
         $user_token = $this->db->get_where('user_token', ['token' => $tokenGet])->row_array();
         if($user_token) {
