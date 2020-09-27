@@ -80,8 +80,6 @@ class Auth extends CI_Controller {
       'min_length' => 'Password terlalu pendek'
     ]);
     $this->form_validation->set_rules('password2','Password2','trim|matches[password1]');
-
-
     if($this->form_validation->run() == false){
 
       $data['title'] = 'E-KSTM - Daftar';
@@ -161,6 +159,10 @@ class Auth extends CI_Controller {
       if(!$CI->session->userdata('token')){
           redirect('auth/lupapassword');
       }else {
+        $this->form_validation->set_rules('password1','Password','trim|min_length[3]|matches[password2]', [
+          'matches' => "Password tidak sama",
+          'min_length' => 'Password terlalu pendek'
+        ]);
         $this->form_validation->set_rules('new_password2', 'Confirm New Password
         ', 'required|trim|min_length[3]|matches[new_password1]');
         $data['form'] = 'ganti password';
@@ -185,6 +187,7 @@ class Auth extends CI_Controller {
       }
 
     } else {
+
       $this->form_validation->set_rules('email','Email', 'required|trim|valid_email',[
         'required' => "Email harus diisi"
       ]);
