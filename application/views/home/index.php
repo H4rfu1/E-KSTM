@@ -78,7 +78,7 @@
                 <h1 class="masthead-heading text-uppercase mb-0">E-KSTM</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
-                    <img src="<?= base_url('assets/img/');?>logo.png" alt="logo" style="max-height:200;">
+                    <img src="<?= base_url('assets/img/');?>logo.png" alt="logo" height="170" >
                 </div>
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">Website pengawasan program KSTM</p>
