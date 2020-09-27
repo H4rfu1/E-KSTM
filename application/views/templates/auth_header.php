@@ -33,8 +33,8 @@
 
 <body class="bg-gradient-primary">
 
-		<!-- Topbar -->
-		<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+		<!-- Topbar mb-4 -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-white topbar static-top shadow">
 
 
 			<!-- Logo -->
