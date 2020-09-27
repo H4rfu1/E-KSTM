@@ -158,7 +158,7 @@
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">Tentang</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">Tentang E-KSTM</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -167,14 +167,14 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ml-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-4 ml-auto"><p class="lead">Website “E-KSTM” ini akan sangat bermanfaat menjembatani pusat informasi antara KSTM dengan Dinas Ketahanan Pangan dan Peternakan Kabupaten Jember serta dapat mempermudah pengawasan (monitoring) berkala terhadap jalannya program KSTM.</p></div>
+                    <div class="col-lg-4 mr-auto"><p class="lead">Terutama di era pandemi COVID-19 sekarang ini. Proses transparansi menjadi keunggulan utama aplikasi kami ini, karena semua terawasi dan terintegrasi di dalam satu sistem (real time)!</p></div>
                 </div>
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
                     <a class="btn btn-xl btn-outline-light" target="_blank" href="https://github.com/H4rfu1/E-KSTM">
                         <i class="fab fa-github mr-2"></i>
-                        See code on github!
+                        Lihat kode di github!
                     </a>
                 </div>
             </div>
@@ -205,10 +205,17 @@
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">Tentang E-kstm team</h4>
+                        <h4 class="text-uppercase mb-4">Tim PKM E-kstm</h4>
                         <p class="lead mb-0">
-                            E-kstm is a free to use, MIT licensed Bootstrap theme created by e-kstm team
-                            .
+                            Ketua Tim <br>
+                            Alif Aditya Rahman (182410101075) <br>
+                            <br>
+                            Anggota Tim <br>
+                            Moh. Fahrul Hafidh (182410101109) <br>
+                            Aditya Novan Firmansyah (182410101017) <br>
+                            Agung Dewantara (182410101019) <br>
+                            Firra Andriani (192410101028) <br>
+
                         </p>
                     </div>
                 </div>
