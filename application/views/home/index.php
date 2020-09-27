@@ -24,7 +24,6 @@
                 <a class="navbar-brand js-scroll-trigger" href="<?= base_url('') ?>">
                   <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-top mr-2 " height="70" alt="logo">
                 </a>
-                <div class="form-inline" >
                   <!-- Topbar Navbar -->
                   <?php if (is_logged_in("home")) {
                     echo '
@@ -66,7 +65,6 @@
                     </ul>
                   ';
                   }?>
-                </div>
             </div>
         </nav>
         <!-- Masthead-->
