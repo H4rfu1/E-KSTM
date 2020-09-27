@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand bg-white text-uppercase fixed-top shadow" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="<?= base_url('') ?>">
-                  <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-top img-fluid " width="90" height="90" alt="logo">
+                  <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-top img-fluid " width="60" height="60" alt="logo">
                 </a>
                   <!-- Topbar Navbar -->
                   <?php if (is_logged_in("home")) {
@@ -48,7 +48,7 @@
                       <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="'. base_url('user').'" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <span class="mr-2 d-none d-lg-inline text-gray-600 small">'. $user['name'] .'</span>
-                          <img class="img-profile rounded-circle img-fluid" src="'. base_url('assets/img/profile/'). $user['image'] .'" width="90" height="90">
+                          <img class="img-profile rounded-circle img-fluid" src="'. base_url('assets/img/profile/'). $user['image'] .'" width="60" height="60">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
