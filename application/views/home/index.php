@@ -210,15 +210,13 @@
                     <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">Tim PKM E-kstm</h4>
                         <p class="lead mb-0">
-                            Ketua Tim <br>
-                            Alif Aditya Rahman (182410101075) <br>
-                            <br>
-                            Anggota Tim <br>
-                            Moh. Fahrul Hafidh (182410101109) <br>
-                            Aditya Novan Firmansyah (182410101017) <br>
-                            Agung Dewantara (182410101019) <br>
-                            Firra Andriani (192410101028) <br>
-
+                            Ketua Tim: <br>
+                            Alif Aditya Rahman  <br>
+                            Anggota Tim: <br>
+                            Moh. Fahrul Hafidh  <br>
+                            Aditya Novan Firmansyah  <br>
+                            Agung Dewantara  <br>
+                            Firra Andriani  <br>
                         </p>
                     </div>
                 </div>
