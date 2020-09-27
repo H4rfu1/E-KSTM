@@ -10,7 +10,8 @@
         <link rel="shortcut icon" href="<?= base_url('assets/') ?>favicon.ico" type="image/x-icon">
       	<link rel="icon" href="<?= base_url('assets/') ?>favicon.ico" type="image/x-icon">
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script> -->
+          <link href="<?php echo base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css" />
@@ -460,10 +461,10 @@
             </div>
         </div>
         <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
         <!-- Contact form JS-->
         <script src="<?= base_url('assets/') ?>mail/jqBootstrapValidation.js"></script>
         <script src="<?= base_url('assets/') ?>mail/contact_me.js"></script>
