@@ -6,39 +6,43 @@
           <div class="col-lg">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Buat akun!</h1>
+                <h1 class="h4 text-gray-900 mb-4">Lupa Password</h1>
               </div>
-              <form class="user" method="post" action="<?php echo base_url('auth/registration/'); ?>">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fullname" name="fullname" placeholder="Nama lengkap" value="<?= set_value('fullname'); ?>">
-                  <?= form_error('fullname','<small class="text-danger pl-3">', '</small>'); ?>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email" value="<?= set_value('email'); ?>">
-                  <?= form_error('email','<small class="text-danger pl-3">', '</small>'); ?>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="Password1" name="password1" placeholder="Password">
-                    <?= form_error('password1','<small class="text-danger pl-3">', '</small>'); ?>
+              <?php if ($form == 'isi email'): ?>
+                <form class="user" method="post" action="<?php echo base_url('auth/lupapassword/'); ?>">
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email" value="<?= set_value('email'); ?>">
+                    <?= form_error('email','<small class="text-danger pl-3">', '</small>'); ?>
                   </div>
-                  <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="Password2" name="password2" placeholder="Ulangi Password">
+                  <button type="submit" class="btn btn-primary btn-user btn-block">
+                    Kirim
+                  </button>
 
-                  </div>
+                </form>
+                <hr>
+                <div class="text-center">
+                  <a class="small" href="<?php echo base_url("auth/registration"); ?>">Belum punya akun? Daftar</a>
                 </div>
-                <button type="submit" class="btn btn-primary btn-user btn-block">
-                  Daftar
-                </button>
-
-              </form>
-              <hr>
-              <div class="text-center">
-                <a class="small" href="forgot-password.html">Lupa Password?</a>
-              </div>
-              <div class="text-center">
-                <a class="small" href="<?php echo base_url("auth"); ?>">Sudah punya akun? Login!</a>
-              </div>
+                <div class="text-center">
+                  <a class="small" href="<?php echo base_url("auth"); ?>">Sudah punya akun? Masuk!</a>
+                </div>
+              <?php endif; ?>
+              <?php if ($form == 'ganti password'): ?>
+                <form class="" action="<?= base_url('auth/lupapassword/token'); ?>" method="post">
+                  <div class="form-group">
+                    <label for="new_password1">Pasword baru</label>
+                    <input type="password" class="form-control" id="new_password1" name="new_password1">
+                    <?= form_error('new_password1','<small class="text-danger pl-3">', '</small>'); ?>
+                  </div>
+                  <div class="form-group">
+                    <label for="new_password2">Ulangi pasword baru</label>
+                    <input type="password" class="form-control" id="new_password2" name="new_password2">
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" name="button" class="btn btn-primary">Ubah Password</button>
+                  </div>
+                </form>
+              <?php endif; ?>
             </div>
           </div>
         </div>
