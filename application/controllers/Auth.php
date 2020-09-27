@@ -120,7 +120,7 @@ class Auth extends CI_Controller {
 
   public function lupaPassword($token = ''){
     if($this->session->userdata('id')){
-      redirect('user');
+      redirect('auth');
     }
     if ($token == 'token') {
       $email = $this->input->get('email');
@@ -314,6 +314,7 @@ class Auth extends CI_Controller {
   public function logout(){
     $this->session->unset_userdata('email');
     $this->session->unset_userdata('role_id');
+    $this->session->unset_userdata('id');
     $pesan = '<div class="alert alert-success" role="alert"> Berhasil logout</div>';
     $this->session-> set_flashdata('message', $pesan);
     redirect('auth');
