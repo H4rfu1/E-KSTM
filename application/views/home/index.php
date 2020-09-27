@@ -174,12 +174,12 @@
                     <div class="col-lg-4 mr-auto"><p class="lead" style="text-align: justify; text-justify: inter-word;text-indent: 2.0em;">Terutama di era pandemi COVID-19 sekarang ini. Proses transparansi menjadi keunggulan utama aplikasi kami ini, karena semua terawasi dan terintegrasi di dalam satu sistem (secara waktu langsung)!</p></div>
                 </div>
                 <!-- About Section Button-->
-                <div class="text-center mt-4">
+                <!-- <div class="text-center mt-4">
                     <a class="btn btn-xl btn-outline-light" target="_blank" href="https://github.com/H4rfu1/E-KSTM">
                         <i class="fab fa-github mr-2"></i>
                         Lihat kode di github!
                     </a>
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- Footer-->
