@@ -20,7 +20,7 @@
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand bg-white text-uppercase fixed-top shadow" id="mainNav">
-            <div class="container">
+            <div class="container d-flex flex-column">
                 <a class="navbar-brand js-scroll-trigger" href="<?= base_url('') ?>">
                   <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-top mr-2 " height="70" alt="logo">
                 </a>
