@@ -18,9 +18,10 @@
         <link href="<?= base_url('assets/') ?>css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+      <div id="content-wrapper" class="d-flex flex-column">
         <!-- Navigation-->
         <nav class="navbar navbar-expand bg-white text-uppercase fixed-top shadow" id="mainNav">
-            <div class="container d-flex flex-column">
+            <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="<?= base_url('') ?>">
                   <img src="<?= base_url('assets/img/');?>logo.png" class="d-inline-block align-top mr-2 " height="70" alt="logo">
                 </a>
@@ -220,6 +221,11 @@
                 </div>
             </div>
         </footer>
+        
+        </div>
+        <!-- end content wrapper -->
+
+
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
             <div class="container"><small>Copyright &copy; E-KSTM <?= date('Y'); ?></small></div>
