@@ -130,7 +130,7 @@ class Auth extends CI_Controller {
       if($user) {
         $user_token = $this->db->get_where('user_token', ['token' => $tokenGet])->row_array();
         if($user_token) {
-          if(time()->$user_token['date_created'] < (60*60*24)) {
+          if(time()-$user_token['date_created'] < (60*60*24)) {
             $this->db->delete('user_token', ['email' => $email]);
             $data = [
               'email' => $user['email'],
@@ -281,7 +281,7 @@ class Auth extends CI_Controller {
     if($user) {
       $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
       if($user_token) {
-        if(time()->$user_token['date_created'] < (60*60*24)) {
+        if(time()-$user_token['date_created'] < (60*60*24)) {
           $this->db->set('is_active', 1);
           $this->db->where('email', $email);
           $this->db->update('user');
