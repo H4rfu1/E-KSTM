@@ -140,19 +140,19 @@ class Auth extends CI_Controller {
             $this->session->set_userdata($data);
           }else {
             $this->db->delete('user_token', ['email' => $email]);
-            $pesan = '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, token aktivasi sudah kadaluarsa.</div>';
+            $pesan = '<div class="alert alert-danger" role="alert"> Password gagal direset, token aktivasi sudah kadaluarsa.</div>';
             $this->session-> set_flashdata('message', $pesan);
             redirect('auth');
           }
         } else {
           if(!$CI->session->userdata('token')){
-            $pesan = '<div class="alert alert-danger" role="alert"> Akun gagal diaktifkan, token tidak dikenali.</div>';
+            $pesan = '<div class="alert alert-danger" role="alert"> Password gagal direset, token tidak dikenali.</div>';
             $this->session-> set_flashdata('message', $pesan);
             redirect('auth');
           }
         }
       } else {
-        $pesan = '<div class="alert alert-danger" role="alert">Jangan dibuat mainan, atau akan dilaporkan.</div>';
+        $pesan = '<div class="alert alert-danger" role="alert">Tindakan ilegal terdeteksi.</div>';
         $this->session-> set_flashdata('message', $pesan);
         redirect('auth');
       }
@@ -179,9 +179,17 @@ class Auth extends CI_Controller {
           $this->db->where('email', $this->session->userdata('email'));
           $this->db->update('user');
 
-          $pesan = '<div class="alert alert-success" role="alert"> Password berhasil direset.</div>';
-          $this->session-> set_flashdata('message', $pesan);
+          if ($this->db->affected_rows() > 0) {
+            $pesan = '<div class="alert alert-success" role="alert"> Password berhasil direset.</div>';
+            $this->session-> set_flashdata('message', $pesan);
+            $this->session->unset_userdata('email');
+            $this->session->unset_userdata('token');
+          }else {
+            $pesan = '<div class="alert alert-success" role="alert"> Password gagal direset.</div>';
+            $this->session-> set_flashdata('message', $pesan);
+          }
           redirect('auth');
+
         }
 
       }
