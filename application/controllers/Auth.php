@@ -179,7 +179,7 @@ class Auth extends CI_Controller {
           $this->db->where('email', $this->session->userdata('email'));
           $this->db->update('user');
 
-          $pesan = '<div class="alert alert-success" role="alert"> Password berhasil diubah.</div>';
+          $pesan = '<div class="alert alert-success" role="alert"> Password berhasil direset.</div>';
           $this->session-> set_flashdata('message', $pesan);
           redirect('auth');
         }

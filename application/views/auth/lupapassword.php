@@ -6,7 +6,7 @@
           <div class="col-lg">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Lupa Password</h1>
+                <h1 class="h4 text-gray-900 mb-4">Reset Password</h1>
               </div>
               <?= $this->session->flashdata('message'); ?>
               <?php if ($form == 'isi email'): ?>
@@ -16,7 +16,7 @@
                     <?= form_error('email','<small class="text-danger pl-3">', '</small>'); ?>
                   </div>
                   <button type="submit" class="btn btn-primary btn-user btn-block">
-                    Kirim
+                    Reset
                   </button>
 
                 </form>
@@ -40,7 +40,7 @@
                     <input type="password" class="form-control" id="new_password2" name="new_password2">
                   </div>
                   <div class="form-group">
-                    <button type="submit" name="button" class="btn btn-primary">Ubah Password</button>
+                    <button type="submit" name="button" class="btn btn-primary">Reset Password</button>
                   </div>
                 </form>
               <?php endif; ?>
