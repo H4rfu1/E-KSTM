@@ -119,6 +119,7 @@ class Auth extends CI_Controller {
   }
 
   public function lupaPassword($token = ''){
+    $CI = get_instance();
     if($this->session->userdata('id')){
       redirect('auth');
     }
@@ -157,7 +158,6 @@ class Auth extends CI_Controller {
         $this->session-> set_flashdata('message', $pesan);
         redirect('auth');
       }
-      $CI = get_instance();
       if(!$CI->session->userdata('token')){
           redirect('auth/lupapassword');
       }else {
