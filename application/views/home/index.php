@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="<?= base_url('assets/') ?>css/styles.css" rel="stylesheet" />
+        <link href="<?= base_url('assets/') ?>css/sb-admin-2.css" rel="stylesheet" />
     </head>
     <body id="page-top">
       <div id="wrapper">
@@ -45,7 +45,7 @@
                       <div class="topbar-divider d-none d-sm-block"></div>
 
                       <!-- Nav Item - User Information -->
-                      <li class="nav-item dropdown no-arrow">
+                      <li class="nav-item dropdown no-arrow" style="">
                         <a class="nav-link dropdown-toggle" href="'. base_url('user').'" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <span class="mr-2 d-none d-lg-inline text-gray-600 small">'. $user['name'] .'</span>
                           <img class="img-profile rounded-circle img-fluid" src="'. base_url('assets/img/profile/'). $user['image'] .'" width="60" height="60">
