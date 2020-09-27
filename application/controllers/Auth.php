@@ -159,12 +159,12 @@ class Auth extends CI_Controller {
       if(!$CI->session->userdata('token')){
           redirect('auth/lupapassword');
       }else {
-        $this->form_validation->set_rules('new_password1','Password','trim|min_length[3]|matches[password2]', [
+        $this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]', [
+          'required' => "Passsword harus diisi",
           'matches' => "Password tidak sama",
           'min_length' => 'Password terlalu pendek'
         ]);
-        $this->form_validation->set_rules('new_password2', 'Confirm New Password
-        ', 'required|trim|min_length[3]|matches[new_password1]');
+        $this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|min_length[3]|matches[new_password1]');
         $data['form'] = 'ganti password';
         $data['title'] = 'E-KSTM - Lupa Password';
         if($this->form_validation->run() == false){
