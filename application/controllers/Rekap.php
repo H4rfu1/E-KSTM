@@ -89,7 +89,7 @@ class Rekap extends CI_Controller {
   public function detail($tipe='', $id = 0){
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Laporan_model', 'laporan');
-    $data['komen'] = ''
+    $data['komen'] = '';
     if ($tipe == '' or $id == 0) {
       redirect('rekap');
     }
