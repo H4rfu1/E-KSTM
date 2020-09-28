@@ -37,7 +37,7 @@
     <?php endif; ?>
     <?= form_error('akun', '<div class="alert alert-danger" role="alert">','</div>'); ?>
     <?= $this->session->flashdata('message'); ?>
-
+    <a href="<?= base_url('rekap/excelKstm') ?>" class="btn btn-primary">Download Excel</a>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -87,14 +87,10 @@
           <td><?= $r['keterangan_konsumsi'] ?></td>
           <td><?= $r['jumlah_ternak_dijual'] ?></td>
           <td><?= $r['harga_ternak_perekor'] ?></td>
-          <?php if ($tipe == "pengontrol") {
-            $a = $r['foto'];
-            $b = $r['video'];
-            echo "
-            <td> $a </td>
-            <td> $b </td>
-            ";
-          } ?>
+          <?php if ($tipe == "pengontrol"): ?>
+            <td> <?= $r['foto'] ?> </td>
+            <td> <?= $r['video'] ?> </td>
+          <?php endif; ?>
         </tr>
       <?php $i++; endforeach; ?>
       </tbody>
