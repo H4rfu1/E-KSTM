@@ -89,7 +89,6 @@ class Rekap extends CI_Controller {
   public function detail($tipe='', $id = 0){
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Laporan_model', 'laporan');
-    $data['komen'] = '';
     if ($tipe == '' or $id == 0) {
       redirect('rekap');
     }
@@ -102,7 +101,7 @@ class Rekap extends CI_Controller {
           );
       $data['breadcrumb'] = $breadcrumb;
       $data['laporan'] = $this->laporan->getLaporanKSTMById($id);
-      // $data['komen'] = $this->laporan->getKomen($id);
+      $data['komen'] = $this->laporan->getKomenKSTM($id);
     } elseif ($tipe == 'pengontrol') {
       $data['tipe'] = 'pengontrol';
       $data['title'] = 'Detail Laporan Pengontrol Lapangan';
@@ -112,7 +111,7 @@ class Rekap extends CI_Controller {
           );
       $data['breadcrumb'] = $breadcrumb;
       $data['laporan'] = $this->laporan->getLaporanPengontrolById($id);
-      // $data['komen'] = $this->laporan->getKomen($id);
+      $data['komen'] = $this->laporan->getKomenPengontrol($id);
     }else {
       redirect('rekap');
     }
@@ -129,11 +128,15 @@ class Rekap extends CI_Controller {
     }else {
       $data = [
         'id_penanggap' => $this->session->userdata('id'),
-        'id_forum' => $id,
+        'id_laporan' => $id,
         'tanggal_tanggapan' => time(),
         'isi_tanggapan' => htmlspecialchars( $this->input->post('isi_tanggapan'))
       ];
-      $this->db->insert('tanggapan_forum', $data);
+      if ($tipe == 'kstm') {
+        $this->db->insert('tanggapan_kstm', $data);
+      } else {
+        $this->db->insert('tanggapan_pengontrol', $data);
+      }
       if ($this->db->affected_rows() > 0) {
         $pesan = '<div class="alert alert-success" role="alert"> Komen berhasil ditambah </div>';
         $this->session-> set_flashdata('message', $pesan);
