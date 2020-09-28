@@ -20,7 +20,12 @@
 
 <div class="row">
   <div class="col-lg-12 float-right">
-    <a href="<?= base_url('rekap/exportCSV') ?>" class="btn btn-primary">Download Excel</a>
+    <?php if ($tipe == "pengontrol"): ?>
+      <a href="<?= base_url('rekap/exportCSV/pengontrol'); ?>" class="btn btn-primary">Download Excel</a>
+    <?php else: ?>
+      <a href="<?= base_url('rekap/exportCSV/kstm'); ?>" class="btn btn-primary">Download Excel</a>
+    <?php endif; ?>
+
   </div>
   <div class="col-lg-12 table-responsive">
     <div class="btn-group dropright mb-5">
@@ -59,7 +64,7 @@
           <th scope="col">Keterangan Konsumsi</th>
           <th scope="col">Jumlah Ternak Diual</th>
           <th scope="col">Harga Ternak Perekor</th>
-          <?php if ($tipe == "pengontrol") {
+          <?php if (c) {
             echo "
             <td> Foto </td>
             <td> Video </td>

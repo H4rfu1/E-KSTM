@@ -86,27 +86,52 @@ class Rekap extends CI_Controller {
   }
 
   // Export data in CSV format
-  public function exportCSV(){
+  public function exportCSV($tipe = 'kstm'){
     $this->load->model('Laporan_model', 'laporan');
-    // file name
-    $filename = 'laporan_kstm_'.date('Ymd').'.csv';
-    header("Content-Description: File Transfer");
-    header("Content-Disposition: attachment; filename=$filename");
-    header("Content-Type: application/csv; ");
+    if ($tipe == 'pengontrol') {
+      // file name
+      $filename = 'laporan_pengontrol_'.date('Ymd').'.csv';
+      header("Content-Description: File Transfer");
+      header("Content-Disposition: attachment; filename=$filename");
+      header("Content-Type: application/csv; ");
 
-    // get data
-    $usersData = $this->laporan->getExportLaporanKSTM();;
+      // get data
+      $usersData = $this->laporan->getLaporanPengontrol();;
 
-    // file creation
-    $file = fopen('php://output', 'w');
+      // file creation
+      $file = fopen('php://output', 'w');
 
-    $header = array("Name","tanggal","deskripsi");
-    fputcsv($file, $header);
-    foreach ($usersData as $key){
-      $row = array($key['name'],date('d F Y', $key['tanggal_laporan']),$key['deskripsi_laporan']);
-      fputcsv($file,$row);
+      $header = array("Name","tanggal","deskripsi");
+      fputcsv($file, $header);
+      foreach ($usersData as $key){
+        $row = array($key['name'],date('d F Y', $key['tanggal_laporan']),$key['deskripsi_laporan']);
+        fputcsv($file,$row);
+      }
+      fclose($file);
+      exit;
+    } else {
+      // file name
+      $filename = 'laporan_kstm_'.date('Ymd').'.csv';
+      header("Content-Description: File Transfer");
+      header("Content-Disposition: attachment; filename=$filename");
+      header("Content-Type: application/csv; ");
+
+      // get data
+      $usersData = $this->laporan->getLaporanKSTM();;
+
+      // file creation
+      $file = fopen('php://output', 'w');
+
+      $header = array("Name","tanggal","deskripsi");
+      fputcsv($file, $header);
+      foreach ($usersData as $key){
+        $row = array($key['name'],date('d F Y', $key['tanggal_laporan']),$key['deskripsi_laporan']);
+        fputcsv($file,$row);
+      }
+      fclose($file);
+      exit;
     }
-    fclose($file);
-    exit;
+
+
   }
 }
