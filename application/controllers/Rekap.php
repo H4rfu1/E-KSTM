@@ -88,24 +88,25 @@ class Rekap extends CI_Controller {
   // Export data in CSV format
   public function exportCSV(){
     $this->load->model('Laporan_model', 'laporan');
-   // file name
-   $filename = 'laporan_kstm_'.date('Ymd').'.csv';
-   header("Content-Description: File Transfer");
-   header("Content-Disposition: attachment; filename=$filename");
-   header("Content-Type: application/csv; ");
+    // file name
+    $filename = 'laporan_kstm_'.date('Ymd').'.csv';
+    header("Content-Description: File Transfer");
+    header("Content-Disposition: attachment; filename=$filename");
+    header("Content-Type: application/csv; ");
 
-   // get data
-   $usersData = $this->laporan->getExportLaporanKSTM();;
+    // get data
+    $usersData = $this->laporan->getExportLaporanKSTM();;
 
-   // file creation
-   $file = fopen('php://output', 'w');
+    // file creation
+    $file = fopen('php://output', 'w');
 
-   $header = array("Name","deskripsi");
-   fputcsv($file, $header);
-   foreach ($usersData as $key=>$line){
-     fputcsv($file,$line);
-   }
-   fclose($file);
-   exit;
+    $header = array("Name","tanggal","deskripsi");
+    fputcsv($file, $header);
+    foreach ($usersData as $key){
+      $row = array($key['name'],date('d F Y', $key['tanggal_laporan']),$key['deskripsi_laporan']);
+      fputcsv($file,$row);
+    }
+    fclose($file);
+    exit;
   }
 }

@@ -9,7 +9,7 @@ class Laporan_model extends CI_Model {
       return $this->db->query($query)->result_array();
   }
   public function getExportLaporanKSTM(){
-     $query = "SELECT `user`.`name`, `laporan_kstm`.`deskripsi_laporan`
+     $query = "SELECT `laporan_kstm`.*, `user`.`name`
               FROM `laporan_kstm` JOIN `user`
               ON `laporan_kstm`.`id_pelapor` = `user`.`id`";
       return $this->db->query($query)->result_array();
