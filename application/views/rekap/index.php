@@ -20,6 +20,7 @@
 
 <div class="row">
   <div class="col-lg-12 table-responsive">
+    <a href="<?= base_url('rekap/excelKstm') ?>" class="btn btn-primary">Download Excel</a>
     <div class="btn-group dropright mb-5">
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Laporan
@@ -37,7 +38,6 @@
     <?php endif; ?>
     <?= form_error('akun', '<div class="alert alert-danger" role="alert">','</div>'); ?>
     <?= $this->session->flashdata('message'); ?>
-    <a href="<?= base_url('rekap/excelKstm') ?>" class="btn btn-primary">Download Excel</a>
     <table class="table table-hover">
       <thead>
         <tr>
