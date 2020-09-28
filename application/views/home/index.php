@@ -83,7 +83,7 @@
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">
                   Platform Pengembangan dan Pengawasan <br>
-                  Program Kelompok Tani Santri Milenial (KSTM)</p>
+                  Program Kelompok Santri Tani Milenial (KSTM)</p>
             </div>
         </header>
         <!-- Portfolio Section-->
@@ -168,8 +168,8 @@
             <div class="container">
                 <div class="row">
                     <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0" style="text-align:left;">
-                        <h4 class="text-uppercase mb-4">Partner</h4>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Mitra</h4>
                         <p class="lead mb-0">
                           Dinas Ketahanan Pangan
                           <br />

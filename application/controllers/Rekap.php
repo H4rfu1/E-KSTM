@@ -29,23 +29,41 @@ class Rekap extends CI_Controller {
 
   }
 
-  public function kstm(){
-    $breadcrumb         = array(
-            "Rekap Laporan KSTM" => ""
-        );
-    $data['breadcrumb'] = $breadcrumb;
-
+  public function kstm($id = ''){
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Laporan_model', 'laporan');
-    $data['title'] = 'Rekap Laporan KSTM';
-    $data['laporan'] = $this->laporan->getLaporanKSTM();
-    $data['tipe'] = 'kstm';
+    if ($id == '') {
+      $breadcrumb         = array(
+              "Rekap Laporan KSTM" => ""
+          );
+      $data['breadcrumb'] = $breadcrumb;
+      $data['title'] = 'Rekap Laporan KSTM';
+      $data['laporan'] = $this->laporan->getLaporanKSTM();
+      $data['tipe'] = 'kstm';
 
-    $this->load->view('templates/dash_header', $data);
-    $this->load->view('templates/dash_sidebar', $data);
-    $this->load->view('templates/dash_topbar', $data);
-    $this->load->view('rekap/index', $data);
-    $this->load->view('templates/dash_footer');
+      $this->load->view('templates/dash_header', $data);
+      $this->load->view('templates/dash_sidebar', $data);
+      $this->load->view('templates/dash_topbar', $data);
+      $this->load->view('rekap/index', $data);
+      $this->load->view('templates/dash_footer');
+    } else {
+      $breadcrumb         = array(
+              "Rekap Laporan KSTM" => "kstm",
+              "Detail Laporan KSTM" => ""
+          );
+      $data['breadcrumb'] = $breadcrumb;
+      $data['title'] = 'Detail Laporan KSTM';
+      $data['laporan'] = $this->laporan->getLaporanKSTM();
+      $data['tipe'] = 'kstm';
+
+      $this->load->view('templates/dash_header', $data);
+      $this->load->view('templates/dash_sidebar', $data);
+      $this->load->view('templates/dash_topbar', $data);
+      $this->load->view('rekap/index', $data);
+      $this->load->view('templates/dash_footer');
+    }
+
+
 
   }
   public function laporan(){
