@@ -11,7 +11,8 @@
       	<link rel="icon" href="<?= base_url('assets/') ?>favicon.ico" type="image/x-icon">
         <!-- Font Awesome icons (free version)-->
         <!-- <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script> -->
-          <link href="<?php echo base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="<?php echo base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" crossorigin="anonymous"></script>
+          <!-- <link href="<?php echo base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css" />
@@ -93,7 +94,7 @@
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fa fa-star" aria-hidden="true"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star fa-sm fa-fw"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- slider-->
@@ -145,7 +146,7 @@
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fa fa-star" aria-hidden="true"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star fa-sm fa-fw"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
