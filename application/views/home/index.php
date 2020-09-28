@@ -197,15 +197,15 @@
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">Tim PKM E-kstm</h4>
+                        <h4 class="text-uppercase mb-4">Tim PKM E-KSTM</h4>
                         <p class="lead mb-0">
                             Ketua Tim: <br>
                             Alif Aditya Rahman  <br>
                             Anggota Tim: <br>
-                            Moh. Fahrul Hafidh  <br>
-                            Aditya Novan Firmansyah  <br>
+														Firra Andriani  <br>
                             Agung Dewantara  <br>
-                            Firra Andriani  <br>
+														Moh. Fahrul Hafidh  <br>
+                            Aditya Novan Firmansyah  <br>
                         </p>
                     </div>
                 </div>
