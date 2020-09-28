@@ -19,12 +19,14 @@
 <h1 class="h3 mb-4 text-gray-800"><?=  $title; ?></h1>
 
 <div class="row">
-  <div class="col-lg-12 float-right">
-    <?php if ($tipe == "pengontrol"): ?>
-      <a href="<?= base_url('rekap/exportCSV/pengontrol'); ?>" class="btn btn-primary">Download Excel</a>
-    <?php else: ?>
-      <a href="<?= base_url('rekap/exportCSV/kstm'); ?>" class="btn btn-primary">Download Excel</a>
-    <?php endif; ?>
+  <div class="col-lg-12">
+    <div class="float-right">
+      <?php if ($tipe == "pengontrol"): ?>
+        <a href="<?= base_url('rekap/exportCSV/pengontrol'); ?>" class="btn btn-primary">Download Excel</a>
+      <?php else: ?>
+        <a href="<?= base_url('rekap/exportCSV/kstm'); ?>" class="btn btn-primary">Download Excel</a>
+      <?php endif; ?>
+    </div>
 
   </div>
   <div class="col-lg-12 table-responsive">
