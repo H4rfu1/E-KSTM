@@ -27,7 +27,6 @@ class Pengumuman extends CI_Controller {
     }
 
     $this->db->where('id != 1');
-    $this->db->where('id != 2');
     $this->db->where('id != 3');
     $data['role'] = $this->db->get('user_role')->result_array();
 
