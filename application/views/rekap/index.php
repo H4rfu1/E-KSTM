@@ -72,6 +72,7 @@
             <td> Video </td>
             ";
           } ?>
+          <th scope="col">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -96,10 +97,20 @@
           <td><?= $r['keterangan_konsumsi'] ?></td>
           <td><?= $r['jumlah_ternak_dijual'] ?></td>
           <td><?= $r['harga_ternak_perekor'] ?></td>
+          <?php if ($tipe == "kstm"): ?>
+            <td>
+              <a href="<?= base_url('laporan/edit/kstm/'); echo $r['id_laporan_kstm']; ?>" class="badge badge-info">Detail</a>
+            </td>
+          <?php endif; ?>
           <?php if ($tipe == "pengontrol"): ?>
             <td> <?= $r['foto'] ?> </td>
             <td> <?= $r['video'] ?> </td>
+            <td>
+              <a href="<?= base_url('laporan/edit/pengontrol/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-info">Detail</a>
+            </td>
           <?php endif; ?>
+
+
         </tr>
       <?php $i++; endforeach; ?>
       </tbody>
