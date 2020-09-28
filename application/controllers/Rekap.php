@@ -93,7 +93,5 @@ class Rekap extends CI_Controller {
 
     // Tambahkan table
     $this->load->view('rekap/data');
-
-    exit;
   }
 }
