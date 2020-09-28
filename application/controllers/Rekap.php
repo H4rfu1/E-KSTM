@@ -92,6 +92,6 @@ class Rekap extends CI_Controller {
     header("Content-Disposition: attachment; filename=tutorialweb-export.xls");
 
     // Tambahkan table
-    $this->load->view('rekap/data');
+    $this->load->library('data');
   }
 }
