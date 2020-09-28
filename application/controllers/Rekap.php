@@ -124,7 +124,7 @@ class Rekap extends CI_Controller {
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
       $this->load->view('templates/dash_topbar', $data);
-      $this->load->view('laporan/detail', $data);
+      $this->load->view('rekap/detail', $data);
       $this->load->view('templates/dash_footer');
     }else {
       $data = [
@@ -138,7 +138,7 @@ class Rekap extends CI_Controller {
         $pesan = '<div class="alert alert-success" role="alert"> Komen berhasil ditambah </div>';
         $this->session-> set_flashdata('message', $pesan);
       }
-      redirect('forum/diskusi/'.$id);
+      redirect('rekap/detail/'.$tipe.'/'.$id);
     }
 
   }
