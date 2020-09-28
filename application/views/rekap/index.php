@@ -64,7 +64,7 @@
           <th scope="col">Keterangan Konsumsi</th>
           <th scope="col">Jumlah Ternak Diual</th>
           <th scope="col">Harga Ternak Perekor</th>
-          <?php if (c) {
+          <?php if ($tipe == "pengontrol") {
             echo "
             <td> Foto </td>
             <td> Video </td>
