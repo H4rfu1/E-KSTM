@@ -84,14 +84,28 @@ class Rekap extends CI_Controller {
     $this->load->view('templates/dash_footer');
 
   }
-  public function excelKstm(){
-    // Fungsi header dengan mengirimkan raw data excel
-    header("Content-type: application/vnd-ms-excel");
 
-    // Mendefinisikan nama file ekspor "hasil-export.xls"
-    header("Content-Disposition: attachment; filename=tutorialweb-export.xls");
+  // Export data in CSV format
+  public function exportCSV(){
+    $this->load->model('Laporan_model', 'laporan');
+   // file name
+   $filename = 'laporan_kstm_'.date('Ymd').'.csv';
+   header("Content-Description: File Transfer");
+   header("Content-Disposition: attachment; filename=$filename");
+   header("Content-Type: application/csv; ");
 
-    // Tambahkan table
-    $this->load->library('data');
+   // get data
+   $usersData = $this->laporan->getExportLaporanKSTM();;
+
+   // file creation
+   $file = fopen('php://output', 'w');
+
+   $header = array("Name","deskripsi");
+   fputcsv($file, $header);
+   foreach ($usersData as $key=>$line){
+     fputcsv($file,$line);
+   }
+   fclose($file);
+   exit;
   }
 }

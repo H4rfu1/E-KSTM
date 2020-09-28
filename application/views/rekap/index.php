@@ -20,7 +20,7 @@
 
 <div class="row">
   <div class="col-lg-12 table-responsive">
-    <a href="<?= base_url('rekap/excelKstm') ?>" class="btn btn-primary">Download Excel</a>
+    <a href="<?= base_url('rekap/exportCSV') ?>" class="btn btn-primary">Download Excel</a>
     <div class="btn-group dropright mb-5">
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Laporan
