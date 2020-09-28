@@ -11,7 +11,7 @@
       	<link rel="icon" href="<?= base_url('assets/') ?>favicon.ico" type="image/x-icon">
         <!-- Font Awesome icons (free version)-->
         <!-- <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script> -->
-        <script type="text/javascript" src="<?php echo base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/') ?>vendor/fontawesome-free/js/all.js" crossorigin="anonymous"></script>
           <!-- <link href="<?php echo base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" type="text/css" />
