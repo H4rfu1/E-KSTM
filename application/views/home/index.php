@@ -1,3 +1,11 @@
+<!-- untuk membuat pagenya terus https -->
+<?php
+	if($_SERVER['HTTPS']!="on")
+	{
+		 $redirect= "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		 header("Location:$redirect");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
