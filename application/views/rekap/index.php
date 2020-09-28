@@ -19,8 +19,10 @@
 <h1 class="h3 mb-4 text-gray-800"><?=  $title; ?></h1>
 
 <div class="row">
-  <div class="col-lg-12 table-responsive">
+  <div class="col-lg-12 float-right">
     <a href="<?= base_url('rekap/exportCSV') ?>" class="btn btn-primary">Download Excel</a>
+  </div>
+  <div class="col-lg-12 table-responsive">
     <div class="btn-group dropright mb-5">
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Laporan
