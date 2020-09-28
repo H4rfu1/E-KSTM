@@ -1,22 +1,13 @@
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css)$">
+<IfModule mod_headers.c>
+    Header add Access-Control-Allow-Origin "https://e-kstm.com"
+</IfModule>
+</FilesMatch>
 <IfModule authz_core_module>
     Require all denied
 </IfModule>
 <IfModule !authz_core_module>
     Deny from all
-</IfModule>
-<IfModule mod_setenvif.c>
-  <IfModule mod_headers.c>
-    # mod_headers, y u no match by Content-Type?!
-    <FilesMatch "\.(gif|png|jpe?g|svg|svgz|ico|webp)$">
-      SetEnvIf Origin ":" IS_CORS
-      Header set Access-Control-Allow-Origin "*" env=IS_CORS
-    </FilesMatch>
-  </IfModule>
-</IfModule>
-<IfModule mod_headers.c>
-  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
-    Header set Access-Control-Allow-Origin "*"
-  </FilesMatch>
 </IfModule>
 RewriteEngine on
 
