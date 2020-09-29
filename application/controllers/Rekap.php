@@ -183,10 +183,11 @@ class Rekap extends CI_Controller {
       // file creation
       $file = fopen('php://output', 'w');
 
-      $header = array("Name","tanggal","deskripsi");
+      $header = array("id Pelapor", "Nama Pelapor", "Tanggal Laporan", "Deskripsi Laporan", "Jenis Ternak", "Jumlah Ternak Sebelumnya", "Jumlah Ternak Sekarang", "Jumlah Ternak Meninggal", "Keterangan Ternak Meninggal", "Jumlah Ternak Sehat", "Jumlah Ternak Sakit", "Keterangan Kesehatan Ternak", "Jumlah Ternak Dikonsumsi", "Keterangan Konsumsi", "Jumlah Ternak Dijual");
       fputcsv($file, $header);
       foreach ($usersData as $key){
-        $row = array($key['name'],date('d F Y', $key['tanggal_laporan']),$key['deskripsi_laporan']);
+        $row = array($key['id_pelapor'], $key['name'], date('d F Y', $key['tanggal_laporan']), $key['deskripsi_laporan'], $key['jenis_ternak'], $key['jumlah_ternak_sebelumnya'], $key['jumlah_ternak_sekarang'], $key['jumlah_ternak_meninggal'], $key['keterangan_ternak_meninggal'], $key['jumlah_ternak_sehat'], $key['jumlah_ternak_sakit'], $key['keterangan_kesehatan_ternak'], $key['jumlah_ternak_dikonsumsi'], $key['keterangan_konsumsi'], $key['jumlah_ternak_dijual'], key['harga_ternak_perekor']);
+
         fputcsv($file,$row);
       }
       fclose($file);
