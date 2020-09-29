@@ -33,9 +33,9 @@
   <div class="col-lg-6">
     <div class="float-right">
       <?php if ($tipe == "pengontrol"): ?>
-        <a href="<?= base_url('rekap/exportCSV/pengontrol'); ?>" class="btn btn-primary">Download CSV - Pengontrol</a>
+        <a href="<?= base_url('rekap/exportCSV/pengontrol'); ?>" class="btn btn-success">Download CSV - Pengontrol</a>
       <?php else: ?>
-        <a href="<?= base_url('rekap/exportCSV/kstm'); ?>" class="btn btn-primary">Download CSV - KSTM</a>
+        <a href="<?= base_url('rekap/exportCSV/kstm'); ?>" class="btn btn-success">Download CSV - KSTM</a>
       <?php endif; ?>
     </div>
   </div>
