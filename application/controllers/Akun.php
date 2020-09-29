@@ -30,7 +30,7 @@ class Akun extends CI_Controller {
     $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]', [
       'required' => "Email harus diisi",
       'valid_email' => "Email tidak dikenal"]);
-      $this->form_validation->set_rules('role','Role', 'required', [
+      $this->form_validation->set_rules('role_id','Role', 'required', [
         'required' => "Role harus diisi"]);
 
     if($this->form_validation->run() == false){
