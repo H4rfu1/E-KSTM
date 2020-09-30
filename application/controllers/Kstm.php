@@ -150,6 +150,47 @@ class Kstm extends CI_Controller {
     }
   }
 
+  public function detail($id = 0){
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $this->load->model('Laporan_model', 'laporan');
+    if ($id == 0) {
+      redirect('kstm');
+    }
+      $data['title'] = 'Detail Laporan KSTM';
+      $breadcrumb         = array(
+              "Laporan KSTM" => "kstm",
+              "Detail" => ""
+          );
+      $data['breadcrumb'] = $breadcrumb;
+      $data['laporan'] = $this->laporan->getLaporanKSTMById($id);
+      $data['komen'] = $this->laporan->getKomenKSTM($id);
+
+    $this->form_validation->set_rules('isi_tanggapan','Isi tanggapan', 'required', [
+      'required' => "Komentar harus diisi"]);
+
+    if($this->form_validation->run() == false){
+      $this->load->view('templates/dash_header', $data);
+      $this->load->view('templates/dash_sidebar', $data);
+      $this->load->view('templates/dash_topbar', $data);
+      $this->load->view('rekap/detail', $data);
+      $this->load->view('templates/dash_footer');
+    }else {
+      $data = [
+        'id_penanggap' => $this->session->userdata('id'),
+        'id_laporan' => $id,
+        'tanggal_tanggapan' => time(),
+        'isi_tanggapan' => htmlspecialchars( $this->input->post('isi_tanggapan'))
+      ];
+      $this->db->insert('tanggapan_kstm', $data);
+      if ($this->db->affected_rows() > 0) {
+        $pesan = '<div class="alert alert-success" role="alert"> Komen berhasil ditambah </div>';
+        $this->session-> set_flashdata('message', $pesan);
+      }
+      redirect('kstm/detail/'.$id);
+    }
+
+  }
+
   public function delete_laporan_kstm($id){
     $this->db->delete('laporan_kstm', ['id_laporan_kstm' => $id]);
     $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan berhasil dihapus. </div>');

@@ -44,10 +44,6 @@
 
         <hr>
 
-        <!-- Preview Image -->
-        <?php if ($tipe == 'pengontrol'): ?>
-          <img class="img-fluid rounded mx-auto d-block" src="<?= base_url('assets/img/pengontrol/') . $laporan['foto']; ?>" alt="gambar post" style="max-height:300px;">
-        <?php endif; ?>
 
         <hr>
 
@@ -78,11 +74,7 @@
         <div class="card my-4">
           <h5 class="card-header">Tinggalkan Komentar:</h5>
           <div class="card-body">
-            <?php if ($tipe == 'kstm'): ?>
-            <form action="<?= base_url('rekap/detail/kstm/');echo $laporan['id_laporan_kstm']; ?>" method="post">
-            <?php else: ?>
-            <form action="<?= base_url('rekap/detail/pengontrol/');echo $laporan['id_laporan_pengontrol']; ?>" method="post">
-            <?php endif; ?>
+            <form action="<?= base_url('KSTM/detail/');echo $laporan['id_laporan_kstm']; ?>" method="post">
               <div class="form-group">
                 <textarea class="form-control" rows="3" name="isi_tanggapan"></textarea>
               </div>
