@@ -66,7 +66,7 @@ class Rekap extends CI_Controller {
 
 
   }
-  public function laporan(){
+  public function pengontrol(){
     $breadcrumb         = array(
             "Rekap Laporan Pengontrol Lapangan" => ""
         );
