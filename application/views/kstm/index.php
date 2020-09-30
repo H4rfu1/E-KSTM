@@ -87,6 +87,7 @@
               <td>
                 <a href='".base_url('kstm/edit/')."$id' class='badge badge-primary'>Ubah</a>
                 <a class='badge badge-danger' style='color:white;' onclick='conDelete(".$del. "); '>Hapus</a>
+                <a href=".base_url('kstm/detail/').$r['id_laporan_kstm']." class='badge badge-info'>Detail</a>
               </td>
               ";
             } ?>

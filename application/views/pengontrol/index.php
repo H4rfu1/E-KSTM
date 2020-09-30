@@ -78,6 +78,7 @@
           <td>
             <a href="<?= base_url('pengontrol/edit/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-primary">Ubah</a>
             <a class="badge badge-danger" style="color:white;" onclick="conDelete('<?= base_url("pengontrol/delete_laporan_pengontrol/"); echo $r['id_laporan_pengontrol']; ?>'); ">Hapus</a>
+            <a href="<?= base_url('pengontrol/detail/'); echo $r['id_laporan_pengontrol']; ?>" class="badge badge-info">Detail</a>
           </td>
         </tr>
       <?php $i++; endforeach; ?>
