@@ -172,7 +172,7 @@ class Kstm extends CI_Controller {
       $this->load->view('templates/dash_header', $data);
       $this->load->view('templates/dash_sidebar', $data);
       $this->load->view('templates/dash_topbar', $data);
-      $this->load->view('rekap/detail', $data);
+      $this->load->view('kstm/detail', $data);
       $this->load->view('templates/dash_footer');
     }else {
       $data = [

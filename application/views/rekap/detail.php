@@ -45,11 +45,12 @@
         <hr>
 
         <!-- Preview Image -->
-        <?php if ($tipe == 'pengontrol'): ?>
+        <?php if ($tipe == 'pengontrol' and $laporan['foto'] != ''): ?>
           <img class="img-fluid rounded mx-auto d-block" src="<?= base_url('assets/img/pengontrol/') . $laporan['foto']; ?>" alt="gambar post" style="max-height:300px;">
+          <hr>
         <?php endif; ?>
 
-        <hr>
+
 
         <!-- Post Content -->
         <p style="white-space: pre-line">Deskripsi Laporan : <?= $laporan['deskripsi_laporan'] ?></p>
