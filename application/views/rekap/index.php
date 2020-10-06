@@ -26,7 +26,7 @@
       </button>
       <div class="dropdown-menu" >
         <a class="dropdown-item" href="<?= base_url('rekap/kstm') ?>">Laporan KSTM</a>
-        <a class="dropdown-item" href="<?= base_url('rekap/laporan') ?>">Laporan Pengontrol Lapangan</a>
+        <a class="dropdown-item" href="<?= base_url('rekap/pengontrol') ?>">Laporan Pengontrol Lapangan</a>
       </div>
     </div>
   </div>
