@@ -192,6 +192,7 @@ class Kstm extends CI_Controller {
   }
 
   public function delete_laporan_kstm($id){
+    $this->db->delete('tanggapan_kstm', ['id_laporan' => $id]);
     $this->db->delete('laporan_kstm', ['id_laporan_kstm' => $id]);
     $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan berhasil dihapus. </div>');
     redirect('kstm');

@@ -270,6 +270,7 @@ class Pengontrol extends CI_Controller {
   }
 
   public function delete_laporan_pengontrol($id){
+    $this->db->delete('tanggapan_pengontrol', ['id_laporan' => $id]);
     $this->db->delete('laporan_pengontrol', ['id_laporan_pengontrol' => $id]);
     $this->session-> set_flashdata('message', '<div class="alert alert-success" role="alert"> Laporan berhasil dihapus. </div>');
     redirect('pengontrol');
